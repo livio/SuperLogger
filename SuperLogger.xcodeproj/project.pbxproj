@@ -10,12 +10,15 @@
 		5D2B796B1B5000A100E83E2B /* SuperLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D2B796A1B5000A100E83E2B /* SuperLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5D2B79711B5000A200E83E2B /* SuperLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D2B79651B5000A100E83E2B /* SuperLogger.framework */; };
 		5D2B79781B5000A200E83E2B /* SuperLoggerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D2B79771B5000A200E83E2B /* SuperLoggerTests.m */; };
-		5D9F9A051B5000E70069DC65 /* SLLogFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D9F9A041B5000E70069DC65 /* SLLogFilter.h */; };
 		5D9F9A081B5000FF0069DC65 /* SLLoggerController.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D9F9A061B5000FF0069DC65 /* SLLoggerController.h */; };
 		5D9F9A091B5000FF0069DC65 /* SLLoggerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D9F9A071B5000FF0069DC65 /* SLLoggerController.m */; };
 		5D9F9A0B1B5002180069DC65 /* SLLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D9F9A0A1B5002180069DC65 /* SLLogger.h */; };
 		5D9F9A0F1B50155F0069DC65 /* SLConsoleLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D9F9A0D1B50155F0069DC65 /* SLConsoleLogger.h */; };
 		5D9F9A101B50155F0069DC65 /* SLConsoleLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D9F9A0E1B50155F0069DC65 /* SLConsoleLogger.m */; };
+		5DB55A6F1B504FA8009E2C2E /* SLLog.h in Headers */ = {isa = PBXBuildFile; fileRef = 5DB55A6D1B504FA8009E2C2E /* SLLog.h */; };
+		5DB55A701B504FA8009E2C2E /* SLLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB55A6E1B504FA8009E2C2E /* SLLog.m */; };
+		5DF4E7E41B5040D30073B6CB /* SLClassModule.h in Headers */ = {isa = PBXBuildFile; fileRef = 5DF4E7E21B5040D30073B6CB /* SLClassModule.h */; };
+		5DF4E7E51B5040D30073B6CB /* SLClassModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DF4E7E31B5040D30073B6CB /* SLClassModule.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,12 +38,16 @@
 		5D2B79701B5000A200E83E2B /* SuperLoggerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SuperLoggerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D2B79761B5000A200E83E2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5D2B79771B5000A200E83E2B /* SuperLoggerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SuperLoggerTests.m; sourceTree = "<group>"; };
-		5D9F9A041B5000E70069DC65 /* SLLogFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLLogFilter.h; sourceTree = "<group>"; };
 		5D9F9A061B5000FF0069DC65 /* SLLoggerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLLoggerController.h; sourceTree = "<group>"; };
 		5D9F9A071B5000FF0069DC65 /* SLLoggerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLLoggerController.m; sourceTree = "<group>"; };
 		5D9F9A0A1B5002180069DC65 /* SLLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLLogger.h; sourceTree = "<group>"; };
 		5D9F9A0D1B50155F0069DC65 /* SLConsoleLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLConsoleLogger.h; sourceTree = "<group>"; };
 		5D9F9A0E1B50155F0069DC65 /* SLConsoleLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLConsoleLogger.m; sourceTree = "<group>"; };
+		5DB55A6D1B504FA8009E2C2E /* SLLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLLog.h; sourceTree = "<group>"; };
+		5DB55A6E1B504FA8009E2C2E /* SLLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLLog.m; sourceTree = "<group>"; };
+		5DB55A771B5062C7009E2C2E /* SLGlobals.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SLGlobals.h; sourceTree = "<group>"; };
+		5DF4E7E21B5040D30073B6CB /* SLClassModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLClassModule.h; sourceTree = "<group>"; };
+		5DF4E7E31B5040D30073B6CB /* SLClassModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLClassModule.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,11 +90,13 @@
 		5D2B79671B5000A100E83E2B /* SuperLogger */ = {
 			isa = PBXGroup;
 			children = (
+				5DB55A711B505FA1009E2C2E /* Logs */,
 				5D9F9A0C1B50154B0069DC65 /* Loggers */,
+				5DB55A751B5061E9009E2C2E /* Modules */,
 				5D2B796A1B5000A100E83E2B /* SuperLogger.h */,
-				5D9F9A041B5000E70069DC65 /* SLLogFilter.h */,
 				5D9F9A061B5000FF0069DC65 /* SLLoggerController.h */,
 				5D9F9A071B5000FF0069DC65 /* SLLoggerController.m */,
+				5DB55A771B5062C7009E2C2E /* SLGlobals.h */,
 				5D2B79681B5000A100E83E2B /* Supporting Files */,
 			);
 			path = SuperLogger;
@@ -128,6 +137,24 @@
 			name = Loggers;
 			sourceTree = "<group>";
 		};
+		5DB55A711B505FA1009E2C2E /* Logs */ = {
+			isa = PBXGroup;
+			children = (
+				5DB55A6D1B504FA8009E2C2E /* SLLog.h */,
+				5DB55A6E1B504FA8009E2C2E /* SLLog.m */,
+			);
+			name = Logs;
+			sourceTree = "<group>";
+		};
+		5DB55A751B5061E9009E2C2E /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				5DF4E7E21B5040D30073B6CB /* SLClassModule.h */,
+				5DF4E7E31B5040D30073B6CB /* SLClassModule.m */,
+			);
+			name = Modules;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -136,9 +163,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D9F9A081B5000FF0069DC65 /* SLLoggerController.h in Headers */,
+				5DF4E7E41B5040D30073B6CB /* SLClassModule.h in Headers */,
 				5D9F9A0F1B50155F0069DC65 /* SLConsoleLogger.h in Headers */,
+				5DB55A6F1B504FA8009E2C2E /* SLLog.h in Headers */,
 				5D2B796B1B5000A100E83E2B /* SuperLogger.h in Headers */,
-				5D9F9A051B5000E70069DC65 /* SLLogFilter.h in Headers */,
 				5D9F9A0B1B5002180069DC65 /* SLLogger.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -240,7 +268,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D9F9A101B50155F0069DC65 /* SLConsoleLogger.m in Sources */,
+				5DF4E7E51B5040D30073B6CB /* SLClassModule.m in Sources */,
 				5D9F9A091B5000FF0069DC65 /* SLLoggerController.m in Sources */,
+				5DB55A701B504FA8009E2C2E /* SLLog.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

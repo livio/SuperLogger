@@ -10,6 +10,12 @@
 
 #import "SLLogger.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface SLConsoleLogger : NSObject <SLLogger>
 
+@property (copy, nonatomic, nullable) SLLogFormatBlock formatBlock;
+
 @end
+
+NS_ASSUME_NONNULL_END

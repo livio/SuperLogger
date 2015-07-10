@@ -9,27 +9,13 @@
 #import <Foundation/Foundation.h>
 
 #import "SLLogger.h"
+#import "SLGlobals.h"
+
+@class SLClassModule;
+@class SLLog;
+
 
 NS_ASSUME_NONNULL_BEGIN
-
-typedef NS_ENUM(NSInteger, SLLogFilterLevel) {
-    SLLogFilterLevelVerbose = 0,
-    SLLogFilterLevelDebug,
-    SLLogFilterLevelInfo,
-    SLLogFilterLevelWarn,
-    SLLogFilterLevelError
-};
-
-/**
- *  A block run over logs to filter results into 'good' and 'bad'. 'Good' log results pass the filter and continue. 'Bad' log results are stopped at the filter.
- *
- *  @param logString The string that was passed to the log method
- *  @param level     The log level that determines the priority of the log being passed
- *
- *  @return 'YES' if the log passes the filter.
- */
-typedef BOOL (^SLLogFilterBlock)(NSString *logString, SLLogFilterLevel level);
-
 
 @interface SLLoggerController : NSObject
 
@@ -43,7 +29,10 @@ typedef BOOL (^SLLogFilterBlock)(NSString *logString, SLLogFilterLevel level);
  */
 @property (strong, nonatomic, readonly) dispatch_queue_t searchDispatchQueue;
 
-@property (copy, nonatomic, readonly) NSMutableSet<NSNumber *> *logModules;
+/**
+ *  All known log modules. A log that contains an unknown module will automatically be added to this list. You can also manually add modules using [SLLogController addModule]. If you don't want to use modules, when you create a log without a module, a module will be added only with the class the log originated from, and with a name equal to the name of the class.
+ */
+@property (copy, nonatomic, readonly) NSSet<SLClassModule *> *logModules;
 
 /**
  *  All currently active loggers
@@ -54,6 +43,11 @@ typedef BOOL (^SLLogFilterBlock)(NSString *logString, SLLogFilterLevel level);
  *  All currently active log filters.
  */
 @property (copy, nonatomic, readonly) NSMutableSet<SLLogFilterBlock> *logFilters;
+
+/**
+ *  The default format block that will be used if a logger's format block is nil
+ */
+@property (copy, nonatomic, readonly) SLLogFormatBlock defaultFormatBlock;
 
 /**
  *  Whether or not non-error logs will be dispatched asynchronously.
@@ -72,7 +66,15 @@ typedef BOOL (^SLLogFilterBlock)(NSString *logString, SLLogFilterLevel level);
  */
 @property (assign, nonatomic) NSInteger maxStoredLogs;
 
+
 - (instancetype)initWithLoggers:(NSArray<id<SLLogger>> *)loggers NS_DESIGNATED_INITIALIZER;
+
+/**
+ *  Add modules to the set of modules. This method is unneccessary, but may be useful in the future. If a log is added with an unknown module, it will automatically be added to the list of known modules.
+ *
+ *  @param module An array of modules to be added.
+ */
+- (void)addModules:(NSArray<SLClassModule *> *)module;
 
 /**
  *  Use a filter to return a list of stored logs that pass the filter. This will run on the search dispatch queue, which is a concurrent queue. It will return on the main queue.
