@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>SuperLogger-WebServer.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>SuperLogger.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -18,6 +23,16 @@
 			<true/>
 		</dict>
 		<key>5D2B796F1B5000A200E83E2B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5D4049D21B557B8C00DA719D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5D4049DB1B557B8C00DA719D</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -11,12 +11,13 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef NS_ENUM(NSInteger, SLLogLevel) {
-    SLLogLevelVerbose = 0,
-    SLLogLevelDebug,
-    SLLogLevelInfo,
+typedef NS_OPTIONS(NSInteger, SLLogLevel) {
+    SLLogLevelOff = 0,
+    SLLogLevelError,
     SLLogLevelWarn,
-    SLLogLevelError
+    SLLogLevelInfo,
+    SLLogLevelDebug,
+    SLLogLevelVerbose,
 };
 
 /**

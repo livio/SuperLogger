@@ -13,7 +13,6 @@ NS_ASSUME_NONNULL_BEGIN
 @interface SLLog ()
 
 @property (copy, nonatomic, readwrite) NSDate *timestamp;
-@property (copy, nonatomic, readwrite) NSString *module;
 @property (copy, nonatomic, readwrite) NSString *logClass;
 @property (copy, nonatomic, readwrite) NSString *string;
 @property (copy, nonatomic, readwrite) NSString *function;
@@ -29,7 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
     return nil;
 }
 
-- (instancetype)initWithString:(NSString *)string className:(NSString *)className moduleName:(NSString *)moduleName functionName:(NSString *)functionName timestamp:(NSDate *)timestamp {
+- (instancetype)initWithString:(NSString *)string className:(NSString *)className functionName:(NSString *)functionName timestamp:(NSDate *)timestamp {
     self = [super init];
     if (!self) {
         return nil;
@@ -37,7 +36,6 @@ NS_ASSUME_NONNULL_BEGIN
     
     self.string = string;
     self.logClass = className;
-    self.module = moduleName;
     self.function = functionName;
     self.timestamp = timestamp;
     

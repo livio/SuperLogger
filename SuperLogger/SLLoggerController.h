@@ -30,7 +30,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic, readonly) dispatch_queue_t searchDispatchQueue;
 
 /**
- *  All known log modules. A log that contains an unknown module will automatically be added to this list. You can also manually add modules using [SLLogController addModule]. If you don't want to use modules, when you create a log without a module, a module will be added only with the class the log originated from, and with a name equal to the name of the class.
+ *  All known log modules. Add modules early on. When a log is sent from a class that is contained in a module, the module will automatically be logged.
  */
 @property (copy, nonatomic, readonly) NSSet<SLClassModule *> *logModules;
 
@@ -84,6 +84,8 @@ NS_ASSUME_NONNULL_BEGIN
  *  @return An array of logs that passed the filter. Position 0 (zero) of the array contains the oldest log from the search.
  */
 - (void)searchStoredLogsWithFilter:(SLLogFilterBlock)searchFilterBlock completion:(void(^)(NSArray<NSString *> *results))completionBlock;
+
++ (dispatch_queue_t)globalLogQueue;
 
 @end
 

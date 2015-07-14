@@ -15,8 +15,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SLLoggerController ()
 
-@property (strong, nonatomic, readwrite) dispatch_queue_t logDispatchQueue;
-@property (strong, nonatomic, readwrite) dispatch_queue_t searchDispatchQueue;
 @property (copy, nonatomic, readwrite) NSMutableSet<id<SLLogger>> *loggers;
 @property (copy, nonatomic, readwrite) NSMutableSet<SLLogFilterBlock> *logFilters;
 @property (copy, nonatomic, readwrite) NSMutableSet<SLClassModule *> *mutableLogModules;
@@ -43,15 +41,12 @@ NS_ASSUME_NONNULL_BEGIN
         return nil;
     }
     
-    self.logDispatchQueue = dispatch_queue_create("com.superlogger.loggercontroller.log", DISPATCH_QUEUE_SERIAL);
-    self.searchDispatchQueue = dispatch_queue_create("com.superlogger.loggercontroller.search", DISPATCH_QUEUE_CONCURRENT);
-    
-    self.loggers = [NSMutableSet<id<SLLogger>> setWithArray:loggers];
-    self.logFilters = [NSMutableSet set];
-    self.mutableLogModules = [NSMutableSet set];
-    self.async = YES;
-    self.errorAsync = NO;
-    self.maxStoredLogs = 1000;
+    _loggers = [NSMutableSet<id<SLLogger>> setWithArray:loggers];
+    _logFilters = [NSMutableSet set];
+    _mutableLogModules = [NSMutableSet set];
+    _async = YES;
+    _errorAsync = NO;
+    _maxStoredLogs = 1000;
     
     return self;
 }
@@ -76,7 +71,7 @@ NS_ASSUME_NONNULL_BEGIN
 }
 
 - (void)sl_asyncLog:(SLLog *)log {
-    dispatch_async(self.logDispatchQueue, ^{
+    dispatch_async([SLLoggerController globalLogQueue], ^{
         [self sl_log:log];
     });
 }
@@ -101,12 +96,35 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)searchStoredLogsWithFilter:(SLLogFilterBlock)searchFilterBlock completion:(void(^)(NSArray<NSString *> *results))completionBlock {
     dispatch_async(self.searchDispatchQueue, ^{
-        // TODO:
+        // TODO
         
         dispatch_async(dispatch_get_main_queue(), ^{
             completionBlock(@[]);
         });
     });
+}
+
+
+#pragma mark - Dispatch Queues
+
++ (dispatch_queue_t)globalLogQueue {
+    static dispatch_queue_t queue = NULL;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        queue = dispatch_queue_create("com.superlogger.loggercontroller.log", DISPATCH_QUEUE_SERIAL);
+    });
+    
+    return queue;
+}
+
++ (dispatch_queue_t)searchQueue {
+    static dispatch_queue_t queue = NULL;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        queue = dispatch_queue_create("com.superlogger.loggercontroller.search", DISPATCH_QUEUE_CONCURRENT);
+    });
+    
+    return queue;
 }
 
 @end
