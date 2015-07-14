@@ -13,6 +13,7 @@
 		5D4049D61B557B8C00DA719D /* SuperLogger-WebServer.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D4049D51B557B8C00DA719D /* SuperLogger-WebServer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5D4049DD1B557B8C00DA719D /* SuperLogger-WebServer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D4049D31B557B8C00DA719D /* SuperLogger-WebServer.framework */; };
 		5D4049E21B557B8C00DA719D /* SuperLogger_WebServerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D4049E11B557B8C00DA719D /* SuperLogger_WebServerTests.m */; };
+		5D4049EA1B557C2B00DA719D /* SuperLogger-WebServer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D4049D31B557B8C00DA719D /* SuperLogger-WebServer.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		5D9F9A081B5000FF0069DC65 /* SLLoggerController.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D9F9A061B5000FF0069DC65 /* SLLoggerController.h */; };
 		5D9F9A091B5000FF0069DC65 /* SLLoggerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D9F9A071B5000FF0069DC65 /* SLLoggerController.m */; };
 		5D9F9A0B1B5002180069DC65 /* SLLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D9F9A0A1B5002180069DC65 /* SLLogger.h */; };
@@ -79,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D4049EA1B557C2B00DA719D /* SuperLogger-WebServer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
