@@ -16,4 +16,4 @@ FOUNDATION_EXPORT const unsigned char SuperLogger_ConsoleVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <SuperLogger_Console/PublicHeader.h>
 
-
+#import "SLConsoleLogger.h"

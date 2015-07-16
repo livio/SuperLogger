@@ -8,7 +8,6 @@
 
 #import "SLLoggerController.h"
 
-#import "SLConsoleLogger.h"
 #import "SLLog.h"
 
 NS_ASSUME_NONNULL_BEGIN
@@ -27,7 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark - Lifecycle
 
 - (instancetype)init {
-    self = [self initWithLoggers:@[[[SLConsoleLogger alloc] init]]];
+    self = [self initWithLoggers:@[]];
     if (!self) {
         return nil;
     }
@@ -97,6 +96,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)searchStoredLogsWithFilter:(SLLogFilterBlock)searchFilterBlock completion:(void(^)(NSArray<NSString *> *results))completionBlock {
     dispatch_async(self.searchDispatchQueue, ^{
         // TODO
+        // http://nshipster.com/search-kit/
+        // https://github.com/indragiek/SNRSearchIndex
         
         dispatch_async(dispatch_get_main_queue(), ^{
             completionBlock(@[]);

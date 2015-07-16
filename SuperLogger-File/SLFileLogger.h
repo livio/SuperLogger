@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (copy, nonatomic, nullable) SLLogFormatBlock formatBlock;
 @property (assign, nonatomic) NSUInteger numLogFiles; // TODO
 
-- (NSString *)newLogFileName;
++ (NSString *)newLogFileName;
 + (NSString *)logDirectory;
 
 @end

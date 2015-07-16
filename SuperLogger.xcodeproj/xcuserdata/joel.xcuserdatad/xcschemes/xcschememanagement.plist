@@ -9,6 +9,11 @@
 			<key>orderHint</key>
 			<integer>2</integer>
 		</dict>
+		<key>SuperLogger-CoreData.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
 		<key>SuperLogger-File.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -63,6 +68,16 @@
 			<true/>
 		</dict>
 		<key>5D77FA031B57E9DF0013F9A7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5D77FA231B57F8630013F9A7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5D77FA2C1B57F8630013F9A7</key>
 		<dict>
 			<key>primary</key>
 			<true/>

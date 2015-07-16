@@ -22,7 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark - Lifecycle
 
 - (instancetype)init {
-    NSString *logFilePath = [[SLFileLogger logDirectory] stringByAppendingPathComponent:[self newLogFileName]];
+    NSString *logFilePath = [[SLFileLogger logDirectory] stringByAppendingPathComponent:[SLFileLogger newLogFileName]];
     
     NSFileManager *fileManager = [NSFileManager defaultManager];
     if ([fileManager fileExistsAtPath:logFilePath]) {
@@ -45,7 +45,7 @@ NS_ASSUME_NONNULL_BEGIN
     
 }
 
-- (NSString *)newLogFileName {
++ (NSString *)newLogFileName {
     static NSString *appName = nil;
     if (!appName) {
         NSString *appName = [NSBundle mainBundle].infoDictionary[@"CFBundleDisplayName"];
