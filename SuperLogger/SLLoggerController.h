@@ -60,21 +60,17 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (assign, nonatomic) BOOL errorAsync;
 
-/**
- *  The maximum number of logs stored for real-time searching and filtering. Set to 0 to store no logs, set to NS_INTEGER_MAX to store infinite logs.
- *  Default is 1000
- */
-@property (assign, nonatomic) NSInteger maxStoredLogs;
-
 
 - (instancetype)initWithLoggers:(NSArray<id<SLLogger>> *)loggers NS_DESIGNATED_INITIALIZER;
+
+- (instancetype)initWithLoggers:(NSArray<id<SLLogger>> *)loggers modules:(NSArray<SLClassModule *> *)modules;
 
 /**
  *  Add modules to the set of modules. This method is unneccessary, but may be useful in the future. If a log is added with an unknown module, it will automatically be added to the list of known modules.
  *
  *  @param module An array of modules to be added.
  */
-- (void)addModules:(NSArray<SLClassModule *> *)module;
+- (void)addModules:(NSArray<SLClassModule *> *)modules;
 
 /**
  *  Use a filter to return a list of stored logs that pass the filter. This will run on the search dispatch queue, which is a concurrent queue. It will return on the main queue.
@@ -83,7 +79,7 @@ NS_ASSUME_NONNULL_BEGIN
  *
  *  @return An array of logs that passed the filter. Position 0 (zero) of the array contains the oldest log from the search.
  */
-- (void)searchStoredLogsWithFilter:(SLLogFilterBlock)searchFilterBlock completion:(void(^)(NSArray<NSString *> *results))completionBlock;
+- (void)searchStoredLogsWithFilters:(NSArray<SLLogFilterBlock> *)searchFilterBlock completion:(SLSearchCompletionBlock)completionBlock;
 
 + (dispatch_queue_t)globalLogQueue;
 

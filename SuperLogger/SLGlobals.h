@@ -32,6 +32,16 @@ typedef NS_OPTIONS(NSInteger, SLLogLevel) {
 typedef BOOL (^SLLogFilterBlock)(SLLog *log);
 
 /**
+ *  The search results that come from an attempted search
+ *
+ *  @param results An array of SLLog model objects that are the results
+ *  @param error   An error if the search failed.
+ *
+ *  @return Whether or not the search succeeded.
+ */
+typedef void (^SLSearchCompletionBlock)(NSArray<SLLog *> *results, NSError **error);
+
+/**
  *  A block that is used to format a log into a string
  *
  *  @param log The log to be formatted

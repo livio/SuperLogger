@@ -12,11 +12,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SLLog ()
 
-@property (copy, nonatomic, readwrite) NSDate *timestamp;
+@property (assign, nonatomic, readwrite) NSTimeInterval timestamp;
 @property (copy, nonatomic, readwrite) NSString *logClass;
 @property (copy, nonatomic, readwrite) NSString *string;
 @property (copy, nonatomic, readwrite) NSString *function;
 @property (assign, nonatomic, readwrite) SLLogLevel level;
+@property (assign, nonatomic, readwrite) int threadId;
+@property (copy, nonatomic, readwrite) NSString *queueLabel;
+@property (copy, nonatomic, readwrite) NSArray *callstack;
 
 @end
 
@@ -28,18 +31,28 @@ NS_ASSUME_NONNULL_BEGIN
     return nil;
 }
 
-- (instancetype)initWithString:(NSString *)string className:(NSString *)className functionName:(NSString *)functionName timestamp:(NSDate *)timestamp {
+- (instancetype)initWithString:(NSString *)string className:(NSString *)className functionName:(NSString *)functionName timestamp:(NSTimeInterval)timestamp level:(SLLogLevel)level threadId:(int)threadId queueLabel:(NSString *)queueLabel callstack:(NSArray *)callstack {
     self = [super init];
     if (!self) {
         return nil;
     }
     
-    self.string = string;
-    self.logClass = className;
-    self.function = functionName;
-    self.timestamp = timestamp;
+    _string = string;
+    _logClass = className;
+    _function = functionName;
+    _timestamp = timestamp;
+    _level = level;
+    _threadId = threadId;
+    _queueLabel = queueLabel;
+    _callstack = callstack;
     
     return self;
+}
+
+- (id)copyWithZone:(nullable NSZone *)zone {
+    SLLog *newLog = [[SLLog allocWithZone:zone] initWithString:_string className:_logClass functionName:_function timestamp:_timestamp level:_level threadId:_threadId queueLabel:_queueLabel callstack:_callstack];
+    
+    return newLog;
 }
 
 @end

@@ -30,7 +30,7 @@
 
 #pragma mark - Regex filtering
 
-- (SLLogFilterBlock )filterByDisallowingRegex:(NSRegularExpression *)regex {
+- (SLLogFilterBlock)filterByDisallowingRegex:(NSRegularExpression *)regex {
     return [^BOOL(SLLog *log) {
         NSUInteger matches = [regex numberOfMatchesInString:log.string options:0 range:NSMakeRange(0, log.string.length)];
         if (matches > 0) {

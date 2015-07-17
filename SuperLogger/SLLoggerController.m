@@ -45,13 +45,23 @@ NS_ASSUME_NONNULL_BEGIN
     _mutableLogModules = [NSMutableSet set];
     _async = YES;
     _errorAsync = NO;
-    _maxStoredLogs = 1000;
     
     return self;
 }
 
-- (void)addModules:(NSArray<SLClassModule *> *)module {
-    [self.mutableLogModules addObjectsFromArray:module];
+- (instancetype)initWithLoggers:(NSArray<id<SLLogger>> *)loggers modules:(NSArray<SLClassModule *> *)modules {
+    self = [self initWithLoggers:loggers];
+    if (!self) {
+        return nil;
+    }
+    
+    [_mutableLogModules addObjectsFromArray:modules];
+    
+    return self;
+}
+
+- (void)addModules:(NSArray<SLClassModule *> *)modules {
+    [self.mutableLogModules addObjectsFromArray:modules];
 }
 
 - (void)addLogFilters:(NSSet *)objects {
@@ -93,14 +103,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark - Searching
 
-- (void)searchStoredLogsWithFilter:(SLLogFilterBlock)searchFilterBlock completion:(void(^)(NSArray<NSString *> *results))completionBlock {
+- (void)searchStoredLogsWithFilters:(NSArray<SLLogFilterBlock> *)searchFilterBlock completion:(SLSearchCompletionBlock)completionBlock {
     dispatch_async(self.searchDispatchQueue, ^{
         // TODO
         // http://nshipster.com/search-kit/
         // https://github.com/indragiek/SNRSearchIndex
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            completionBlock(@[]);
+            completionBlock(@[], nil);
         });
     });
 }
