@@ -78,7 +78,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (void)searchStoredLogsWithFilters:(NSArray<SLLogFilterBlock> *)searchFilters completion:(SLSearchCompletionBlock)completionBlock;
 
-+ (void)logString:(NSString *)message, ... NS_FORMAT_FUNCTION(1, 2);
++ (void)logString:(SLLogLevel)level message:(NSString *)message, ... NS_FORMAT_FUNCTION(2, 3);
 
 
 + (dispatch_queue_t)globalLogQueue;

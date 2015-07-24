@@ -20,19 +20,19 @@ typedef NS_OPTIONS(NSInteger, SLLogLevel) {
      */
     SLLogLevelOff = 0,
     /**
-     *  Log any errors using this level. Shorthand is SLogE().
+     *  Log any errors using this level. Logs in DEBUG and release. By default logs sync. Shorthand is SLogE().
      */
     SLLogLevelError,
     /**
-     *  Log anything that you want to also log in release
+     *  Log anything that you want to also log in release. By default logs async. Shorthand is SLogR().
      */
     SLLogLevelRelease,
     /**
-     *  Log anything that you want to only log in DEBUG
+     *  Log anything that you want to only log in DEBUG. By default logs async. Shorthand is SLogD().
      */
     SLLogLevelDebug,
     /**
-     *  Logs in DEBUG, extra verbose logging
+     *  Logs only in DEBUG, extra verbose logging. By default logs async. Shorthand is SLogV().
      */
     SLLogLevelVerbose,
 };
@@ -65,6 +65,6 @@ typedef void (^SLSearchCompletionBlock)(NSArray<SLLog *> *results, NSError *erro
  *
  *  @return The string that represents the formatted log
  */
-typedef NSString __nonnull *(^SLLogFormatBlock)(SLLog *log);
+typedef NSString * __nonnull (^SLLogFormatBlock)(SLLog *log);
 
 NS_ASSUME_NONNULL_END

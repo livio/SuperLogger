@@ -80,13 +80,26 @@ NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark - Logging
 
-- (void)logString:(NSString *)string, ... {
++ (void)logString:(SLLogLevel)level message:(NSString *)message, ... {
+    if (!message) {
+        return;
+    }
+    
     NSArray *callstack = [NSThread callStackSymbols];
-//    va_list args;
-//    va_start(args, message);
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+    NSString *currentQueueLabel = [NSString stringWithCString:dispatch_queue_get_label(dispatch_get_current_queue()) encoding:NSUTF8StringEncoding];
+#pragma clang diagnostic pop
+    
+    va_list args;
+    va_start(args, message);
+    NSString *format = [[NSString alloc] initWithFormat:message arguments:args];
+    SLLog *log = [[SLLog alloc] initWithMessage:format timestamp:[NSDate date] level:level queueLabel:currentQueueLabel callstack:callstack];
+    
+    [[self sharedController] sl_logMessage:log];
 }
 
-- (void)logMessage:(SLLog *)log {
+- (void)sl_logMessage:(SLLog *)log {
     if (log.level == SLLogLevelError) {
         if (self.errorAsync) {
             [self sl_asyncLog:log];

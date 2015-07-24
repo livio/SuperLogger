@@ -12,10 +12,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SLLog ()
 
-@property (assign, nonatomic, readwrite) NSTimeInterval timestamp;
+@property (assign, nonatomic, readwrite) NSDate *timestamp;
 @property (copy, nonatomic, readwrite) NSString *message;
 @property (assign, nonatomic, readwrite) SLLogLevel level;
-@property (assign, nonatomic, readwrite) NSInteger threadId;
 @property (copy, nonatomic, readwrite) NSString *queueLabel;
 @property (copy, nonatomic, readwrite) NSArray *callstack;
 
@@ -29,7 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
     return nil;
 }
 
-- (instancetype)initWithMessage:(NSString *)message timestamp:(NSTimeInterval)timestamp level:(SLLogLevel)level threadId:(NSInteger)threadId queueLabel:(NSString *)queueLabel callstack:(NSArray *)callstack {
+- (instancetype)initWithMessage:(NSString *)message timestamp:(NSDate *)timestamp level:(SLLogLevel)level queueLabel:(NSString *)queueLabel callstack:(NSArray *)callstack {
     self = [super init];
     if (!self) {
         return nil;
@@ -38,7 +37,6 @@ NS_ASSUME_NONNULL_BEGIN
     _message = message;
     _timestamp = timestamp;
     _level = level;
-    _threadId = threadId;
     _queueLabel = queueLabel;
     _callstack = callstack;
     

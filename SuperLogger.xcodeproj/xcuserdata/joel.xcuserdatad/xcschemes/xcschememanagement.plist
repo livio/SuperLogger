@@ -29,9 +29,29 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>SuperLoggerTestApp.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>5</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>5D0149781B62CB11005142B2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5D0149931B62CB11005142B2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5D01499E1B62CB11005142B2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>5D2B79641B5000A100E83E2B</key>
 		<dict>
 			<key>primary</key>

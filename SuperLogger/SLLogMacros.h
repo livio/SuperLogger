@@ -9,12 +9,14 @@
 #import "SLLoggerController.h"
 
 #if DEBUG
-#define SLogV(...)
-#define SLogD(...)
+#define SLogTrace() // TODO
+#define SLogV(...) // TODO
+#define SLogD(...) // TODO
 #else
+#define SLogTrace()
 #define SLogV(...)
 #define SLogD(...)
 #endif
 
-#define SLogR(...)
-#define SLogE(...)
+#define SLogR(...) // TODO
+#define SLogE(...) // TODO
