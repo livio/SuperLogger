@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D0149741B614442005142B2 /* SLLogMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D0149731B614442005142B2 /* SLLogMacros.h */; };
 		5D2B796B1B5000A100E83E2B /* SuperLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D2B796A1B5000A100E83E2B /* SuperLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5D2B79711B5000A200E83E2B /* SuperLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D2B79651B5000A100E83E2B /* SuperLogger.framework */; };
 		5D2B79781B5000A200E83E2B /* SuperLoggerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D2B79771B5000A200E83E2B /* SuperLoggerTests.m */; };
@@ -31,6 +32,7 @@
 		5D77FA331B57F8630013F9A7 /* SuperLogger_CoreDataTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D77FA321B57F8630013F9A7 /* SuperLogger_CoreDataTests.m */; };
 		5D77FA3B1B5804B60013F9A7 /* SuperLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D2B79651B5000A100E83E2B /* SuperLogger.framework */; };
 		5D77FA3C1B5842B70013F9A7 /* SLGlobals.h in Headers */ = {isa = PBXBuildFile; fileRef = 5DB55A771B5062C7009E2C2E /* SLGlobals.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5D77FA421B5D40710013F9A7 /* SLLogSearch.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D77FA411B5D40710013F9A7 /* SLLogSearch.h */; };
 		5D9F9A081B5000FF0069DC65 /* SLLoggerController.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D9F9A061B5000FF0069DC65 /* SLLoggerController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5D9F9A091B5000FF0069DC65 /* SLLoggerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D9F9A071B5000FF0069DC65 /* SLLoggerController.m */; };
 		5D9F9A0B1B5002180069DC65 /* SLLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D9F9A0A1B5002180069DC65 /* SLLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -81,6 +83,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5D0149731B614442005142B2 /* SLLogMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLLogMacros.h; sourceTree = "<group>"; };
 		5D2B79651B5000A100E83E2B /* SuperLogger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SuperLogger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D2B79691B5000A100E83E2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5D2B796A1B5000A100E83E2B /* SuperLogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SuperLogger.h; sourceTree = "<group>"; };
@@ -115,6 +118,7 @@
 		5D77FA2D1B57F8630013F9A7 /* SuperLogger-CoreDataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SuperLogger-CoreDataTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D77FA321B57F8630013F9A7 /* SuperLogger_CoreDataTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SuperLogger_CoreDataTests.m; sourceTree = "<group>"; };
 		5D77FA341B57F8630013F9A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5D77FA411B5D40710013F9A7 /* SLLogSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLLogSearch.h; sourceTree = "<group>"; };
 		5D9F9A061B5000FF0069DC65 /* SLLoggerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLLoggerController.h; sourceTree = "<group>"; };
 		5D9F9A071B5000FF0069DC65 /* SLLoggerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLLoggerController.m; sourceTree = "<group>"; };
 		5D9F9A0A1B5002180069DC65 /* SLLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLLogger.h; sourceTree = "<group>"; };
@@ -255,6 +259,7 @@
 				5D9F9A071B5000FF0069DC65 /* SLLoggerController.m */,
 				5DB55A771B5062C7009E2C2E /* SLGlobals.h */,
 				5D2B796A1B5000A100E83E2B /* SuperLogger.h */,
+				5D0149731B614442005142B2 /* SLLogMacros.h */,
 				5D2B79681B5000A100E83E2B /* Supporting Files */,
 			);
 			path = SuperLogger;
@@ -365,6 +370,7 @@
 			isa = PBXGroup;
 			children = (
 				5D9F9A0A1B5002180069DC65 /* SLLogger.h */,
+				5D77FA411B5D40710013F9A7 /* SLLogSearch.h */,
 			);
 			name = Loggers;
 			sourceTree = "<group>";
@@ -405,11 +411,13 @@
 			files = (
 				5D9F9A081B5000FF0069DC65 /* SLLoggerController.h in Headers */,
 				5DF4E7E41B5040D30073B6CB /* SLClassModule.h in Headers */,
+				5D77FA421B5D40710013F9A7 /* SLLogSearch.h in Headers */,
 				5D77FA3C1B5842B70013F9A7 /* SLGlobals.h in Headers */,
 				5DB55A6F1B504FA8009E2C2E /* SLLog.h in Headers */,
 				5D2B796B1B5000A100E83E2B /* SuperLogger.h in Headers */,
 				5DB55A7B1B53F801009E2C2E /* SLFilter.h in Headers */,
 				5D9F9A0B1B5002180069DC65 /* SLLogger.h in Headers */,
+				5D0149741B614442005142B2 /* SLLogMacros.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1325,6 +1333,7 @@
 				5D77F9F11B57E9D20013F9A7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5D77F9F51B57E9D20013F9A7 /* Build configuration list for PBXNativeTarget "SuperLogger-ConsoleTests" */ = {
 			isa = XCConfigurationList;
@@ -1333,6 +1342,7 @@
 				5D77F9F31B57E9D20013F9A7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5D77FA0C1B57E9DF0013F9A7 /* Build configuration list for PBXNativeTarget "SuperLogger-File" */ = {
 			isa = XCConfigurationList;
@@ -1341,6 +1351,7 @@
 				5D77FA0E1B57E9DF0013F9A7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5D77FA0F1B57E9DF0013F9A7 /* Build configuration list for PBXNativeTarget "SuperLogger-FileTests" */ = {
 			isa = XCConfigurationList;
@@ -1349,6 +1360,7 @@
 				5D77FA111B57E9DF0013F9A7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5D77FA351B57F8630013F9A7 /* Build configuration list for PBXNativeTarget "SuperLogger-CoreData" */ = {
 			isa = XCConfigurationList;
@@ -1357,6 +1369,7 @@
 				5D77FA371B57F8630013F9A7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5D77FA381B57F8630013F9A7 /* Build configuration list for PBXNativeTarget "SuperLogger-CoreDataTests" */ = {
 			isa = XCConfigurationList;
@@ -1365,6 +1378,7 @@
 				5D77FA3A1B57F8630013F9A7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

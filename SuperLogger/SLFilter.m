@@ -18,13 +18,13 @@
 
 - (SLLogFilterBlock)filterByDisallowingString:(NSString *)string {
     return [^BOOL(SLLog *log) {
-        return [log.string containsString:string] ? NO : YES;
+        return [log.message containsString:string] ? NO : YES;
     } copy];
 }
 
 - (SLLogFilterBlock)filterByAllowingString:(NSString *)string {
     return [^BOOL(SLLog *log) {
-        return [log.string containsString:string] ? YES : NO;
+        return [log.message containsString:string] ? YES : NO;
     } copy];
 }
 
@@ -32,7 +32,7 @@
 
 - (SLLogFilterBlock)filterByDisallowingRegex:(NSRegularExpression *)regex {
     return [^BOOL(SLLog *log) {
-        NSUInteger matches = [regex numberOfMatchesInString:log.string options:0 range:NSMakeRange(0, log.string.length)];
+        NSUInteger matches = [regex numberOfMatchesInString:log.message options:0 range:NSMakeRange(0, log.message.length)];
         if (matches > 0) {
             return NO;
         } else {
@@ -43,7 +43,7 @@
 
 - (SLLogFilterBlock )filterByAllowingRegex:(NSRegularExpression *)regex {
     return [^BOOL(SLLog *log) {
-        NSUInteger matches = [regex numberOfMatchesInString:log.string options:0 range:NSMakeRange(0, log.string.length)];
+        NSUInteger matches = [regex numberOfMatchesInString:log.message options:0 range:NSMakeRange(0, log.message.length)];
         if (matches > 0) {
             return YES;
         } else {

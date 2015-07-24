@@ -13,11 +13,9 @@ NS_ASSUME_NONNULL_BEGIN
 @interface SLLog ()
 
 @property (assign, nonatomic, readwrite) NSTimeInterval timestamp;
-@property (copy, nonatomic, readwrite) NSString *logClass;
-@property (copy, nonatomic, readwrite) NSString *string;
-@property (copy, nonatomic, readwrite) NSString *function;
+@property (copy, nonatomic, readwrite) NSString *message;
 @property (assign, nonatomic, readwrite) SLLogLevel level;
-@property (assign, nonatomic, readwrite) int threadId;
+@property (assign, nonatomic, readwrite) NSInteger threadId;
 @property (copy, nonatomic, readwrite) NSString *queueLabel;
 @property (copy, nonatomic, readwrite) NSArray *callstack;
 
@@ -27,19 +25,17 @@ NS_ASSUME_NONNULL_BEGIN
 @implementation SLLog
 
 - (instancetype)init {
-    NSAssert(NO, @"This method cannot be used. Use [SLLog initWithString:className:moduleName:functionName:timestamp:] instead");
+    NSAssert(NO, @"This method cannot be used");
     return nil;
 }
 
-- (instancetype)initWithString:(NSString *)string className:(NSString *)className functionName:(NSString *)functionName timestamp:(NSTimeInterval)timestamp level:(SLLogLevel)level threadId:(int)threadId queueLabel:(NSString *)queueLabel callstack:(NSArray *)callstack {
+- (instancetype)initWithMessage:(NSString *)message timestamp:(NSTimeInterval)timestamp level:(SLLogLevel)level threadId:(NSInteger)threadId queueLabel:(NSString *)queueLabel callstack:(NSArray *)callstack {
     self = [super init];
     if (!self) {
         return nil;
     }
     
-    _string = string;
-    _logClass = className;
-    _function = functionName;
+    _message = message;
     _timestamp = timestamp;
     _level = level;
     _threadId = threadId;
@@ -47,12 +43,6 @@ NS_ASSUME_NONNULL_BEGIN
     _callstack = callstack;
     
     return self;
-}
-
-- (id)copyWithZone:(nullable NSZone *)zone {
-    SLLog *newLog = [[SLLog allocWithZone:zone] initWithString:_string className:_logClass functionName:_function timestamp:_timestamp level:_level threadId:_threadId queueLabel:_queueLabel callstack:_callstack];
-    
-    return newLog;
 }
 
 @end

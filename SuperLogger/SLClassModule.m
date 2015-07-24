@@ -27,14 +27,15 @@ NS_ASSUME_NONNULL_BEGIN
     return nil;
 }
 
-- (instancetype)initWithName:(NSString *)name classes:(NSArray<Class> *)classes {
+- (instancetype)initWithName:(NSString *)name classes:(NSArray<Class> *)classes level:(SLLogLevel)level {
     self = [super init];
     if (!self) {
         return nil;
     }
     
-    self.name = name;
-    self.classes = [NSMutableSet<Class> setWithArray:classes];
+    _name = name;
+    _classes = [NSMutableSet<Class> setWithArray:classes];
+    _logLevel = level;
     
     return self;
 }

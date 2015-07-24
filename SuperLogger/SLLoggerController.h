@@ -37,12 +37,12 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  All currently active loggers
  */
-@property (copy, nonatomic, readonly) NSMutableSet<id<SLLogger>> *loggers;
+@property (copy, nonatomic, readonly) NSSet<id<SLLogger>> *loggers;
 
 /**
  *  All currently active log filters.
  */
-@property (copy, nonatomic, readonly) NSMutableSet<SLLogFilterBlock> *logFilters;
+@property (copy, nonatomic, readonly) NSSet<SLLogFilterBlock> *logFilters;
 
 /**
  *  The default format block that will be used if a logger's format block is nil
@@ -60,17 +60,14 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (assign, nonatomic) BOOL errorAsync;
 
-
-- (instancetype)initWithLoggers:(NSArray<id<SLLogger>> *)loggers NS_DESIGNATED_INITIALIZER;
-
-- (instancetype)initWithLoggers:(NSArray<id<SLLogger>> *)loggers modules:(NSArray<SLClassModule *> *)modules;
++ (SLLoggerController *)sharedController;
 
 /**
- *  Add modules to the set of modules. This method is unneccessary, but may be useful in the future. If a log is added with an unknown module, it will automatically be added to the list of known modules.
- *
- *  @param module An array of modules to be added.
+ *  Add loggers, modules, or filters to the shared instance
  */
-- (void)addModules:(NSArray<SLClassModule *> *)modules;
++ (void)addLoggers:(NSArray<id<SLLogger>> *)loggers;
++ (void)addModules:(NSArray<SLClassModule *> *)modules;
++ (void)addFilters:(NSArray<SLLogFilterBlock> *)filters;
 
 /**
  *  Use a filter to return a list of stored logs that pass the filter. This will run on the search dispatch queue, which is a concurrent queue. It will return on the main queue.
@@ -79,7 +76,10 @@ NS_ASSUME_NONNULL_BEGIN
  *
  *  @return An array of logs that passed the filter. Position 0 (zero) of the array contains the oldest log from the search.
  */
-- (void)searchStoredLogsWithFilters:(NSArray<SLLogFilterBlock> *)searchFilterBlock completion:(SLSearchCompletionBlock)completionBlock;
++ (void)searchStoredLogsWithFilters:(NSArray<SLLogFilterBlock> *)searchFilters completion:(SLSearchCompletionBlock)completionBlock;
+
++ (void)logString:(NSString *)message, ... NS_FORMAT_FUNCTION(1, 2);
+
 
 + (dispatch_queue_t)globalLogQueue;
 

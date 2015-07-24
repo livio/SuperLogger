@@ -9,13 +9,14 @@
 #import "SLLoggerController.h"
 
 #import "SLLog.h"
+#import "SLLogSearch.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SLLoggerController ()
 
-@property (copy, nonatomic, readwrite) NSMutableSet<id<SLLogger>> *loggers;
-@property (copy, nonatomic, readwrite) NSMutableSet<SLLogFilterBlock> *logFilters;
+@property (copy, nonatomic, readwrite) NSMutableSet<id<SLLogger>> *mutableLoggers;
+@property (copy, nonatomic, readwrite) NSMutableSet<SLLogFilterBlock> *mutableLogFilters;
 @property (copy, nonatomic, readwrite) NSMutableSet<SLClassModule *> *mutableLogModules;
 
 @end
@@ -25,64 +26,92 @@ NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark - Lifecycle
 
-- (instancetype)init {
-    self = [self initWithLoggers:@[]];
-    if (!self) {
-        return nil;
-    }
++ (SLLoggerController *)sharedController {
+    static SLLoggerController *sharedController = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sharedController = [[self alloc] init];
+    });
     
-    return self;
+    return sharedController;
 }
 
-- (instancetype)initWithLoggers:(NSArray<id<SLLogger>> *)loggers {
+- (instancetype)init {
     self = [super init];
     if (!self) {
         return nil;
     }
     
-    _loggers = [NSMutableSet<id<SLLogger>> setWithArray:loggers];
-    _logFilters = [NSMutableSet set];
+    _mutableLoggers = [NSMutableSet set];
+    _mutableLogFilters = [NSMutableSet set];
     _mutableLogModules = [NSMutableSet set];
-    _async = YES;
-    _errorAsync = NO;
     
     return self;
 }
 
-- (instancetype)initWithLoggers:(NSArray<id<SLLogger>> *)loggers modules:(NSArray<SLClassModule *> *)modules {
-    self = [self initWithLoggers:loggers];
-    if (!self) {
-        return nil;
-    }
-    
-    [_mutableLogModules addObjectsFromArray:modules];
-    
-    return self;
++ (void)addLoggers:(NSArray<id<SLLogger>> *)loggers {
+    dispatch_async([self.class globalLogQueue], ^{ @autoreleasepool {
+        for (id<SLLogger> logger in loggers) {
+#ifndef DEBUG
+            // If the app is running in release mode, and the logger should not run in release mode, then just ignore this logger.
+            if (!logger.logInRelease) {
+                continue;
+            }
+#endif
+            // If the logger should be set up, then set it up.
+            [[self.class sharedController].mutableLoggers addObject:logger];
+            [logger setupLogger];
+        }
+    }});
 }
 
-- (void)addModules:(NSArray<SLClassModule *> *)modules {
-    [self.mutableLogModules addObjectsFromArray:modules];
++ (void)addModules:(NSArray<SLClassModule *> *)modules {
+    dispatch_async([self.class globalLogQueue], ^{ @autoreleasepool {
+        [[self.class sharedController].mutableLogModules addObjectsFromArray:modules];
+    }});
 }
 
-- (void)addLogFilters:(NSSet *)objects {
-    
++ (void)addFilters:(NSArray<SLLogFilterBlock> *)filters {
+    dispatch_async([self.class globalLogQueue], ^{ @autoreleasepool {
+        [[self.class sharedController].mutableLogFilters addObjectsFromArray:filters];
+    }});
 }
 
 
 #pragma mark - Logging
 
-- (void)log:(SLLog *)log {
-    if (self.async == YES) {
-        [self sl_asyncLog:log];
+- (void)logString:(NSString *)string, ... {
+    NSArray *callstack = [NSThread callStackSymbols];
+//    va_list args;
+//    va_start(args, message);
+}
+
+- (void)logMessage:(SLLog *)log {
+    if (log.level == SLLogLevelError) {
+        if (self.errorAsync) {
+            [self sl_asyncLog:log];
+        } else {
+            [self sl_syncLog:log];
+        }
     } else {
-        [self sl_log:log];
+        if (self.async) {
+            [self sl_asyncLog:log];
+        } else {
+            [self sl_syncLog:log];
+        }
     }
 }
 
 - (void)sl_asyncLog:(SLLog *)log {
-    dispatch_async([SLLoggerController globalLogQueue], ^{
+    dispatch_async([SLLoggerController globalLogQueue], ^{ @autoreleasepool {
         [self sl_log:log];
-    });
+    }});
+}
+
+- (void)sl_syncLog:(SLLog *)log {
+    dispatch_sync([SLLoggerController globalLogQueue], ^{ @autoreleasepool {
+        [self sl_log:log];
+    }});
 }
 
 - (void)sl_log:(SLLog *)log {
@@ -96,23 +125,29 @@ NS_ASSUME_NONNULL_BEGIN
         SLLogFormatBlock formatBlock = logger.formatBlock ?: [self defaultFormatBlock];
         [logger logString:formatBlock(log)];
     }
-    
-    // TODO: Store logs in some way for future searches
 }
 
 
 #pragma mark - Searching
 
-- (void)searchStoredLogsWithFilters:(NSArray<SLLogFilterBlock> *)searchFilterBlock completion:(SLSearchCompletionBlock)completionBlock {
-    dispatch_async(self.searchDispatchQueue, ^{
-        // TODO
-        // http://nshipster.com/search-kit/
-        // https://github.com/indragiek/SNRSearchIndex
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            completionBlock(@[], nil);
-        });
-    });
++ (void)searchStoredLogsWithFilters:(NSArray<SLLogFilterBlock> *)searchFilters completion:(SLSearchCompletionBlock)completionBlock {
+    dispatch_async([SLLoggerController globalLogQueue], ^{ @autoreleasepool {
+        // Go through our loggers and find those that support searching
+        // TODO: Only search a passed in logger?
+        for (id<SLLogger> logger in [self.class sharedController].loggers) {
+            if ([logger conformsToProtocol:@protocol(SLLogSearch)] && [logger respondsToSelector:@selector(searchStoredLogsWithFilter:error:)]) {
+                NSError *error = nil;
+                
+                // Search the logs
+                NSArray *results = [(id<SLLogSearch>)logger searchStoredLogsWithFilter:searchFilters error:&error];
+                
+                // Report back to the main thread with the result or error
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    completionBlock(results, error);
+                });
+            }
+        }
+    }});
 }
 
 
@@ -128,15 +163,15 @@ NS_ASSUME_NONNULL_BEGIN
     return queue;
 }
 
-+ (dispatch_queue_t)searchQueue {
-    static dispatch_queue_t queue = NULL;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        queue = dispatch_queue_create("com.superlogger.loggercontroller.search", DISPATCH_QUEUE_CONCURRENT);
-    });
-    
-    return queue;
-}
+//+ (dispatch_queue_t)searchQueue {
+//    static dispatch_queue_t queue = NULL;
+//    static dispatch_once_t onceToken;
+//    dispatch_once(&onceToken, ^{
+//        queue = dispatch_queue_create("com.superlogger.loggercontroller.search", DISPATCH_QUEUE_CONCURRENT);
+//    });
+//    
+//    return queue;
+//}
 
 @end
 

@@ -11,12 +11,29 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+/**
+ *  This enum defines the possible log levels.
+ */
 typedef NS_OPTIONS(NSInteger, SLLogLevel) {
+    /**
+     *  Nothing will be logged
+     */
     SLLogLevelOff = 0,
+    /**
+     *  Log any errors using this level. Shorthand is SLogE().
+     */
     SLLogLevelError,
-    SLLogLevelWarn,
-    SLLogLevelInfo,
+    /**
+     *  Log anything that you want to also log in release
+     */
+    SLLogLevelRelease,
+    /**
+     *  Log anything that you want to only log in DEBUG
+     */
     SLLogLevelDebug,
+    /**
+     *  Logs in DEBUG, extra verbose logging
+     */
     SLLogLevelVerbose,
 };
 
@@ -39,7 +56,7 @@ typedef BOOL (^SLLogFilterBlock)(SLLog *log);
  *
  *  @return Whether or not the search succeeded.
  */
-typedef void (^SLSearchCompletionBlock)(NSArray<SLLog *> *results, NSError **error);
+typedef void (^SLSearchCompletionBlock)(NSArray<SLLog *> *results, NSError *error);
 
 /**
  *  A block that is used to format a log into a string
