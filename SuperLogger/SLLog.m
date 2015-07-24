@@ -43,6 +43,18 @@ NS_ASSUME_NONNULL_BEGIN
     return self;
 }
 
+- (NSArray *)componentsForCallstackLevel:(NSInteger)level {
+    static NSCharacterSet *characterSet = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        characterSet = [NSCharacterSet characterSetWithCharactersInString:@" +,-.?[]"];
+    });
+    
+    NSString *symbol = self.callstack[level];
+    NSArray *components = [symbol componentsSeparatedByCharactersInSet:characterSet];
+    return [components filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"self <> ''"]];
+}
+
 @end
 
 NS_ASSUME_NONNULL_END

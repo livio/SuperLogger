@@ -46,8 +46,15 @@ NS_ASSUME_NONNULL_BEGIN
     _mutableLogFilters = [NSMutableSet set];
     _mutableLogModules = [NSMutableSet set];
     
+    _async = YES;
+    _errorAsync = NO;
+    _globalLogLevel = SLLogLevelDebug;
+    
     return self;
 }
+
+
+#pragma mark - Set adding / removing
 
 + (void)addLoggers:(NSArray<id<SLLogger>> *)loggers {
     dispatch_async([self.class globalLogQueue], ^{ @autoreleasepool {
@@ -78,13 +85,20 @@ NS_ASSUME_NONNULL_BEGIN
 }
 
 
+#pragma mark - Getters / Setters
+
+- (SLLogFormatBlock)defaultFormatBlock {
+    return ^NSString * (SLLog *log) {
+        NSString *callerClass = [log componentsForCallstackLevel:1][3];
+        NSString *callerFunction = [log componentsForCallstackLevel:1][4];
+        return [NSString stringWithFormat:@"(%@:%@)[%@ %@] %@", log.queueLabel, log.timestamp, callerClass, callerFunction, log.message];
+    };
+}
+
+
 #pragma mark - Logging
 
 + (void)logString:(SLLogLevel)level message:(NSString *)message, ... {
-    if (!message) {
-        return;
-    }
-    
     NSArray *callstack = [NSThread callStackSymbols];
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
@@ -94,8 +108,8 @@ NS_ASSUME_NONNULL_BEGIN
     va_list args;
     va_start(args, message);
     NSString *format = [[NSString alloc] initWithFormat:message arguments:args];
-    SLLog *log = [[SLLog alloc] initWithMessage:format timestamp:[NSDate date] level:level queueLabel:currentQueueLabel callstack:callstack];
     
+    SLLog *log = [[SLLog alloc] initWithMessage:format timestamp:[NSDate date] level:level queueLabel:currentQueueLabel callstack:callstack];
     [[self sharedController] sl_logMessage:log];
 }
 

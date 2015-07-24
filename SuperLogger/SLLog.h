@@ -26,6 +26,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype)init NS_UNAVAILABLE;
 - (instancetype)initWithMessage:(NSString *)message timestamp:(NSDate *)timestamp level:(SLLogLevel)level queueLabel:(NSString *)queueLabel callstack:(NSArray *)callstack NS_DESIGNATED_INITIALIZER;
 
+- (NSArray *)componentsForCallstackLevel:(NSInteger)level;
+
 @end
 
 NS_ASSUME_NONNULL_END

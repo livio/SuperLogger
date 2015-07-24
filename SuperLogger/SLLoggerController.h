@@ -20,16 +20,6 @@ NS_ASSUME_NONNULL_BEGIN
 @interface SLLoggerController : NSObject
 
 /**
- *  The serial dispatch queue that will be used to send logs through filters and to the logger.
- */
-@property (strong, nonatomic, readonly) dispatch_queue_t logDispatchQueue;
-
-/**
- *  The concurrent dispatch queue that will be used to search over past logs in history.
- */
-@property (strong, nonatomic, readonly) dispatch_queue_t searchDispatchQueue;
-
-/**
  *  All known log modules. Add modules early on. When a log is sent from a class that is contained in a module, the module will automatically be logged.
  */
 @property (copy, nonatomic, readonly) NSSet<SLClassModule *> *logModules;
@@ -60,6 +50,12 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (assign, nonatomic) BOOL errorAsync;
 
+/**
+ *  Any modules that do not have an explicitly specified level will by default use the global log level;
+ */
+@property (assign, nonatomic) SLLogLevel globalLogLevel;
+
+
 + (SLLoggerController *)sharedController;
 
 /**
@@ -79,7 +75,6 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)searchStoredLogsWithFilters:(NSArray<SLLogFilterBlock> *)searchFilters completion:(SLSearchCompletionBlock)completionBlock;
 
 + (void)logString:(SLLogLevel)level message:(NSString *)message, ... NS_FORMAT_FUNCTION(2, 3);
-
 
 + (dispatch_queue_t)globalLogQueue;
 
