@@ -7,7 +7,7 @@
 //
 
 @class SLLog;
-@class SLClassModule;
+@class SLFileModule;
 
 NS_ASSUME_NONNULL_BEGIN
 

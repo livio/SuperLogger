@@ -11,7 +11,7 @@
 #import "SLLogger.h"
 #import "SLGlobals.h"
 
-@class SLClassModule;
+@class SLFileModule;
 @class SLLog;
 
 
@@ -22,7 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  All known log modules. Add modules early on. When a log is sent from a class that is contained in a module, the module will automatically be logged.
  */
-@property (copy, nonatomic, readonly) NSSet<SLClassModule *> *logModules;
+@property (copy, nonatomic, readonly) NSSet<SLFileModule *> *logModules;
 
 /**
  *  All currently active loggers
@@ -62,8 +62,14 @@ NS_ASSUME_NONNULL_BEGIN
  *  Add loggers, modules, or filters to the shared instance
  */
 + (void)addLoggers:(NSArray<id<SLLogger>> *)loggers;
-+ (void)addModules:(NSArray<SLClassModule *> *)modules;
++ (void)addModules:(NSArray<SLFileModule *> *)modules;
 + (void)addFilters:(NSArray<SLLogFilterBlock> *)filters;
+
++ (void)removeLoggers:(NSArray<id<SLLogger>> *)loggers;
++ (void)removeModules:(NSArray<SLFileModule *> *)modules;
++ (void)removeFilters:(NSArray<SLLogFilterBlock> *)filters;
+
++ (SLLogLevel)logLevelForFile:(NSString *)file;
 
 /**
  *  Use a filter to return a list of stored logs that pass the filter. This will run on the search dispatch queue, which is a concurrent queue. It will return on the main queue.
@@ -74,7 +80,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (void)searchStoredLogsWithFilters:(NSArray<SLLogFilterBlock> *)searchFilters completion:(SLSearchCompletionBlock)completionBlock;
 
-+ (void)logString:(SLLogLevel)level message:(NSString *)message, ... NS_FORMAT_FUNCTION(2, 3);
++ (void)logStringWithLevel:(SLLogLevel)level fileName:(NSString *)fileName functionName:(NSString *)functionName line:(NSInteger)line message:(NSString *)message, ... NS_FORMAT_FUNCTION(5, 6);
 
 + (dispatch_queue_t)globalLogQueue;
 

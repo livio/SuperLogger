@@ -8,7 +8,7 @@
 
 #import "SLFilter.h"
 
-#import "SLClassModule.h"
+#import "SLFileModule.h"
 #import "SLLog.h"
 
 
@@ -66,8 +66,8 @@
 
 - (SLLogFilterBlock)filterByAllowingModules:(NSSet<SLClassModule *> *)modules {
     return [^BOOL(SLLog *log) {
-        for (SLClassModule *module in modules) {
-            if ([module containsClass:log.class]) {
+        for (SLFileModule *module in modules) {
+            if ([module containsFile:log.fileName]) {
                 return YES;
             }
         }
@@ -78,8 +78,8 @@
 
 - (SLLogFilterBlock)filterByDisallowingModules:(NSSet<SLClassModule *> *)modules {
     return [^BOOL(SLLog *log) {
-        for (SLClassModule *module in modules) {
-            if ([module containsClass:log.class]) {
+        for (SLFileModule *module in modules) {
+            if ([module containsFile:log.fileName]) {
                 return NO;
             }
         }

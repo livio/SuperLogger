@@ -20,11 +20,21 @@ NS_ASSUME_NONNULL_BEGIN
 @property (copy, nonatomic, readonly) NSString *message;
 @property (assign, nonatomic, readonly) NSDate *timestamp;
 @property (assign, nonatomic, readonly) SLLogLevel level;
+@property (assign, nonatomic, readonly) NSInteger line;
 @property (copy, nonatomic, readonly) NSString *queueLabel;
+@property (copy, nonatomic, readonly) NSString *fileName;
+@property (copy, nonatomic, readonly) NSString *functionName;
 @property (copy, nonatomic, readonly) NSArray *callstack;
 
 - (instancetype)init NS_UNAVAILABLE;
-- (instancetype)initWithMessage:(NSString *)message timestamp:(NSDate *)timestamp level:(SLLogLevel)level queueLabel:(NSString *)queueLabel callstack:(NSArray *)callstack NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithMessage:(NSString *)message
+                      timestamp:(NSDate *)timestamp
+                          level:(SLLogLevel)level
+                       fileName:(NSString *)fileName
+                   functionName:(NSString *)functionName
+                           line:(NSInteger)line
+                     queueLabel:(NSString *)queueLabel
+                      callstack:(NSArray *)callstack NS_DESIGNATED_INITIALIZER;
 
 - (NSArray *)componentsForCallstackLevel:(NSInteger)level;
 

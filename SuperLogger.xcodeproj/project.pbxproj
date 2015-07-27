@@ -49,8 +49,8 @@
 		5DB55A701B504FA8009E2C2E /* SLLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB55A6E1B504FA8009E2C2E /* SLLog.m */; };
 		5DB55A7B1B53F801009E2C2E /* SLFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 5DB55A791B53F801009E2C2E /* SLFilter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5DB55A7C1B53F801009E2C2E /* SLFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB55A7A1B53F801009E2C2E /* SLFilter.m */; };
-		5DF4E7E41B5040D30073B6CB /* SLClassModule.h in Headers */ = {isa = PBXBuildFile; fileRef = 5DF4E7E21B5040D30073B6CB /* SLClassModule.h */; };
-		5DF4E7E51B5040D30073B6CB /* SLClassModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DF4E7E31B5040D30073B6CB /* SLClassModule.m */; };
+		5DF4E7E41B5040D30073B6CB /* SLFileModule.h in Headers */ = {isa = PBXBuildFile; fileRef = 5DF4E7E21B5040D30073B6CB /* SLFileModule.h */; };
+		5DF4E7E51B5040D30073B6CB /* SLFileModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DF4E7E31B5040D30073B6CB /* SLFileModule.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -168,8 +168,8 @@
 		5DB55A771B5062C7009E2C2E /* SLGlobals.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SLGlobals.h; sourceTree = "<group>"; };
 		5DB55A791B53F801009E2C2E /* SLFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLFilter.h; sourceTree = "<group>"; };
 		5DB55A7A1B53F801009E2C2E /* SLFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLFilter.m; sourceTree = "<group>"; };
-		5DF4E7E21B5040D30073B6CB /* SLClassModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLClassModule.h; sourceTree = "<group>"; };
-		5DF4E7E31B5040D30073B6CB /* SLClassModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLClassModule.m; sourceTree = "<group>"; };
+		5DF4E7E21B5040D30073B6CB /* SLFileModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLFileModule.h; sourceTree = "<group>"; };
+		5DF4E7E31B5040D30073B6CB /* SLFileModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLFileModule.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -499,8 +499,8 @@
 		5DB55A751B5061E9009E2C2E /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				5DF4E7E21B5040D30073B6CB /* SLClassModule.h */,
-				5DF4E7E31B5040D30073B6CB /* SLClassModule.m */,
+				5DF4E7E21B5040D30073B6CB /* SLFileModule.h */,
+				5DF4E7E31B5040D30073B6CB /* SLFileModule.m */,
 			);
 			name = Modules;
 			sourceTree = "<group>";
@@ -522,7 +522,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D9F9A081B5000FF0069DC65 /* SLLoggerController.h in Headers */,
-				5DF4E7E41B5040D30073B6CB /* SLClassModule.h in Headers */,
+				5DF4E7E41B5040D30073B6CB /* SLFileModule.h in Headers */,
 				5D77FA421B5D40710013F9A7 /* SLLogSearch.h in Headers */,
 				5D77FA3C1B5842B70013F9A7 /* SLGlobals.h in Headers */,
 				5DB55A6F1B504FA8009E2C2E /* SLLog.h in Headers */,
@@ -1014,7 +1014,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5DF4E7E51B5040D30073B6CB /* SLClassModule.m in Sources */,
+				5DF4E7E51B5040D30073B6CB /* SLFileModule.m in Sources */,
 				5D9F9A091B5000FF0069DC65 /* SLLoggerController.m in Sources */,
 				5DB55A701B504FA8009E2C2E /* SLLog.m in Sources */,
 				5DB55A7C1B53F801009E2C2E /* SLFilter.m in Sources */,

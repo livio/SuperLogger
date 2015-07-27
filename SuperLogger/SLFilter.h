@@ -10,7 +10,7 @@
 
 #import "SLGlobals.h"
 
-@class SLClassModule;
+@class SLFileModule;
 
 
 @interface SLFilter : NSObject

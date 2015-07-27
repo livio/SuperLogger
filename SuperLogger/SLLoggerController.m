@@ -8,6 +8,7 @@
 
 #import "SLLoggerController.h"
 
+#import "SLFileModule.h"
 #import "SLLog.h"
 #import "SLLogSearch.h"
 
@@ -17,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (copy, nonatomic, readwrite) NSMutableSet<id<SLLogger>> *mutableLoggers;
 @property (copy, nonatomic, readwrite) NSMutableSet<SLLogFilterBlock> *mutableLogFilters;
-@property (copy, nonatomic, readwrite) NSMutableSet<SLClassModule *> *mutableLogModules;
+@property (copy, nonatomic, readwrite) NSMutableSet<SLFileModule *> *mutableLogModules;
 
 @end
 
@@ -72,7 +73,7 @@ NS_ASSUME_NONNULL_BEGIN
     }});
 }
 
-+ (void)addModules:(NSArray<SLClassModule *> *)modules {
++ (void)addModules:(NSArray<SLFileModule *> *)modules {
     dispatch_async([self.class globalLogQueue], ^{ @autoreleasepool {
         [[self.class sharedController].mutableLogModules addObjectsFromArray:modules];
     }});
@@ -84,13 +85,51 @@ NS_ASSUME_NONNULL_BEGIN
     }});
 }
 
++ (void)removeLoggers:(NSArray<id<SLLogger>> *)loggers {
+    dispatch_async([self.class globalLogQueue], ^{
+        for (id<SLLogger> logger in loggers) {
+            [logger teardownLogger];
+            [[self.class sharedController].mutableLoggers removeObject:logger];
+        }
+    });
+}
+
++ (void)removeModules:(NSArray<SLFileModule *> *)modules {
+    dispatch_async([self.class globalLogQueue], ^{
+        for (SLFileModule *module in modules) {
+            [[self.class sharedController].mutableLogModules removeObject:module];
+        }
+    });
+}
+
++ (void)removeFilters:(NSArray<SLLogFilterBlock> *)filters {
+    dispatch_async([self.class globalLogQueue], ^{
+        for (SLLogFilterBlock filter in filters) {
+            [[self.class sharedController].mutableLogFilters removeObject:filter];
+        }
+    });
+}
+
+
+#pragma mark - Log Level
+
++ (SLLogLevel)logLevelForFile:(NSString *)file {
+    for (SLFileModule *module in [self.class sharedController].logModules) {
+        if ([module containsFile:file]) {
+            return module.logLevel;
+        }
+    }
+    
+    return [self.class sharedController].globalLogLevel;
+}
+
 
 #pragma mark - Getters / Setters
 
 - (SLLogFormatBlock)defaultFormatBlock {
     return ^NSString * (SLLog *log) {
-        NSString *callerClass = [log componentsForCallstackLevel:1][3];
-        NSString *callerFunction = [log componentsForCallstackLevel:1][4];
+        NSString *callerClass = log.fileName;
+        NSString *callerFunction = log.functionName;
         return [NSString stringWithFormat:@"(%@:%@)[%@ %@] %@", log.queueLabel, log.timestamp, callerClass, callerFunction, log.message];
     };
 }
@@ -98,7 +137,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark - Logging
 
-+ (void)logString:(SLLogLevel)level message:(NSString *)message, ... {
++ (void)logStringWithLevel:(SLLogLevel)level fileName:(NSString *)fileName functionName:(NSString *)functionName line:(NSInteger)line message:(NSString *)message, ... {
+    NSDate *timestamp = [NSDate date];
     NSArray *callstack = [NSThread callStackSymbols];
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
@@ -109,7 +149,7 @@ NS_ASSUME_NONNULL_BEGIN
     va_start(args, message);
     NSString *format = [[NSString alloc] initWithFormat:message arguments:args];
     
-    SLLog *log = [[SLLog alloc] initWithMessage:format timestamp:[NSDate date] level:level queueLabel:currentQueueLabel callstack:callstack];
+    SLLog *log = [[SLLog alloc] initWithMessage:format timestamp:timestamp level:level fileName:fileName functionName:functionName line:line queueLabel:currentQueueLabel callstack:callstack];
     [[self sharedController] sl_logMessage:log];
 }
 
@@ -189,16 +229,6 @@ NS_ASSUME_NONNULL_BEGIN
     
     return queue;
 }
-
-//+ (dispatch_queue_t)searchQueue {
-//    static dispatch_queue_t queue = NULL;
-//    static dispatch_once_t onceToken;
-//    dispatch_once(&onceToken, ^{
-//        queue = dispatch_queue_create("com.superlogger.loggercontroller.search", DISPATCH_QUEUE_CONCURRENT);
-//    });
-//    
-//    return queue;
-//}
 
 @end
 
