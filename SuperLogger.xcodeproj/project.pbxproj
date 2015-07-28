@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5D0149741B614442005142B2 /* SLLogMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D0149731B614442005142B2 /* SLLogMacros.h */; };
+		5D0149741B614442005142B2 /* SLLogMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D0149731B614442005142B2 /* SLLogMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5D01497D1B62CB11005142B2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D01497C1B62CB11005142B2 /* main.m */; };
 		5D0149801B62CB11005142B2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D01497F1B62CB11005142B2 /* AppDelegate.m */; };
 		5D0149831B62CB11005142B2 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D0149821B62CB11005142B2 /* MasterViewController.m */; };
@@ -49,7 +49,7 @@
 		5DB55A701B504FA8009E2C2E /* SLLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB55A6E1B504FA8009E2C2E /* SLLog.m */; };
 		5DB55A7B1B53F801009E2C2E /* SLFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 5DB55A791B53F801009E2C2E /* SLFilter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5DB55A7C1B53F801009E2C2E /* SLFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB55A7A1B53F801009E2C2E /* SLFilter.m */; };
-		5DF4E7E41B5040D30073B6CB /* SLFileModule.h in Headers */ = {isa = PBXBuildFile; fileRef = 5DF4E7E21B5040D30073B6CB /* SLFileModule.h */; };
+		5DF4E7E41B5040D30073B6CB /* SLFileModule.h in Headers */ = {isa = PBXBuildFile; fileRef = 5DF4E7E21B5040D30073B6CB /* SLFileModule.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5DF4E7E51B5040D30073B6CB /* SLFileModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DF4E7E31B5040D30073B6CB /* SLFileModule.m */; };
 /* End PBXBuildFile section */
 

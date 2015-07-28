@@ -15,9 +15,10 @@ FOUNDATION_EXPORT double SuperLoggerVersionNumber;
 FOUNDATION_EXPORT const unsigned char SuperLoggerVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <SuperLogger/PublicHeader.h>
-
-#import "SLLoggerController.h"
-#import "SLGlobals.h"
-#import "SLLogger.h"
-#import "SLLog.h"
+#import "SLFileModule.h"
 #import "SLFilter.h"
+#import "SLGlobals.h"
+#import "SLLog.h"
+#import "SLLogger.h"
+#import "SLLoggerController.h"
+#import "SLLogMacros.h"
