@@ -17,9 +17,28 @@
 		5D01498E1B62CB11005142B2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D01498C1B62CB11005142B2 /* LaunchScreen.storyboard */; };
 		5D0149991B62CB11005142B2 /* SuperLoggerTestAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D0149981B62CB11005142B2 /* SuperLoggerTestAppTests.m */; };
 		5D0149A41B62CB11005142B2 /* SuperLoggerTestAppUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D0149A31B62CB11005142B2 /* SuperLoggerTestAppUITests.m */; };
+		5D0149B01B67D4A9005142B2 /* SLLoggerControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D0149AF1B67D4A9005142B2 /* SLLoggerControllerTests.m */; };
 		5D2B796B1B5000A100E83E2B /* SuperLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D2B796A1B5000A100E83E2B /* SuperLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5D2B79711B5000A200E83E2B /* SuperLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D2B79651B5000A100E83E2B /* SuperLogger.framework */; };
 		5D2B79781B5000A200E83E2B /* SuperLoggerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D2B79771B5000A200E83E2B /* SuperLoggerTests.m */; };
+		5D3A188F1B67F5D000139385 /* Expecta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D3A188D1B67F5D000139385 /* Expecta.framework */; };
+		5D3A18901B67F5D000139385 /* Expecta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D3A188D1B67F5D000139385 /* Expecta.framework */; };
+		5D3A18911B67F5D000139385 /* Expecta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D3A188D1B67F5D000139385 /* Expecta.framework */; };
+		5D3A18921B67F5D000139385 /* Expecta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D3A188D1B67F5D000139385 /* Expecta.framework */; };
+		5D3A18931B67F5D000139385 /* Expecta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D3A188D1B67F5D000139385 /* Expecta.framework */; };
+		5D3A18941B67F5D000139385 /* Expecta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D3A188D1B67F5D000139385 /* Expecta.framework */; };
+		5D3A18951B67F5D000139385 /* Specta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D3A188E1B67F5D000139385 /* Specta.framework */; };
+		5D3A18961B67F5D000139385 /* Specta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D3A188E1B67F5D000139385 /* Specta.framework */; };
+		5D3A18971B67F5D000139385 /* Specta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D3A188E1B67F5D000139385 /* Specta.framework */; };
+		5D3A18981B67F5D000139385 /* Specta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D3A188E1B67F5D000139385 /* Specta.framework */; };
+		5D3A18991B67F5D000139385 /* Specta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D3A188E1B67F5D000139385 /* Specta.framework */; };
+		5D3A189A1B67F5D000139385 /* Specta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D3A188E1B67F5D000139385 /* Specta.framework */; };
+		5D3A18A71B68104C00139385 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D3A18A61B68104C00139385 /* libOCMock.a */; };
+		5D3A18A81B68104C00139385 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D3A18A61B68104C00139385 /* libOCMock.a */; };
+		5D3A18A91B68104C00139385 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D3A18A61B68104C00139385 /* libOCMock.a */; };
+		5D3A18AA1B68104C00139385 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D3A18A61B68104C00139385 /* libOCMock.a */; };
+		5D3A18AB1B68104C00139385 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D3A18A61B68104C00139385 /* libOCMock.a */; };
+		5D3A18AC1B68104C00139385 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D3A18A61B68104C00139385 /* libOCMock.a */; };
 		5D4049D61B557B8C00DA719D /* SuperLogger-WebServer.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D4049D51B557B8C00DA719D /* SuperLogger-WebServer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5D4049DD1B557B8C00DA719D /* SuperLogger-WebServer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D4049D31B557B8C00DA719D /* SuperLogger-WebServer.framework */; };
 		5D4049E21B557B8C00DA719D /* SuperLogger_WebServerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D4049E11B557B8C00DA719D /* SuperLogger_WebServerTests.m */; };
@@ -125,12 +144,25 @@
 		5D01499F1B62CB11005142B2 /* SuperLoggerTestAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SuperLoggerTestAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D0149A31B62CB11005142B2 /* SuperLoggerTestAppUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SuperLoggerTestAppUITests.m; sourceTree = "<group>"; };
 		5D0149A51B62CB11005142B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5D0149AF1B67D4A9005142B2 /* SLLoggerControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLLoggerControllerTests.m; sourceTree = "<group>"; };
 		5D2B79651B5000A100E83E2B /* SuperLogger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SuperLogger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D2B79691B5000A100E83E2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5D2B796A1B5000A100E83E2B /* SuperLogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SuperLogger.h; sourceTree = "<group>"; };
 		5D2B79701B5000A200E83E2B /* SuperLoggerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SuperLoggerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D2B79761B5000A200E83E2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5D2B79771B5000A200E83E2B /* SuperLoggerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SuperLoggerTests.m; sourceTree = "<group>"; };
+		5D3A188D1B67F5D000139385 /* Expecta.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Expecta.framework; path = Carthage/Build/iOS/Expecta.framework; sourceTree = "<group>"; };
+		5D3A188E1B67F5D000139385 /* Specta.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Specta.framework; path = Carthage/Build/iOS/Specta.framework; sourceTree = "<group>"; };
+		5D3A189D1B68104C00139385 /* NSNotificationCenter+OCMAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNotificationCenter+OCMAdditions.h"; sourceTree = "<group>"; };
+		5D3A189E1B68104C00139385 /* OCMArg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMArg.h; sourceTree = "<group>"; };
+		5D3A189F1B68104C00139385 /* OCMConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMConstraint.h; sourceTree = "<group>"; };
+		5D3A18A01B68104C00139385 /* OCMLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMLocation.h; sourceTree = "<group>"; };
+		5D3A18A11B68104C00139385 /* OCMMacroState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMMacroState.h; sourceTree = "<group>"; };
+		5D3A18A21B68104C00139385 /* OCMock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMock.h; sourceTree = "<group>"; };
+		5D3A18A31B68104C00139385 /* OCMockObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMockObject.h; sourceTree = "<group>"; };
+		5D3A18A41B68104C00139385 /* OCMRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMRecorder.h; sourceTree = "<group>"; };
+		5D3A18A51B68104C00139385 /* OCMStubRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMStubRecorder.h; sourceTree = "<group>"; };
+		5D3A18A61B68104C00139385 /* libOCMock.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libOCMock.a; path = Libs/libOCMock.a; sourceTree = "<group>"; };
 		5D4049D31B557B8C00DA719D /* SuperLogger-WebServer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "SuperLogger-WebServer.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D4049D51B557B8C00DA719D /* SuperLogger-WebServer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SuperLogger-WebServer.h"; sourceTree = "<group>"; };
 		5D4049D71B557B8C00DA719D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -184,6 +216,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D3A18AC1B68104C00139385 /* libOCMock.a in Frameworks */,
+				5D3A189A1B67F5D000139385 /* Specta.framework in Frameworks */,
+				5D3A18941B67F5D000139385 /* Expecta.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,6 +241,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D2B79711B5000A200E83E2B /* SuperLogger.framework in Frameworks */,
+				5D3A18A71B68104C00139385 /* libOCMock.a in Frameworks */,
+				5D3A18951B67F5D000139385 /* Specta.framework in Frameworks */,
+				5D3A188F1B67F5D000139385 /* Expecta.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -222,6 +260,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D4049DD1B557B8C00DA719D /* SuperLogger-WebServer.framework in Frameworks */,
+				5D3A18A81B68104C00139385 /* libOCMock.a in Frameworks */,
+				5D3A18961B67F5D000139385 /* Specta.framework in Frameworks */,
+				5D3A18901B67F5D000139385 /* Expecta.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -238,6 +279,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D77F9E91B57E9D20013F9A7 /* SuperLogger-Console.framework in Frameworks */,
+				5D3A18A91B68104C00139385 /* libOCMock.a in Frameworks */,
+				5D3A18971B67F5D000139385 /* Specta.framework in Frameworks */,
+				5D3A18911B67F5D000139385 /* Expecta.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,6 +298,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D77FA051B57E9DF0013F9A7 /* SuperLogger-File.framework in Frameworks */,
+				5D3A18AA1B68104C00139385 /* libOCMock.a in Frameworks */,
+				5D3A18981B67F5D000139385 /* Specta.framework in Frameworks */,
+				5D3A18921B67F5D000139385 /* Expecta.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,6 +317,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D77FA2E1B57F8630013F9A7 /* SuperLogger-CoreData.framework in Frameworks */,
+				5D3A18AB1B68104C00139385 /* libOCMock.a in Frameworks */,
+				5D3A18991B67F5D000139385 /* Specta.framework in Frameworks */,
+				5D3A18931B67F5D000139385 /* Expecta.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,6 +373,7 @@
 		5D2B795B1B5000A100E83E2B = {
 			isa = PBXGroup;
 			children = (
+				5D3A189B1B68103C00139385 /* Libraries */,
 				5D2B79671B5000A100E83E2B /* SuperLogger */,
 				5D2B79741B5000A200E83E2B /* SuperLoggerTests */,
 				5D4049D41B557B8C00DA719D /* SuperLogger-WebServer */,
@@ -389,6 +440,7 @@
 			isa = PBXGroup;
 			children = (
 				5D2B79771B5000A200E83E2B /* SuperLoggerTests.m */,
+				5D0149AF1B67D4A9005142B2 /* SLLoggerControllerTests.m */,
 				5D2B79751B5000A200E83E2B /* Supporting Files */,
 			);
 			path = SuperLoggerTests;
@@ -400,6 +452,42 @@
 				5D2B79761B5000A200E83E2B /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5D3A189B1B68103C00139385 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				5D3A18AD1B68104F00139385 /* OCMock */,
+				5D3A188D1B67F5D000139385 /* Expecta.framework */,
+				5D3A188E1B67F5D000139385 /* Specta.framework */,
+			);
+			name = Libraries;
+			sourceTree = "<group>";
+		};
+		5D3A189C1B68104C00139385 /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				5D3A189D1B68104C00139385 /* NSNotificationCenter+OCMAdditions.h */,
+				5D3A189E1B68104C00139385 /* OCMArg.h */,
+				5D3A189F1B68104C00139385 /* OCMConstraint.h */,
+				5D3A18A01B68104C00139385 /* OCMLocation.h */,
+				5D3A18A11B68104C00139385 /* OCMMacroState.h */,
+				5D3A18A21B68104C00139385 /* OCMock.h */,
+				5D3A18A31B68104C00139385 /* OCMockObject.h */,
+				5D3A18A41B68104C00139385 /* OCMRecorder.h */,
+				5D3A18A51B68104C00139385 /* OCMStubRecorder.h */,
+			);
+			name = Headers;
+			path = Libs/OCMock;
+			sourceTree = "<group>";
+		};
+		5D3A18AD1B68104F00139385 /* OCMock */ = {
+			isa = PBXGroup;
+			children = (
+				5D3A189C1B68104C00139385 /* Headers */,
+				5D3A18A61B68104C00139385 /* libOCMock.a */,
+			);
+			name = OCMock;
 			sourceTree = "<group>";
 		};
 		5D4049D41B557B8C00DA719D /* SuperLogger-WebServer */ = {
@@ -1025,6 +1113,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D0149B01B67D4A9005142B2 /* SLLoggerControllerTests.m in Sources */,
 				5D2B79781B5000A200E83E2B /* SuperLoggerTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1181,9 +1270,17 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = SuperLoggerTestAppTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Libs",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.livio.SuperLoggerTestAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SuperLoggerTestApp.app/SuperLoggerTestApp";
@@ -1194,9 +1291,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = SuperLoggerTestAppTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Libs",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.livio.SuperLoggerTestAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SuperLoggerTestApp.app/SuperLoggerTestApp";
@@ -1359,6 +1464,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -1366,8 +1472,13 @@
 				);
 				INFOPLIST_FILE = SuperLoggerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Libs",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.livio.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/Libs/**";
 			};
 			name = Debug;
 		};
@@ -1377,11 +1488,17 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = SuperLoggerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Libs",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.livio.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/Libs/**";
 			};
 			name = Release;
 		};
@@ -1424,9 +1541,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "SuperLogger-WebServerTests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Libs",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.livio.SuperLogger-WebServerTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -1435,9 +1560,17 @@
 		5D4049E71B557B8C00DA719D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "SuperLogger-WebServerTests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Libs",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.livio.SuperLogger-WebServerTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -1482,9 +1615,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "SuperLogger-ConsoleTests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Libs",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.livio.SuperLogger-ConsoleTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -1493,9 +1634,17 @@
 		5D77F9F31B57E9D20013F9A7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "SuperLogger-ConsoleTests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Libs",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.livio.SuperLogger-ConsoleTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -1540,9 +1689,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "SuperLogger-FileTests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Libs",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.livio.SuperLogger-FileTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -1551,9 +1708,17 @@
 		5D77FA111B57E9DF0013F9A7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "SuperLogger-FileTests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Libs",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.livio.SuperLogger-FileTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -1598,9 +1763,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "SuperLogger-CoreDataTests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Libs",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.livio.SuperLogger-CoreDataTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -1609,9 +1782,17 @@
 		5D77FA3A1B57F8630013F9A7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "SuperLogger-CoreDataTests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Libs",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.livio.SuperLogger-CoreDataTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -1627,6 +1808,7 @@
 				5D0149A81B62CB11005142B2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5D0149A91B62CB11005142B2 /* Build configuration list for PBXNativeTarget "SuperLoggerTestAppTests" */ = {
 			isa = XCConfigurationList;
@@ -1635,6 +1817,7 @@
 				5D0149AB1B62CB11005142B2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5D0149AC1B62CB11005142B2 /* Build configuration list for PBXNativeTarget "SuperLoggerTestAppUITests" */ = {
 			isa = XCConfigurationList;
@@ -1643,6 +1826,7 @@
 				5D0149AE1B62CB11005142B2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5D2B795F1B5000A100E83E2B /* Build configuration list for PBXProject "SuperLogger" */ = {
 			isa = XCConfigurationList;
