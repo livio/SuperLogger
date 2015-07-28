@@ -8,7 +8,7 @@
 
 #import <Specta/Specta.h>
 #import <Expecta/Expecta.h>
-#import "OCMock/OCMock.h"
+#import <OCMock/OCMock.h>
 
 #import "SLFileModule.h"
 #import "SLGlobals.h"

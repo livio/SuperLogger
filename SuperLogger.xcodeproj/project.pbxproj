@@ -1470,6 +1470,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/Libs/**";
 				INFOPLIST_FILE = SuperLoggerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
@@ -1478,7 +1479,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.livio.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/Libs/**";
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Debug;
 		};
@@ -1490,6 +1491,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/Libs/**";
 				INFOPLIST_FILE = SuperLoggerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
@@ -1498,7 +1500,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.livio.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/Libs/**";
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Release;
 		};
