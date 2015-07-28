@@ -55,6 +55,10 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (assign, nonatomic) SLLogLevel globalLogLevel;
 
+/**
+ *  Shared Controller methods are class methods that automatically target the sharedController instance. Since 99% of the time you will want to use the sharedController, these are considered convenience methods.
+ */
+#pragma mark - Shared Controller methods
 
 + (SLLoggerController *)sharedController;
 
@@ -80,7 +84,33 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (void)searchStoredLogsWithFilters:(NSArray<SLLogFilterBlock> *)searchFilters completion:(SLSearchCompletionBlock)completionBlock;
 
-+ (void)logStringWithLevel:(SLLogLevel)level fileName:(NSString *)fileName functionName:(NSString *)functionName line:(NSInteger)line message:(NSString *)message, ... NS_FORMAT_FUNCTION(5, 6);
++ (void)logStringWithLevel:(SLLogLevel)level
+                  fileName:(NSString *)fileName
+              functionName:(NSString *)functionName
+                      line:(NSInteger)line
+                   message:(NSString *)message, ... NS_FORMAT_FUNCTION(5, 6);
+
+
+#pragma mark - Instance Methods
+
+- (void)addLoggers:(NSArray<id<SLLogger>> *)loggers;
+- (void)addModules:(NSArray<SLFileModule *> *)modules;
+- (void)addFilters:(NSArray<SLLogFilterBlock> *)filters;
+
+- (void)removeLoggers:(NSArray<id<SLLogger>> *)loggers;
+- (void)removeModules:(NSArray<SLFileModule *> *)modules;
+- (void)removeFilters:(NSArray<SLLogFilterBlock> *)filters;
+
+- (SLLogLevel)logLevelForFile:(NSString *)file;
+
+- (void)logStringWithLevel:(SLLogLevel)level
+                  fileName:(NSString *)fileName
+              functionName:(NSString *)functionName
+                      line:(NSInteger)line
+                   message:(NSString *)message, ... NS_FORMAT_FUNCTION(5, 6);
+
+
+#pragma mark - Shared Queue
 
 + (dispatch_queue_t)globalLogQueue;
 

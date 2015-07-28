@@ -60,7 +60,32 @@ NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark - Set adding / removing
 
+#pragma Shared Instance
 + (void)addLoggers:(NSArray<id<SLLogger>> *)loggers {
+    [[self.class sharedController] addLoggers:loggers];
+}
+
++ (void)addModules:(NSArray<SLFileModule *> *)modules {
+    [[self.class sharedController] addModules:modules];
+}
+
++ (void)addFilters:(NSArray<SLLogFilterBlock> *)filters {
+    [[self.class sharedController] addFilters:filters];
+}
+
++ (void)removeLoggers:(NSArray<id<SLLogger>> *)loggers {
+    [[self.class sharedController] removeLoggers:loggers];
+}
+
++ (void)removeModules:(NSArray<SLFileModule *> *)modules {
+    [[self.class sharedController] removeModules:modules];
+}
+
++ (void)removeFilters:(NSArray<SLLogFilterBlock> *)filters {
+    [[self.class sharedController] removeFilters:filters];
+}
+
+- (void)addLoggers:(NSArray<id<SLLogger>> *)loggers {
     dispatch_async([self.class globalLogQueue], ^{ @autoreleasepool {
         for (id<SLLogger> logger in loggers) {
 #ifndef DEBUG
@@ -76,19 +101,20 @@ NS_ASSUME_NONNULL_BEGIN
     }});
 }
 
-+ (void)addModules:(NSArray<SLFileModule *> *)modules {
+#pragma Instance Methods
+- (void)addModules:(NSArray<SLFileModule *> *)modules {
     dispatch_async([self.class globalLogQueue], ^{ @autoreleasepool {
         [[self.class sharedController].mutableLogModules addObjectsFromArray:modules];
     }});
 }
 
-+ (void)addFilters:(NSArray<SLLogFilterBlock> *)filters {
+- (void)addFilters:(NSArray<SLLogFilterBlock> *)filters {
     dispatch_async([self.class globalLogQueue], ^{ @autoreleasepool {
         [[self.class sharedController].mutableLogFilters addObjectsFromArray:filters];
     }});
 }
 
-+ (void)removeLoggers:(NSArray<id<SLLogger>> *)loggers {
+- (void)removeLoggers:(nonnull NSArray<id<SLLogger>> *)loggers {
     dispatch_async([self.class globalLogQueue], ^{
         for (id<SLLogger> logger in loggers) {
             [logger teardownLogger];
@@ -97,7 +123,7 @@ NS_ASSUME_NONNULL_BEGIN
     });
 }
 
-+ (void)removeModules:(NSArray<SLFileModule *> *)modules {
+- (void)removeModules:(NSArray<SLFileModule *> *)modules {
     dispatch_async([self.class globalLogQueue], ^{
         for (SLFileModule *module in modules) {
             [[self.class sharedController].mutableLogModules removeObject:module];
@@ -105,7 +131,7 @@ NS_ASSUME_NONNULL_BEGIN
     });
 }
 
-+ (void)removeFilters:(NSArray<SLLogFilterBlock> *)filters {
+- (void)removeFilters:(NSArray<SLLogFilterBlock> *)filters {
     dispatch_async([self.class globalLogQueue], ^{
         for (SLLogFilterBlock filter in filters) {
             [[self.class sharedController].mutableLogFilters removeObject:filter];
@@ -117,6 +143,10 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark - Log Level
 
 + (SLLogLevel)logLevelForFile:(NSString *)file {
+    return [[self.class sharedController] logLevelForFile:file];
+}
+
+- (SLLogLevel)logLevelForFile:(NSString *)file {
     for (SLFileModule *module in [self.class sharedController].logModules) {
         if ([module containsFile:file]) {
             return module.logLevel;
@@ -151,6 +181,13 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark - Logging
 
 + (void)logStringWithLevel:(SLLogLevel)level fileName:(NSString *)fileName functionName:(NSString *)functionName line:(NSInteger)line message:(NSString *)message, ... {
+    va_list args;
+    va_start(args, message);
+    
+    [[self.class sharedController] logStringWithLevel:level fileName:fileName functionName:functionName line:line message:message, args];
+}
+
+- (void)logStringWithLevel:(SLLogLevel)level fileName:(NSString *)fileName functionName:(NSString *)functionName line:(NSInteger)line message:(NSString *)message, ... {
     NSDate *timestamp = [NSDate date];
     NSArray *callstack = [NSThread callStackSymbols];
 #pragma clang diagnostic push
@@ -163,7 +200,7 @@ NS_ASSUME_NONNULL_BEGIN
     NSString *format = [[NSString alloc] initWithFormat:message arguments:args];
     
     SLLog *log = [[SLLog alloc] initWithMessage:format timestamp:timestamp level:level fileName:fileName functionName:functionName line:line queueLabel:currentQueueLabel callstack:callstack];
-    [[self sharedController] sl_logMessage:log];
+    [self sl_logMessage:log];
 }
 
 - (void)sl_logMessage:(SLLog *)log {
