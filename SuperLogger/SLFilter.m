@@ -16,21 +16,22 @@
 
 #pragma mark - String filtering
 
-- (SLLogFilterBlock)filterByDisallowingString:(NSString *)string {
++ (SLLogFilterBlock)filterByDisallowingString:(NSString *)string {
     return [^BOOL(SLLog *log) {
         return [log.message containsString:string] ? NO : YES;
     } copy];
 }
 
-- (SLLogFilterBlock)filterByAllowingString:(NSString *)string {
++ (SLLogFilterBlock)filterByAllowingString:(NSString *)string {
     return [^BOOL(SLLog *log) {
         return [log.message containsString:string] ? YES : NO;
     } copy];
 }
 
+
 #pragma mark - Regex filtering
 
-- (SLLogFilterBlock)filterByDisallowingRegex:(NSRegularExpression *)regex {
++ (SLLogFilterBlock)filterByDisallowingRegex:(NSRegularExpression *)regex {
     return [^BOOL(SLLog *log) {
         NSUInteger matches = [regex numberOfMatchesInString:log.message options:0 range:NSMakeRange(0, log.message.length)];
         if (matches > 0) {
@@ -41,7 +42,7 @@
     } copy];
 }
 
-- (SLLogFilterBlock )filterByAllowingRegex:(NSRegularExpression *)regex {
++ (SLLogFilterBlock )filterByAllowingRegex:(NSRegularExpression *)regex {
     return [^BOOL(SLLog *log) {
         NSUInteger matches = [regex numberOfMatchesInString:log.message options:0 range:NSMakeRange(0, log.message.length)];
         if (matches > 0) {
@@ -55,7 +56,7 @@
 
 #pragma mark - Log level filtering
 
-- (SLLogFilterBlock)filterByAllowingLevel:(SLLogLevel)level {
++ (SLLogFilterBlock)filterByAllowingLevel:(SLLogLevel)level {
     return [^BOOL(SLLog *log) {
         return log.level <= level ? YES : NO;
     } copy];
@@ -64,7 +65,7 @@
 
 #pragma mark - Class module filtering
 
-- (SLLogFilterBlock)filterByAllowingModules:(NSSet<SLClassModule *> *)modules {
++ (SLLogFilterBlock)filterByAllowingModules:(NSSet<SLClassModule *> *)modules {
     return [^BOOL(SLLog *log) {
         for (SLFileModule *module in modules) {
             if ([module containsFile:log.fileName]) {
@@ -76,7 +77,7 @@
     } copy];
 }
 
-- (SLLogFilterBlock)filterByDisallowingModules:(NSSet<SLClassModule *> *)modules {
++ (SLLogFilterBlock)filterByDisallowingModules:(NSSet<SLClassModule *> *)modules {
     return [^BOOL(SLLog *log) {
         for (SLFileModule *module in modules) {
             if ([module containsFile:log.fileName]) {

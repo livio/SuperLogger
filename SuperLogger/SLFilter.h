@@ -22,7 +22,7 @@
  *
  *  @return The filter block to be added to SLLoggerController
  */
-- (SLLogFilterBlock)filterByDisallowingString:(NSString *)string;
++ (SLLogFilterBlock)filterByDisallowingString:(NSString *)string;
 
 /**
  *  Only logs containing the string specified will be logged
@@ -31,7 +31,7 @@
  *
  *  @return The filter block to be added to SLLoggerController
  */
-- (SLLogFilterBlock)filterByAllowingString:(NSString *)string;
++ (SLLogFilterBlock)filterByAllowingString:(NSString *)string;
 
 /**
  *  If the log contains the regex specified, it will not be logged
@@ -40,7 +40,7 @@
  *
  *  @return The filter block to be added to SLLoggerController
  */
-- (SLLogFilterBlock)filterByDisallowingRegex:(NSRegularExpression *)regex;
++ (SLLogFilterBlock)filterByDisallowingRegex:(NSRegularExpression *)regex;
 
 /**
  *  Only logs containing the regex specified will be logged
@@ -49,7 +49,7 @@
  *
  *  @return The filter block to be added to SLLoggerController
  */
-- (SLLogFilterBlock)filterByAllowingRegex:(NSRegularExpression *)regex;
++ (SLLogFilterBlock)filterByAllowingRegex:(NSRegularExpression *)regex;
 
 /**
  *  If the log contains a level lower than, or equal to, the level specified, it will be logged
@@ -58,7 +58,7 @@
  *
  *  @return The filter block to be added to SLLoggerController
  */
-- (SLLogFilterBlock)filterByAllowingLevel:(SLLogLevel)level;
++ (SLLogFilterBlock)filterByAllowingLevel:(SLLogLevel)level;
 
 /**
  *  If the log is sent from a class that is contained in the allowed modules, it will be logged.
@@ -67,7 +67,7 @@
  *
  *  @return The filter block to be added to SLLoggerController
  */
-- (SLLogFilterBlock)filterByAllowingModules:(NSSet<SLFileModule *> *)modules;
++ (SLLogFilterBlock)filterByAllowingModules:(NSSet<SLFileModule *> *)modules;
 
 /**
  *  If the log is sent from a class that is contained in the disallowed modules, it will not be logged.
@@ -76,6 +76,6 @@
  *
  *  @return The filter block to be added to SLLoggerController
  */
-- (SLLogFilterBlock)filterByDisallowingModules:(NSSet<SLFileModule *> *)modules;
++ (SLLogFilterBlock)filterByDisallowingModules:(NSSet<SLFileModule *> *)modules;
 
 @end
