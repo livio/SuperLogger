@@ -37,7 +37,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  The default format block that will be used if a logger's format block is nil
  */
-@property (copy, nonatomic, readonly) SLLogFormatBlock defaultFormatBlock;
+@property (copy, nonatomic) SLLogFormatBlock defaultFormatBlock;
 
 /**
  *  Whether or not non-error logs will be dispatched asynchronously.

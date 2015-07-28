@@ -25,6 +25,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @implementation SLLoggerController
 
+@synthesize defaultFormatBlock = _defaultFormatBlock;
+
 #pragma mark - Lifecycle
 
 + (SLLoggerController *)sharedController {
@@ -50,6 +52,7 @@ NS_ASSUME_NONNULL_BEGIN
     _async = YES;
     _errorAsync = NO;
     _globalLogLevel = SLLogLevelDebug;
+    _defaultFormatBlock = nil;
     
     return self;
 }
@@ -127,11 +130,21 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark - Getters / Setters
 
 - (SLLogFormatBlock)defaultFormatBlock {
-    return ^NSString * (SLLog *log) {
-        NSString *callerClass = log.fileName;
-        NSString *callerFunction = log.functionName;
-        return [NSString stringWithFormat:@"(%@:%@)[%@ %@] %@", log.queueLabel, log.timestamp, callerClass, callerFunction, log.message];
-    };
+    if (_defaultFormatBlock != nil) {
+        return _defaultFormatBlock;
+    } else {
+        return [^NSString * (SLLog *log) {
+            NSString *callerClass = log.fileName;
+            NSString *callerFunction = log.functionName;
+            return [NSString stringWithFormat:@"(%@:%@)[%@ %@] %@", log.queueLabel, log.timestamp, callerClass, callerFunction, log.message];
+        } copy];
+    }
+}
+
+- (void)setDefaultFormatBlock:(SLLogFormatBlock)defaultFormatBlock {
+    dispatch_async([self.class globalLogQueue], ^{
+        _defaultFormatBlock = defaultFormatBlock;
+    });
 }
 
 
