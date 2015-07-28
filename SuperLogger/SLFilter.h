@@ -67,7 +67,7 @@
  *
  *  @return The filter block to be added to SLLoggerController
  */
-- (SLLogFilterBlock)filterByAllowingModules:(NSSet<SLClassModule *> *)modules;
+- (SLLogFilterBlock)filterByAllowingModules:(NSSet<SLFileModule *> *)modules;
 
 /**
  *  If the log is sent from a class that is contained in the disallowed modules, it will not be logged.
@@ -76,6 +76,6 @@
  *
  *  @return The filter block to be added to SLLoggerController
  */
-- (SLLogFilterBlock)filterByDisallowingModules:(NSSet<SLClassModule *> *)modules;
+- (SLLogFilterBlock)filterByDisallowingModules:(NSSet<SLFileModule *> *)modules;
 
 @end
