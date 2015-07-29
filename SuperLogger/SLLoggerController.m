@@ -180,14 +180,16 @@ NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark - Logging
 
-+ (void)logStringWithLevel:(SLLogLevel)level fileName:(NSString *)fileName functionName:(NSString *)functionName line:(NSInteger)line message:(NSString *)message, ... {
++ (void)logStringWithLevel:(SLLogLevel)level fileName:(const char *)fileName functionName:(const char *)functionName line:(NSInteger)line message:(NSString *)message, ... {
     va_list args;
     va_start(args, message);
     
     [[self.class sharedController] logStringWithLevel:level fileName:fileName functionName:functionName line:line message:message, args];
+    
+    va_end(args);
 }
 
-- (void)logStringWithLevel:(SLLogLevel)level fileName:(NSString *)fileName functionName:(NSString *)functionName line:(NSInteger)line message:(NSString *)message, ... {
+- (void)logStringWithLevel:(SLLogLevel)level fileName:(const char *)fileName functionName:(const char *)functionName line:(NSInteger)line message:(NSString *)message, ... {
     NSDate *timestamp = [NSDate date];
     NSArray *callstack = [NSThread callStackSymbols];
 #pragma clang diagnostic push
@@ -199,11 +201,24 @@ NS_ASSUME_NONNULL_BEGIN
     va_start(args, message);
     NSString *format = [[NSString alloc] initWithFormat:message arguments:args];
     
-    SLLog *log = [[SLLog alloc] initWithMessage:format timestamp:timestamp level:level fileName:fileName functionName:functionName line:line queueLabel:currentQueueLabel callstack:callstack];
-    [self sl_logMessage:log];
+    SLLog *log = [[SLLog alloc] initWithMessage:format
+                                      timestamp:timestamp
+                                          level:level
+                                       fileName:[NSString stringWithFormat:@"%s", fileName]
+                                   functionName:[NSString stringWithFormat:@"%s", functionName]
+                                           line:line
+                                     queueLabel:currentQueueLabel
+                                      callstack:callstack];
+    [self queueLog:log];
+    
+    va_end(args);
 }
 
-- (void)sl_logMessage:(SLLog *)log {
++ (void)queueLog:(SLLog *)log {
+    [[self.class sharedController] queueLog:log];
+}
+
+- (void)queueLog:(SLLog *)log {
     if (log.level == SLLogLevelError) {
         if (self.errorAsync) {
             [self sl_asyncLog:log];

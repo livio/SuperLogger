@@ -85,10 +85,12 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)searchStoredLogsWithFilters:(NSArray<SLLogFilterBlock> *)searchFilters completion:(SLSearchCompletionBlock)completionBlock;
 
 + (void)logStringWithLevel:(SLLogLevel)level
-                  fileName:(NSString *)fileName
-              functionName:(NSString *)functionName
+                  fileName:(const char *)fileName
+              functionName:(const char *)functionName
                       line:(NSInteger)line
                    message:(NSString *)message, ... NS_FORMAT_FUNCTION(5, 6);
+
++ (void)queueLog:(SLLog *)log;
 
 
 #pragma mark - Instance Methods
@@ -104,11 +106,12 @@ NS_ASSUME_NONNULL_BEGIN
 - (SLLogLevel)logLevelForFile:(NSString *)file;
 
 - (void)logStringWithLevel:(SLLogLevel)level
-                  fileName:(NSString *)fileName
-              functionName:(NSString *)functionName
+                  fileName:(const char *)fileName
+              functionName:(const char *)functionName
                       line:(NSInteger)line
                    message:(NSString *)message, ... NS_FORMAT_FUNCTION(5, 6);
 
+- (void)queueLog:(SLLog *)log;
 
 #pragma mark - Shared Queue
 

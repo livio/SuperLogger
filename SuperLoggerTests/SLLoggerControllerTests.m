@@ -12,13 +12,14 @@
 
 #import "SLFileModule.h"
 #import "SLGlobals.h"
+#import "SLLog.h"
 #import "SLLogger.h"
 #import "SLLoggerController.h"
 
 
 SpecBegin(SLLoggerControllerTests)
 
-describe(@"In the Logger Controller", ^{
+describe(@"Logger Controller instance methods", ^{
     __block SLLoggerController *testController = nil;
     beforeEach(^{
         testController = [[SLLoggerController alloc] init];
@@ -176,8 +177,39 @@ describe(@"In the Logger Controller", ^{
         });
     });
     
-    xdescribe(@"when logging something", ^{
-        // TODO
+    describe(@"when logging something", ^{
+        __block id<SLLogger> testLogger = nil;
+        beforeEach(^{
+            testLogger = OCMProtocolMock(@protocol(SLLogger));
+            [testController addLoggers:@[testLogger]];
+        });
+        
+        it(@"should properly generate a log, and tell its loggers to log", ^{
+            SLLogLevel someLogLevelDebugOrAbove = SLLogLevelRelease;
+            const char *someFileName = __FILE__;
+            const char *someFunctionName = __PRETTY_FUNCTION__;
+            NSInteger someLine = __LINE__;
+            
+            [testController logStringWithLevel:someLogLevelDebugOrAbove fileName:someFileName functionName:someFunctionName line:someLine message:@"some message with format %@", @"some other message"];
+            
+            OCMVerify([testLogger logString:[OCMArg any]]);
+        });
+        
+        it(@"should tell its loggers to log the right thing", ^{
+            NSTimeInterval someInterval = 12000;
+            SLLogLevel someLogLevelDebugOrAbove = SLLogLevelRelease;
+            NSString *someFileName = @"testfilename";
+            NSString *someFunctionName = @"testfunctionname";
+            NSInteger someLine = __LINE__;
+            NSString *someQueueName = @"com.test.testQueue";
+            NSArray *someCallstack = @[];
+            
+            SLLog *testLog = [[SLLog alloc] initWithMessage:@"someString" timestamp:[NSDate dateWithTimeIntervalSince1970:someInterval] level:someLogLevelDebugOrAbove fileName:someFileName functionName:someFunctionName line:someLine queueLabel:someQueueName callstack:someCallstack];
+            NSString *expectedLogString = testController.defaultFormatBlock(testLog);
+            
+            [testController queueLog:testLog];
+            OCMVerify([testLogger logString:expectedLogString]);
+        });
     });
     
     describe(@"getting the global log queue", ^{
@@ -194,6 +226,18 @@ describe(@"In the Logger Controller", ^{
             
             expect(currentQueueLabel).to.equal(@"com.superlogger.loggercontroller.log");
         });
+    });
+});
+
+describe(@"Logger Controller class methods", ^{
+    beforeEach(^{
+        [[SLLoggerController sharedController] removeLoggers:[[SLLoggerController sharedController].loggers allObjects]];
+        [[SLLoggerController sharedController] removeModules:[[SLLoggerController sharedController].logModules allObjects]];
+        [[SLLoggerController sharedController] removeFilters:[[SLLoggerController sharedController].logFilters allObjects]];
+    });
+    
+    it(@"should return the same object for the shared controller in multiple invocations", ^{
+        expect([SLLoggerController sharedController]).to.equal([SLLoggerController sharedController]);
     });
 });
 
