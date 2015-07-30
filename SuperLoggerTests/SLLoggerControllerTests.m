@@ -75,14 +75,32 @@ describe(@"Logger Controller instance methods", ^{
                 [testController addLoggers:@[loggerMock]];
             });
             
-            it(@"should add a logger", ^{
-                expect(testController.loggers).will.haveACountOf(1);
-                expect(testController.loggers).will.contain(loggerMock);
+            describe(@"when adding a logger", ^{
+                it(@"should add the logger", ^{
+                    expect(testController.loggers).will.haveACountOf(1);
+                    expect(testController.loggers).will.contain(loggerMock);
+                });
+                
+                xit(@"should call setupLogger on the logger", ^{
+                    // TODO
+                });
+                
+                describe(@"if in release mode", ^{
+                    xit(@"should not set up the logger if the logger should not work in release mode", ^{
+                        // TODO
+                    });
+                });
             });
             
-            it(@"should remove a logger", ^{
-                [testController removeLoggers:@[loggerMock]];
-                expect(testController.loggers).will.haveACountOf(0);
+            describe(@"when removing a logger", ^{
+                it(@"should remove the logger", ^{
+                    [testController removeLoggers:@[loggerMock]];
+                    expect(testController.loggers).will.haveACountOf(0);
+                });
+                
+                xit(@"should call teardownLogger on the logger", ^{
+                    
+                });
             });
         });
         
@@ -90,7 +108,7 @@ describe(@"Logger Controller instance methods", ^{
             __block SLFileModule *fileModuleMock = nil;
             beforeEach(^{
                 fileModuleMock = OCMClassMock([SLFileModule class]);
-                [testController addLoggers:@[fileModuleMock]];
+                [testController addModules:@[fileModuleMock]];
             });
             
             it(@"should add a fileModule", ^{
@@ -108,7 +126,7 @@ describe(@"Logger Controller instance methods", ^{
             __block SLLogFilterBlock filter = nil;
             beforeEach(^{
                 filter = ^(SLLog *log){ return YES; };
-                [testController addLoggers:@[filter]];
+                [testController addFilters:@[filter]];
             });
             
             it(@"should add a logger", ^{
@@ -117,7 +135,7 @@ describe(@"Logger Controller instance methods", ^{
             });
             
             it(@"should remove a logger", ^{
-                [testController removeLoggers:@[filter]];
+                [testController removeFilters:@[filter]];
                 expect(testController.logFilters).will.haveACountOf(0);
             });
         });
