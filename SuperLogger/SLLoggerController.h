@@ -40,6 +40,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (copy, nonatomic) SLLogFormatBlock defaultFormatBlock;
 
 /**
+ *  The date formatter that will be passed to format blocks to be used on timestamps
+ */
+@property (strong, nonatomic) NSDateFormatter *timestampFormatter;
+
+/**
  *  Whether or not non-error logs will be dispatched asynchronously.
  */
 @property (assign, nonatomic) BOOL async;
@@ -112,6 +117,7 @@ NS_ASSUME_NONNULL_BEGIN
                    message:(NSString *)message, ... NS_FORMAT_FUNCTION(5, 6);
 
 - (void)queueLog:(SLLog *)log;
+
 
 #pragma mark - Shared Queue
 

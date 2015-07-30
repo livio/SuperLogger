@@ -25,7 +25,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @implementation SLLoggerController
 
-@synthesize defaultFormatBlock = _defaultFormatBlock;
+@synthesize defaultFormatBlock = _defaultFormatBlock, timestampFormatter = _timestampFormatter;
 
 #pragma mark - Lifecycle
 
@@ -53,6 +53,7 @@ NS_ASSUME_NONNULL_BEGIN
     _errorAsync = NO;
     _globalLogLevel = SLLogLevelDebug;
     _defaultFormatBlock = nil;
+    _timestampFormatter = nil;
     
     return self;
 }
@@ -153,7 +154,7 @@ NS_ASSUME_NONNULL_BEGIN
         }
     }
     
-    return [self.class sharedController].globalLogLevel;
+    return self.globalLogLevel;
 }
 
 
@@ -163,10 +164,11 @@ NS_ASSUME_NONNULL_BEGIN
     if (_defaultFormatBlock != nil) {
         return _defaultFormatBlock;
     } else {
-        return [^NSString * (SLLog *log) {
+        return [^NSString *(SLLog *log, NSDateFormatter *dateFormatter) {
             NSString *callerClass = log.fileName;
             NSString *callerFunction = log.functionName;
-            return [NSString stringWithFormat:@"(%@:%@)[%@ %@] %@", log.queueLabel, log.timestamp, callerClass, callerFunction, log.message];
+            NSString *dateString = [dateFormatter stringFromDate:log.timestamp];
+            return [NSString stringWithFormat:@"(%@:%@)[%@ %@] %@", log.queueLabel, dateString, callerClass, callerFunction, log.message];
         } copy];
     }
 }
@@ -176,6 +178,22 @@ NS_ASSUME_NONNULL_BEGIN
         _defaultFormatBlock = defaultFormatBlock;
     });
 }
+
+- (NSDateFormatter *)timestampFormatter {
+    if (_timestampFormatter != nil) {
+        return _timestampFormatter;
+    } else {
+        return [self.class sl_dateFormatter];
+    }
+}
+
+- (void)setTimestampFormatter:(NSDateFormatter *)timestampFormatter {
+    dispatch_async([self.class globalLogQueue], ^{
+        _timestampFormatter = timestampFormatter;
+    });
+}
+
+#pragma mark Readonly, Immutable Sets
 
 - (NSSet<SLFileModule *> *)logModules {
     return [NSSet setWithSet:self.mutableLogModules];
@@ -266,8 +284,8 @@ NS_ASSUME_NONNULL_BEGIN
     }
     
     for (id<SLLogger> logger in self.loggers) {
-        SLLogFormatBlock formatBlock = logger.formatBlock ?: [self defaultFormatBlock];
-        [logger logString:formatBlock(log)];
+        SLLogFormatBlock formatBlock = logger.formatBlock ?: self.defaultFormatBlock;
+        [logger logString:formatBlock(log, self.timestampFormatter)];
     }
 }
 
@@ -295,7 +313,7 @@ NS_ASSUME_NONNULL_BEGIN
 }
 
 
-#pragma mark - Dispatch Queues
+#pragma mark - Singletons
 
 + (dispatch_queue_t)globalLogQueue {
     static dispatch_queue_t queue = NULL;
@@ -305,6 +323,17 @@ NS_ASSUME_NONNULL_BEGIN
     });
     
     return queue;
+}
+
++ (NSDateFormatter *)sl_dateFormatter {
+    static NSDateFormatter *formatter = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        formatter = [[NSDateFormatter alloc] init];
+        formatter.dateFormat = @"yy-mm-dd | HH:mm:ss:SSSS";
+    });
+    
+    return formatter;
 }
 
 @end
