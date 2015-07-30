@@ -85,6 +85,7 @@ NS_ASSUME_NONNULL_BEGIN
     [[self.class sharedController] removeFilters:filters];
 }
 
+#pragma Instance Methods
 - (void)addLoggers:(NSArray<id<SLLogger>> *)loggers {
     dispatch_async([self.class globalLogQueue], ^{ @autoreleasepool {
         for (id<SLLogger> logger in loggers) {
@@ -95,22 +96,21 @@ NS_ASSUME_NONNULL_BEGIN
             }
 #endif
             // If the logger should be set up, then set it up.
-            [[self.class sharedController].mutableLoggers addObject:logger];
+            [self.mutableLoggers addObject:logger];
             [logger setupLogger];
         }
     }});
 }
 
-#pragma Instance Methods
 - (void)addModules:(NSArray<SLFileModule *> *)modules {
     dispatch_async([self.class globalLogQueue], ^{ @autoreleasepool {
-        [[self.class sharedController].mutableLogModules addObjectsFromArray:modules];
+        [self.mutableLogModules addObjectsFromArray:modules];
     }});
 }
 
 - (void)addFilters:(NSArray<SLLogFilterBlock> *)filters {
     dispatch_async([self.class globalLogQueue], ^{ @autoreleasepool {
-        [[self.class sharedController].mutableLogFilters addObjectsFromArray:filters];
+        [self.mutableLogFilters addObjectsFromArray:filters];
     }});
 }
 
@@ -118,7 +118,7 @@ NS_ASSUME_NONNULL_BEGIN
     dispatch_async([self.class globalLogQueue], ^{
         for (id<SLLogger> logger in loggers) {
             [logger teardownLogger];
-            [[self.class sharedController].mutableLoggers removeObject:logger];
+            [self.mutableLoggers removeObject:logger];
         }
     });
 }
@@ -126,7 +126,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)removeModules:(NSArray<SLFileModule *> *)modules {
     dispatch_async([self.class globalLogQueue], ^{
         for (SLFileModule *module in modules) {
-            [[self.class sharedController].mutableLogModules removeObject:module];
+            [self.mutableLogModules removeObject:module];
         }
     });
 }
@@ -134,7 +134,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)removeFilters:(NSArray<SLLogFilterBlock> *)filters {
     dispatch_async([self.class globalLogQueue], ^{
         for (SLLogFilterBlock filter in filters) {
-            [[self.class sharedController].mutableLogFilters removeObject:filter];
+            [self.mutableLogFilters removeObject:filter];
         }
     });
 }
