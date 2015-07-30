@@ -70,9 +70,10 @@ typedef void (^SLSearchCompletionBlock)(NSArray<SLLog *> *results, NSError *erro
  *  A block that is used to format a log into a string
  *
  *  @param log The log to be formatted
+ *  @param dateFormatter A date formatter for the timestamp.
  *
  *  @return The string that represents the formatted log
  */
-typedef NSString * __nonnull (^SLLogFormatBlock)(SLLog *log);
+typedef NSString * __nonnull (^SLLogFormatBlock)(SLLog *log,  NSDateFormatter *dateFormatter);
 
 NS_ASSUME_NONNULL_END
