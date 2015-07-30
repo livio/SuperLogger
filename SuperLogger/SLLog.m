@@ -69,6 +69,13 @@ NS_ASSUME_NONNULL_BEGIN
     return [components filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"self <> ''"]];
 }
 
+
+#pragma mark - NSCopying
+
+- (id)copyWithZone:(nullable NSZone *)zone {
+    return [[SLLog allocWithZone:zone] initWithMessage:_message timestamp:_timestamp level:_level fileName:_fileName functionName:_functionName line:_line queueLabel:_queueLabel callstack:_callstack];
+}
+
 @end
 
 NS_ASSUME_NONNULL_END
