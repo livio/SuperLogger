@@ -19,20 +19,28 @@ typedef NS_OPTIONS(NSInteger, SLLogLevel) {
      *  Nothing will be logged
      */
     SLLogLevelOff = 0,
+    
     /**
-     *  Log any errors using this level. Logs in DEBUG and release. By default logs sync. Shorthand is SLogE().
+     *  Log errors using this level. Logs in DEBUG and release. Logs syncronously by default. Shorthand is SLogE().
+     *  If a log level is set to Error, only errors will be logged.
      */
     SLLogLevelError,
+    
     /**
-     *  Log anything that you want to also log in release. By default logs async. Shorthand is SLogR().
+     *  Log anything that you want to also log in release. Logs async by default. Shorthand is SLogR().
+     *  If a log level is set to Release, only errors and release logs will be logged.
      */
     SLLogLevelRelease,
+    
     /**
-     *  Log anything that you want to only log in DEBUG. By default logs async. Shorthand is SLogD().
+     *  Log anything that you want to only log in DEBUG. Logs async by default. Shorthand is SLogD().
+     *  If a log level is set to Debug, errors, release logs, and debug logs will be logged (in DEBUG).
      */
     SLLogLevelDebug,
+    
     /**
-     *  Logs only in DEBUG, extra verbose logging. By default logs async. Shorthand is SLogV().
+     *  Logs only in DEBUG, extra verbose logging. Logs async by default. Shorthand is SLogV().
+     *  If a log level is set to Verbose, all types of logs will be logged (in DEBUG).
      */
     SLLogLevelVerbose,
 };
