@@ -24,7 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (copy, nonatomic, nullable) SLLogFormatBlock formatBlock;
 
 /**
- *  If this is NO, when not in DEBUG, the logger will not receive any messages to set up, tear down, or log. This 
+ *  If this is NO, when not in DEBUG, the logger will not receive any messages to set up, tear down, or log.
  */
 @property (assign, nonatomic) BOOL logInRelease;
 
