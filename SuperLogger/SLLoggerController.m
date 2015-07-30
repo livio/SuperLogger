@@ -177,6 +177,18 @@ NS_ASSUME_NONNULL_BEGIN
     });
 }
 
+- (NSSet<SLFileModule *> *)logModules {
+    return [NSSet setWithSet:self.mutableLogModules];
+}
+
+- (NSSet<id<SLLogger>> *)loggers {
+    return [NSSet setWithSet:self.mutableLoggers];
+}
+
+- (NSSet<SLLogFilterBlock> *)logFilters {
+    return [NSSet setWithSet:self.logFilters];
+}
+
 
 #pragma mark - Logging
 
