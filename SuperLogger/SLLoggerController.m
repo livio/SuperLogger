@@ -186,7 +186,7 @@ NS_ASSUME_NONNULL_BEGIN
 }
 
 - (NSSet<SLLogFilterBlock> *)logFilters {
-    return [NSSet setWithSet:self.logFilters];
+    return [NSSet setWithSet:self.mutableLogFilters];
 }
 
 
