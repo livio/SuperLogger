@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "5D4049D21B557B8C00DA719D"
-               BuildableName = "SuperLogger-WebServer.framework"
-               BlueprintName = "SuperLogger-WebServer"
+               BuildableName = "SuperLogger_WebServer.framework"
+               BlueprintName = "SuperLogger_WebServer"
                ReferencedContainer = "container:SuperLogger.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -33,8 +33,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "5D4049DB1B557B8C00DA719D"
-               BuildableName = "SuperLogger-WebServerTests.xctest"
-               BlueprintName = "SuperLogger-WebServerTests"
+               BuildableName = "SuperLogger_WebServerTests.xctest"
+               BlueprintName = "SuperLogger_WebServerTests"
                ReferencedContainer = "container:SuperLogger.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -43,8 +43,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "5D4049D21B557B8C00DA719D"
-            BuildableName = "SuperLogger-WebServer.framework"
-            BlueprintName = "SuperLogger-WebServer"
+            BuildableName = "SuperLogger_WebServer.framework"
+            BlueprintName = "SuperLogger_WebServer"
             ReferencedContainer = "container:SuperLogger.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -65,8 +65,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "5D4049D21B557B8C00DA719D"
-            BuildableName = "SuperLogger-WebServer.framework"
-            BlueprintName = "SuperLogger-WebServer"
+            BuildableName = "SuperLogger_WebServer.framework"
+            BlueprintName = "SuperLogger_WebServer"
             ReferencedContainer = "container:SuperLogger.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -83,8 +83,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "5D4049D21B557B8C00DA719D"
-            BuildableName = "SuperLogger-WebServer.framework"
-            BlueprintName = "SuperLogger-WebServer"
+            BuildableName = "SuperLogger_WebServer.framework"
+            BlueprintName = "SuperLogger_WebServer"
             ReferencedContainer = "container:SuperLogger.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
