@@ -142,9 +142,9 @@ describe(@"Logger Controller instance methods", ^{
     });
     
     describe(@"when getting the log level for a file", ^{
-        __block NSString *someFileName = nil;
+        __block const char *someFileName = nil;
         beforeAll(^{
-            someFileName = @"some file";
+            someFileName = "some file";
         });
         
         context(@"when there are no log modules", ^{
@@ -184,7 +184,7 @@ describe(@"Logger Controller instance methods", ^{
         context(@"when there is a relevant log module", ^{
             __block SLFileModule *relevantModule = nil;
             beforeEach(^{
-                relevantModule = [[SLFileModule alloc] initWithName:@"Relevant" files:@[someFileName] level:SLLogLevelRelease];
+                relevantModule = [[SLFileModule alloc] initWithName:@"Relevant" files:@[[NSString stringWithCString:someFileName encoding:NSUTF8StringEncoding]] level:SLLogLevelRelease];
                 [testController addModules:@[relevantModule]];
                 
                 it(@"should return the global log level", ^{
