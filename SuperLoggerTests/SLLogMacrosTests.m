@@ -6,6 +6,8 @@
 //  Copyright © 2015 livio. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
+
 #import <Specta/Specta.h>
 #import <Expecta/Expecta.h>
 #import <OCMock/OCMock.h>
@@ -20,7 +22,10 @@ xdescribe(@"Debug Macros", ^{
 
 describe(@"Release Macros", ^{
     describe(@"Logging with the release level macro", ^{
-        SLogR(@"Some test message");
+        __block id loggerControllerClassMock = OCMClassMock([SLLoggerController class]);
+        beforeAll(^{
+            OCMStub([loggerControllerClassMock logLevelForFile:[OCMArg anyPointer]]).andReturn(SLLogLevelRelease);
+        });
     });
 });
 
