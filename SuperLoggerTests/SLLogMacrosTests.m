@@ -18,8 +18,10 @@ xdescribe(@"Debug Macros", ^{
     // TODO
 });
 
-xdescribe(@"Release Macros", ^{
-    // TODO
+describe(@"Release Macros", ^{
+    describe(@"Logging with the release level macro", ^{
+        SLogR(@"Some test message");
+    });
 });
 
 SpecEnd

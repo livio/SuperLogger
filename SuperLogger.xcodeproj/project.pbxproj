@@ -57,7 +57,7 @@
 		5DB55A7B1B53F801009E2C2E /* SLFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 5DB55A791B53F801009E2C2E /* SLFilter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5DB55A7C1B53F801009E2C2E /* SLFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB55A7A1B53F801009E2C2E /* SLFilter.m */; };
 		5DB55FF41B6A5F4400BC8B87 /* SLLogTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB55FF31B6A5F4400BC8B87 /* SLLogTests.m */; };
-		5DB55FF61B6A683800BC8B87 /* SLLogMacros.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB55FF51B6A683800BC8B87 /* SLLogMacros.m */; };
+		5DB55FF61B6A683800BC8B87 /* SLLogMacrosTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB55FF51B6A683800BC8B87 /* SLLogMacrosTests.m */; };
 		5DB55FF91B6A6F8400BC8B87 /* Expecta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DB55FF71B6A6F8400BC8B87 /* Expecta.framework */; };
 		5DB55FFA1B6A6F8400BC8B87 /* Specta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DB55FF81B6A6F8400BC8B87 /* Specta.framework */; };
 		5DB55FFB1B6A6F8800BC8B87 /* Expecta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DB55FF71B6A6F8400BC8B87 /* Expecta.framework */; };
@@ -193,7 +193,7 @@
 		5DB55A791B53F801009E2C2E /* SLFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLFilter.h; sourceTree = "<group>"; };
 		5DB55A7A1B53F801009E2C2E /* SLFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLFilter.m; sourceTree = "<group>"; };
 		5DB55FF31B6A5F4400BC8B87 /* SLLogTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLLogTests.m; sourceTree = "<group>"; };
-		5DB55FF51B6A683800BC8B87 /* SLLogMacros.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLLogMacros.m; sourceTree = "<group>"; };
+		5DB55FF51B6A683800BC8B87 /* SLLogMacrosTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLLogMacrosTests.m; sourceTree = "<group>"; };
 		5DB55FF71B6A6F8400BC8B87 /* Expecta.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Expecta.framework; path = Carthage/Build/iOS/Expecta.framework; sourceTree = "<group>"; };
 		5DB55FF81B6A6F8400BC8B87 /* Specta.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Specta.framework; path = Carthage/Build/iOS/Specta.framework; sourceTree = "<group>"; };
 		5DF4E7E21B5040D30073B6CB /* SLFileModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLFileModule.h; sourceTree = "<group>"; };
@@ -429,7 +429,7 @@
 			children = (
 				5D2B79771B5000A200E83E2B /* SuperLoggerTests.m */,
 				5D0149AF1B67D4A9005142B2 /* SLLoggerControllerTests.m */,
-				5DB55FF51B6A683800BC8B87 /* SLLogMacros.m */,
+				5DB55FF51B6A683800BC8B87 /* SLLogMacrosTests.m */,
 				5DB55FF31B6A5F4400BC8B87 /* SLLogTests.m */,
 				5D2B79751B5000A200E83E2B /* Supporting Files */,
 			);
@@ -1124,7 +1124,7 @@
 			files = (
 				5D0149B01B67D4A9005142B2 /* SLLoggerControllerTests.m in Sources */,
 				5D2B79781B5000A200E83E2B /* SuperLoggerTests.m in Sources */,
-				5DB55FF61B6A683800BC8B87 /* SLLogMacros.m in Sources */,
+				5DB55FF61B6A683800BC8B87 /* SLLogMacrosTests.m in Sources */,
 				5DB55FF41B6A5F4400BC8B87 /* SLLogTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

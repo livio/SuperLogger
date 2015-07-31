@@ -143,13 +143,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark - Log Level
 
-+ (SLLogLevel)logLevelForFile:(NSString *)file {
++ (SLLogLevel)logLevelForFile:(const char *)file {
     return [[self.class sharedController] logLevelForFile:file];
 }
 
-- (SLLogLevel)logLevelForFile:(NSString *)file {
+- (SLLogLevel)logLevelForFile:(const char *)file {
     for (SLFileModule *module in [self.class sharedController].logModules) {
-        if ([module containsFile:file]) {
+        if ([module containsFile:[NSString stringWithCString:file encoding:NSUTF8StringEncoding]]) {
             return module.logLevel;
         }
     }
