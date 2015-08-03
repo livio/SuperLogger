@@ -143,13 +143,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark - Log Level
 
-+ (SLLogLevel)logLevelForFile:(NSString *)file {
-    return [[self.class sharedController] logLevelForFile:file];
-}
-
 - (SLLogLevel)logLevelForFile:(NSString *)file {
     for (SLFileModule *module in self.logModules) {
         if ([module containsFile:file]) {
+            if (module.logLevel == SLLogLevelDefault) {
+                break;
+            }
+            
             return module.logLevel;
         }
     }
@@ -273,16 +273,20 @@ NS_ASSUME_NONNULL_BEGIN
 }
 
 - (void)sl_log:(SLLog *)log {
+    if ([self logLevelForFile:log.fileName] < log.level) {
+        return;
+    }
+    
     for (SLLogFilterBlock filter in self.logFilters) {
         if (filter(log) == NO) {
             return;
         }
     }
     
-    for (id<SLLogger> logger in self.loggers) {
+    for (id<SLLogger> logger in self.loggers) { @autoreleasepool {
         SLLogFormatBlock formatBlock = logger.formatBlock ?: self.defaultFormatBlock;
         [logger logString:formatBlock(log, self.timestampFormatter)];
-    }
+    }}
 }
 
 

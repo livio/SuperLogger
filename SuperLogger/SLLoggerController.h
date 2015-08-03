@@ -78,8 +78,6 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)removeModules:(NSArray<SLFileModule *> *)modules;
 + (void)removeFilters:(NSArray<SLLogFilterBlock> *)filters;
 
-+ (SLLogLevel)logLevelForFile:(NSString *)file;
-
 /**
  *  Use a filter to return a list of stored logs that pass the filter. This will run on the search dispatch queue, which is a concurrent queue. It will return on the main queue.
  *

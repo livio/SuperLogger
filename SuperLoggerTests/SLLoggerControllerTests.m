@@ -147,6 +147,9 @@ describe(@"Logger Controller instance methods", ^{
         beforeAll(^{
             someFileName = @"some file";
         });
+        beforeEach(^{
+            [testController removeModules:testController.logModules.allObjects];
+        });
         
         context(@"when there are no log modules", ^{
             context(@"when the global log level has not been modified", ^{
