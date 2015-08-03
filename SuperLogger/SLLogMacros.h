@@ -10,6 +10,9 @@
 #import "SLLoggerController.h"
 #import "SLGlobals.h"
 
+
+#pragma mark - Debug Logs
+
 #if DEBUG
 
 #define SLogTrace() do { if ([SLLoggerController logLevelForFile:__FILE__] >= SLLogLevelVerbose) [SLLoggerController logStringWithLevel:SLLogLevelVerbose fileName:__FILE__ functionName:__PRETTY_FUNCTION__ line:__LINE__ message:@"Trace"]; } while(0) // TODO: See if this works
@@ -23,6 +26,9 @@
 #define SLogD(msg, ...)
 
 #endif
+
+
+#pragma mark - Release Logs
 
 #define SLogR(msg, ...) do { if ([SLLoggerController logLevelForFile:__FILE__] >= SLLogLevelRelease) [SLLoggerController logStringWithLevel:SLLogLevelRelease fileName:__FILE__ functionName:__PRETTY_FUNCTION__ line:__LINE__ message:msg, ##__VA_ARGS__]; } while(0)
 #define SLogE(msg, ...) do { if ([SLLoggerController logLevelForFile:__FILE__] >= SLLogLevelError) [SLLoggerController logStringWithLevel:SLLogLevelError fileName:__FILE__ functionName:__PRETTY_FUNCTION__ line:__LINE__ message:msg, ##__VA_ARGS__]; } while(0)
