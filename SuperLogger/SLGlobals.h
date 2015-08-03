@@ -78,7 +78,9 @@ typedef BOOL (^SLLogFilterBlock)(SLLog *log);
 typedef void (^SLSearchCompletionBlock)(NSArray<SLLog *> *results, NSError *error);
 
 /**
- *  A block that is used to format a log into a string
+ *  A block that is used to format a log into a string.
+ *
+ *  @Note: Do not append \n in a custom format block, this will be done by the logger.
  *
  *  @param log The log to be formatted
  *  @param dateFormatter A date formatter for the timestamp.
