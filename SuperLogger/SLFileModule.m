@@ -42,6 +42,10 @@ NS_ASSUME_NONNULL_BEGIN
     return self;
 }
 
+- (instancetype)initWithName:(NSString *)name files:(NSArray<NSString *> *)files {
+    return [self initWithName:name files:files level:SLLogLevelVerbose];
+}
+
 
 #pragma mark - Set getters
 

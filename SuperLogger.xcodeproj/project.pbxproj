@@ -19,9 +19,9 @@
 		5D0149A41B62CB11005142B2 /* SuperLoggerTestAppUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D0149A31B62CB11005142B2 /* SuperLoggerTestAppUITests.m */; };
 		5D0149B01B67D4A9005142B2 /* SLLoggerControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D0149AF1B67D4A9005142B2 /* SLLoggerControllerTests.m */; };
 		5D0367FC1B6FE2C8001C0C46 /* SLGlobals.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D0367FB1B6FE2C8001C0C46 /* SLGlobals.m */; };
+		5D0367FE1B6FE44D001C0C46 /* SLFileModuleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D0367FD1B6FE44D001C0C46 /* SLFileModuleTests.m */; };
 		5D2B796B1B5000A100E83E2B /* SuperLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D2B796A1B5000A100E83E2B /* SuperLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5D2B79711B5000A200E83E2B /* SuperLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D2B79651B5000A100E83E2B /* SuperLogger.framework */; };
-		5D2B79781B5000A200E83E2B /* SuperLoggerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D2B79771B5000A200E83E2B /* SuperLoggerTests.m */; };
 		5D3A18A71B68104C00139385 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D3A18A61B68104C00139385 /* libOCMock.a */; };
 		5D3A18A81B68104C00139385 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D3A18A61B68104C00139385 /* libOCMock.a */; };
 		5D3A18A91B68104C00139385 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D3A18A61B68104C00139385 /* libOCMock.a */; };
@@ -141,12 +141,12 @@
 		5D0149A51B62CB11005142B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5D0149AF1B67D4A9005142B2 /* SLLoggerControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLLoggerControllerTests.m; sourceTree = "<group>"; };
 		5D0367FB1B6FE2C8001C0C46 /* SLGlobals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLGlobals.m; sourceTree = "<group>"; };
+		5D0367FD1B6FE44D001C0C46 /* SLFileModuleTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLFileModuleTests.m; sourceTree = "<group>"; };
 		5D2B79651B5000A100E83E2B /* SuperLogger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SuperLogger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D2B79691B5000A100E83E2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5D2B796A1B5000A100E83E2B /* SuperLogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SuperLogger.h; sourceTree = "<group>"; };
 		5D2B79701B5000A200E83E2B /* SuperLoggerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SuperLoggerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D2B79761B5000A200E83E2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5D2B79771B5000A200E83E2B /* SuperLoggerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SuperLoggerTests.m; sourceTree = "<group>"; };
 		5D3A189D1B68104C00139385 /* NSNotificationCenter+OCMAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNotificationCenter+OCMAdditions.h"; sourceTree = "<group>"; };
 		5D3A189E1B68104C00139385 /* OCMArg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMArg.h; sourceTree = "<group>"; };
 		5D3A189F1B68104C00139385 /* OCMConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMConstraint.h; sourceTree = "<group>"; };
@@ -430,10 +430,10 @@
 		5D2B79741B5000A200E83E2B /* SuperLoggerTests */ = {
 			isa = PBXGroup;
 			children = (
-				5D2B79771B5000A200E83E2B /* SuperLoggerTests.m */,
 				5D0149AF1B67D4A9005142B2 /* SLLoggerControllerTests.m */,
 				5DB55FF51B6A683800BC8B87 /* SLLogMacrosTests.m */,
 				5DB55FF31B6A5F4400BC8B87 /* SLLogTests.m */,
+				5D0367FD1B6FE44D001C0C46 /* SLFileModuleTests.m */,
 				5D2B79751B5000A200E83E2B /* Supporting Files */,
 			);
 			path = SuperLoggerTests;
@@ -1126,8 +1126,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D0367FE1B6FE44D001C0C46 /* SLFileModuleTests.m in Sources */,
 				5D0149B01B67D4A9005142B2 /* SLLoggerControllerTests.m in Sources */,
-				5D2B79781B5000A200E83E2B /* SuperLoggerTests.m in Sources */,
 				5DB55FF61B6A683800BC8B87 /* SLLogMacrosTests.m in Sources */,
 				5DB55FF41B6A5F4400BC8B87 /* SLLogTests.m in Sources */,
 			);

@@ -52,6 +52,11 @@ typedef NS_OPTIONS(NSInteger, SLLogLevel) {
 };
 
 /**
+ *  When used with a file module, this will use the global log level instead of a module specific log level
+ */
+extern const NSInteger SLLogLevelDefault;
+
+/**
  *  A block run over logs to filter results into 'good' and 'bad'. 'Good' log results pass the filter and continue. 'Bad' log results are stopped at the filter.
  *
  *  @param logString The string that was passed to the log method

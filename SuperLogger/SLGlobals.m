@@ -16,3 +16,5 @@ NSString *SLLoggerDispatchQueue() {
     return [NSString stringWithCString:dispatch_queue_get_label(dispatch_get_current_queue()) encoding:NSUTF8StringEncoding];
 #pragma clang diagnostic pop
 }
+
+const NSInteger SLLogLevelDefault = -1;
