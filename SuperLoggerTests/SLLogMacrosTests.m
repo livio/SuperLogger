@@ -29,19 +29,19 @@ describe(@"Release Macros", ^{
         xcontext(@"when the log level is at or below release", ^{
             __block id loggerControllerClassMock = OCMClassMock([SLLoggerController class]);
             beforeAll(^{
-                OCMStub([[loggerControllerClassMock ignoringNonObjectArgs] logStringWithLevel:0 fileName:[OCMArg anyPointer] functionName:[OCMArg anyPointer] line:0 message:[OCMArg any]]);
+                OCMStub([[loggerControllerClassMock ignoringNonObjectArgs] logWithLevel:0 fileName:[OCMArg anyPointer] functionName:[OCMArg anyPointer] line:0 message:[OCMArg any]]);
             });
             
             it(@"should log correctly", ^{
                 SLogR(@"testlog");
-                OCMVerify([[loggerControllerClassMock ignoringNonObjectArgs] logStringWithLevel:SLLogLevelRelease fileName:SLOG_FILE functionName:SLOG_FUNC line:0 message:@"testlog"]);
+                OCMVerify([[loggerControllerClassMock ignoringNonObjectArgs] logWithLevel:SLLogLevelRelease fileName:SLOG_FILE functionName:SLOG_FUNC line:0 message:@"testlog"]);
             });
         });
         
         xcontext(@"when logging is off", ^{
             __block id loggerControllerClassMock = OCMClassMock([SLLoggerController class]);
             beforeAll(^{
-                OCMStub([[loggerControllerClassMock ignoringNonObjectArgs] logStringWithLevel:0 fileName:[OCMArg anyPointer] functionName:[OCMArg anyPointer] line:0 message:[OCMArg any]]);
+                OCMStub([[loggerControllerClassMock ignoringNonObjectArgs] logWithLevel:0 fileName:[OCMArg anyPointer] functionName:[OCMArg anyPointer] line:0 message:[OCMArg any]]);
             });
             
             xit(@"should not log", ^{

@@ -63,7 +63,7 @@ describe(@"Logger Controller instance methods", ^{
         });
         
         it(@"should have a default format block", ^{
-            expect(testController.defaultFormatBlock).notTo.beNil();
+            expect(testController.formatBlock).notTo.beNil();
         });
     });
     
@@ -205,7 +205,7 @@ describe(@"Logger Controller instance methods", ^{
             [testController removeLoggers:[testController.loggers allObjects]];
             
             testLogger = OCMProtocolMock(@protocol(SLLogger));
-            OCMStub([testLogger logString:[OCMArg any]]);
+            OCMStub([testLogger log:[OCMArg any]]);
             
             [testController addLoggers:@[testLogger]];
         });
@@ -217,9 +217,9 @@ describe(@"Logger Controller instance methods", ^{
             NSString *someFunctionName = SLOG_FUNC;
             NSInteger someLine = __LINE__;
             
-            OCMExpect([testLogger logString:[OCMArg any]]);
+            OCMExpect([testLogger log:[OCMArg any]]);
             
-            [testController logStringWithLevel:someLogLevelDebugOrAbove fileName:someFileName functionName:someFunctionName line:someLine message:@"some message with format %@", @"some other message"];
+            [testController logWithLevel:someLogLevelDebugOrAbove fileName:someFileName functionName:someFunctionName line:someLine message:@"some message with format %@", @"some other message"];
             
             OCMVerifyAllWithDelay((OCMockObject *)testLogger, 0.25);
         });
@@ -234,10 +234,10 @@ describe(@"Logger Controller instance methods", ^{
             NSArray *someCallstack = @[];
             
             SLLog *testLog = [[SLLog alloc] initWithMessage:@"someString" timestamp:[NSDate dateWithTimeIntervalSince1970:someInterval] level:someLogLevelDebugOrAbove fileName:someFileName functionName:someFunctionName line:someLine queueLabel:someQueueName callstack:someCallstack];
-            NSString *expectedLogString = testController.defaultFormatBlock(testLog, testController.timestampFormatter);
+            NSString *expectedLogString = testController.formatBlock(testLog, testController.timestampFormatter);
             
             [testController queueLog:testLog];
-            OCMVerify([testLogger logString:[OCMArg any]]);
+            OCMVerify([testLogger log:[OCMArg any]]);
         });
     });
     

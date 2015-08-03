@@ -25,7 +25,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @implementation SLLoggerController
 
-@synthesize defaultFormatBlock = _defaultFormatBlock, timestampFormatter = _timestampFormatter;
+@synthesize formatBlock = _formatBlock, timestampFormatter = _timestampFormatter;
 
 #pragma mark - Lifecycle
 
@@ -52,7 +52,7 @@ NS_ASSUME_NONNULL_BEGIN
     _async = YES;
     _errorAsync = NO;
     _globalLogLevel = SLLogLevelDebug;
-    _defaultFormatBlock = nil;
+    _formatBlock = nil;
     _timestampFormatter = nil;
     
     return self;
@@ -160,22 +160,21 @@ NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark - Getters / Setters
 
-- (SLLogFormatBlock)defaultFormatBlock {
-    if (_defaultFormatBlock != nil) {
-        return _defaultFormatBlock;
+- (SLLogFormatBlock)formatBlock {
+    if (_formatBlock != nil) {
+        return _formatBlock;
     } else {
         return [^NSString *(SLLog *log, NSDateFormatter *dateFormatter) {
-            NSString *callerClass = log.fileName;
-            NSString *callerFunction = log.functionName;
             NSString *dateString = [dateFormatter stringFromDate:log.timestamp];
-            return [NSString stringWithFormat:@"(%@:%@)[%@ %@] %@", log.queueLabel, dateString, callerClass, callerFunction, log.message];
+            // TODO: a comment with example output
+            return [NSString stringWithFormat:@"[%@:%ld] (%@:%@) (%@) %@", log.fileName, (long)log.line, log.queueLabel, dateString, log.functionName, log.message];
         } copy];
     }
 }
 
-- (void)setDefaultFormatBlock:(SLLogFormatBlock)defaultFormatBlock {
+- (void)setFormatBlock:(SLLogFormatBlock)formatBlock {
     dispatch_async([self.class globalLogQueue], ^{
-        _defaultFormatBlock = defaultFormatBlock;
+        _formatBlock = formatBlock;
     });
 }
 
@@ -210,16 +209,16 @@ NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark - Logging
 
-+ (void)logStringWithLevel:(SLLogLevel)level fileName:(NSString *)fileName functionName:(NSString *)functionName line:(NSInteger)line message:(NSString *)message, ... {
++ (void)logWithLevel:(SLLogLevel)level fileName:(NSString *)fileName functionName:(NSString *)functionName line:(NSInteger)line message:(NSString *)message, ... {
     va_list args;
     va_start(args, message);
     
-    [[self.class sharedController] logStringWithLevel:level fileName:fileName functionName:functionName line:line message:message, args];
+    [[self.class sharedController] logWithLevel:level fileName:fileName functionName:functionName line:line message:message, args];
     
     va_end(args);
 }
 
-- (void)logStringWithLevel:(SLLogLevel)level fileName:(NSString *)fileName functionName:(NSString *)functionName line:(NSInteger)line message:(NSString *)message, ... {
+- (void)logWithLevel:(SLLogLevel)level fileName:(NSString *)fileName functionName:(NSString *)functionName line:(NSInteger)line message:(NSString *)message, ... {
     NSDate *timestamp = [NSDate date];
     NSArray *callstack = [NSThread callStackSymbols];
     
@@ -284,8 +283,7 @@ NS_ASSUME_NONNULL_BEGIN
     }
     
     for (id<SLLogger> logger in self.loggers) { @autoreleasepool {
-        SLLogFormatBlock formatBlock = logger.formatBlock ?: self.defaultFormatBlock;
-        [logger logString:formatBlock(log, self.timestampFormatter)];
+        [logger log:log];
     }}
 }
 

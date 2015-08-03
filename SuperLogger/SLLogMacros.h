@@ -15,9 +15,9 @@
 
 #if DEBUG
 
-#define SLogTrace() do { [SLLoggerController logStringWithLevel:SLLogLevelVerbose fileName:SLOG_FILE functionName:SLOG_FUNC line:__LINE__ message:@"Trace"]; } while(0) // TODO: See if this works
-#define SLogV(msg, ...) do { [SLLoggerController logStringWithLevel:SLLogLevelVerbose fileName:SLOG_FILE functionName:SLOG_FUNC line:__LINE__ message:msg, ##__VA_ARGS__]; } while(0)
-#define SLogD(msg, ...) do { [SLLoggerController logStringWithLevel:SLLogLevelDebug fileName:SLOG_FILE functionName:SLOG_FUNC line:__LINE__ message:msg, ##__VA_ARGS__]; } while(0)
+#define SLogTrace() do { [SLLoggerController logWithLevel:SLLogLevelVerbose fileName:SLOG_FILE functionName:SLOG_FUNC line:__LINE__ message:@"Trace"]; } while(0) // TODO: See if this works
+#define SLogV(msg, ...) do { [SLLoggerController logWithLevel:SLLogLevelVerbose fileName:SLOG_FILE functionName:SLOG_FUNC line:__LINE__ message:msg, ##__VA_ARGS__]; } while(0)
+#define SLogD(msg, ...) do { [SLLoggerController logWithLevel:SLLogLevelDebug fileName:SLOG_FILE functionName:SLOG_FUNC line:__LINE__ message:msg, ##__VA_ARGS__]; } while(0)
 
 #else
 
@@ -30,5 +30,5 @@
 
 #pragma mark - Release Logs
 
-#define SLogR(msg, ...) do { [SLLoggerController logStringWithLevel:SLLogLevelRelease fileName:SLOG_FILE functionName:SLOG_FUNC line:__LINE__ message:msg, ##__VA_ARGS__]; } while(0)
-#define SLogE(msg, ...) do { [SLLoggerController logStringWithLevel:SLLogLevelError fileName:SLOG_FILE functionName:SLOG_FUNC line:__LINE__ message:msg, ##__VA_ARGS__]; } while(0)
+#define SLogR(msg, ...) do { [SLLoggerController logWithLevel:SLLogLevelRelease fileName:SLOG_FILE functionName:SLOG_FUNC line:__LINE__ message:msg, ##__VA_ARGS__]; } while(0)
+#define SLogE(msg, ...) do { [SLLoggerController logWithLevel:SLLogLevelError fileName:SLOG_FILE functionName:SLOG_FUNC line:__LINE__ message:msg, ##__VA_ARGS__]; } while(0)

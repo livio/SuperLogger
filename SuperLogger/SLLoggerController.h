@@ -37,7 +37,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  The default format block that will be used if a logger's format block is nil
  */
-@property (copy, nonatomic) SLLogFormatBlock defaultFormatBlock;
+@property (copy, nonatomic) SLLogFormatBlock formatBlock;
 
 /**
  *  The date formatter that will be passed to format blocks to be used on timestamps
@@ -87,11 +87,11 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (void)searchStoredLogsWithFilters:(NSArray<SLLogFilterBlock> *)searchFilters completion:(SLSearchCompletionBlock)completionBlock;
 
-+ (void)logStringWithLevel:(SLLogLevel)level
-                  fileName:(NSString *)fileName
-              functionName:(NSString *)functionName
-                      line:(NSInteger)line
-                   message:(NSString *)message, ... NS_FORMAT_FUNCTION(5, 6);
++ (void)logWithLevel:(SLLogLevel)level
+            fileName:(NSString *)fileName
+        functionName:(NSString *)functionName
+                line:(NSInteger)line
+             message:(NSString *)message, ... NS_FORMAT_FUNCTION(5, 6);
 
 + (void)queueLog:(SLLog *)log;
 
@@ -108,11 +108,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (SLLogLevel)logLevelForFile:(NSString *)file;
 
-- (void)logStringWithLevel:(SLLogLevel)level
-                  fileName:(NSString *)fileName
-              functionName:(NSString *)functionName
-                      line:(NSInteger)line
-                   message:(NSString *)message, ... NS_FORMAT_FUNCTION(5, 6);
+- (void)logWithLevel:(SLLogLevel)level
+            fileName:(NSString *)fileName
+        functionName:(NSString *)functionName
+                line:(NSInteger)line
+             message:(NSString *)message, ... NS_FORMAT_FUNCTION(5, 6);
 
 - (void)queueLog:(SLLog *)log;
 
