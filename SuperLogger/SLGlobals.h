@@ -9,6 +9,8 @@
 @class SLLog;
 @class SLFileModule;
 
+#define SLOG_FILE [[[NSString stringWithCString:__FILE__ encoding:NSUTF8StringEncoding] lastPathComponent] stringByDeletingPathExtension]
+
 NS_ASSUME_NONNULL_BEGIN
 
 /**

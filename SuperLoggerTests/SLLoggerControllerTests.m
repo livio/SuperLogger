@@ -71,6 +71,7 @@ describe(@"Logger Controller instance methods", ^{
         describe(@"when adding / removing loggers", ^{
             __block id<SLLogger> loggerMock = nil;
             beforeEach(^{
+                [testController removeLoggers:testController.loggers.allObjects];
                 loggerMock = OCMProtocolMock(@protocol(SLLogger));
                 [testController addLoggers:@[loggerMock]];
             });
@@ -85,7 +86,7 @@ describe(@"Logger Controller instance methods", ^{
                     // TODO
                 });
                 
-                describe(@"if in release mode", ^{
+                xdescribe(@"if in release mode", ^{
                     xit(@"should not set up the logger if the logger should not work in release mode", ^{
                         // TODO
                     });
@@ -142,9 +143,9 @@ describe(@"Logger Controller instance methods", ^{
     });
     
     describe(@"when getting the log level for a file", ^{
-        __block const char *someFileName = nil;
+        __block NSString *someFileName = nil;
         beforeAll(^{
-            someFileName = "some file";
+            someFileName = @"some file";
         });
         
         context(@"when there are no log modules", ^{
@@ -184,7 +185,7 @@ describe(@"Logger Controller instance methods", ^{
         context(@"when there is a relevant log module", ^{
             __block SLFileModule *relevantModule = nil;
             beforeEach(^{
-                relevantModule = [[SLFileModule alloc] initWithName:@"Relevant" files:@[[NSString stringWithCString:someFileName encoding:NSUTF8StringEncoding]] level:SLLogLevelRelease];
+                relevantModule = [[SLFileModule alloc] initWithName:@"Relevant" files:@[someFileName] level:SLLogLevelRelease];
                 [testController addModules:@[relevantModule]];
                 
                 it(@"should return the global log level", ^{
@@ -209,7 +210,7 @@ describe(@"Logger Controller instance methods", ^{
         // TODO: These verify methods seem to be failing when they shouldn't
         xit(@"should properly generate a log, and tell its loggers to log", ^{
             SLLogLevel someLogLevelDebugOrAbove = SLLogLevelRelease;
-            const char *someFileName = __FILE__;
+            NSString *someFileName = SLOG_FILE;
             const char *someFunctionName = __PRETTY_FUNCTION__;
             NSInteger someLine = __LINE__;
             

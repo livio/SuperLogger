@@ -143,13 +143,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark - Log Level
 
-+ (SLLogLevel)logLevelForFile:(const char *)file {
++ (SLLogLevel)logLevelForFile:(NSString *)file {
     return [[self.class sharedController] logLevelForFile:file];
 }
 
-- (SLLogLevel)logLevelForFile:(const char *)file {
+- (SLLogLevel)logLevelForFile:(NSString *)file {
     for (SLFileModule *module in [self.class sharedController].logModules) {
-        if ([module containsFile:[NSString stringWithCString:file encoding:NSUTF8StringEncoding]]) {
+        if ([module containsFile:file]) {
             return module.logLevel;
         }
     }
@@ -210,7 +210,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark - Logging
 
-+ (void)logStringWithLevel:(SLLogLevel)level fileName:(const char *)fileName functionName:(const char *)functionName line:(NSInteger)line message:(NSString *)message, ... {
++ (void)logStringWithLevel:(SLLogLevel)level fileName:(NSString *)fileName functionName:(const char *)functionName line:(NSInteger)line message:(NSString *)message, ... {
     va_list args;
     va_start(args, message);
     
@@ -219,7 +219,7 @@ NS_ASSUME_NONNULL_BEGIN
     va_end(args);
 }
 
-- (void)logStringWithLevel:(SLLogLevel)level fileName:(const char *)fileName functionName:(const char *)functionName line:(NSInteger)line message:(NSString *)message, ... {
+- (void)logStringWithLevel:(SLLogLevel)level fileName:(NSString *)fileName functionName:(const char *)functionName line:(NSInteger)line message:(NSString *)message, ... {
     NSDate *timestamp = [NSDate date];
     NSArray *callstack = [NSThread callStackSymbols];
 #pragma clang diagnostic push
@@ -234,7 +234,7 @@ NS_ASSUME_NONNULL_BEGIN
     SLLog *log = [[SLLog alloc] initWithMessage:format
                                       timestamp:timestamp
                                           level:level
-                                       fileName:[NSString stringWithFormat:@"%s", fileName]
+                                       fileName:fileName
                                    functionName:[NSString stringWithFormat:@"%s", functionName]
                                            line:line
                                      queueLabel:currentQueueLabel

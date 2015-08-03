@@ -78,7 +78,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)removeModules:(NSArray<SLFileModule *> *)modules;
 + (void)removeFilters:(NSArray<SLLogFilterBlock> *)filters;
 
-+ (SLLogLevel)logLevelForFile:(const char *)file;
++ (SLLogLevel)logLevelForFile:(NSString *)file;
 
 /**
  *  Use a filter to return a list of stored logs that pass the filter. This will run on the search dispatch queue, which is a concurrent queue. It will return on the main queue.
@@ -90,7 +90,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)searchStoredLogsWithFilters:(NSArray<SLLogFilterBlock> *)searchFilters completion:(SLSearchCompletionBlock)completionBlock;
 
 + (void)logStringWithLevel:(SLLogLevel)level
-                  fileName:(const char *)fileName
+                  fileName:(NSString *)fileName
               functionName:(const char *)functionName
                       line:(NSInteger)line
                    message:(NSString *)message, ... NS_FORMAT_FUNCTION(5, 6);
@@ -108,10 +108,10 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)removeModules:(NSArray<SLFileModule *> *)modules;
 - (void)removeFilters:(NSArray<SLLogFilterBlock> *)filters;
 
-- (SLLogLevel)logLevelForFile:(const char *)file;
+- (SLLogLevel)logLevelForFile:(NSString *)file;
 
 - (void)logStringWithLevel:(SLLogLevel)level
-                  fileName:(const char *)fileName
+                  fileName:(NSString *)fileName
               functionName:(const char *)functionName
                       line:(NSInteger)line
                    message:(NSString *)message, ... NS_FORMAT_FUNCTION(5, 6);
