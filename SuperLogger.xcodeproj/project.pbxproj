@@ -361,6 +361,9 @@
 		5D2B795B1B5000A100E83E2B = {
 			isa = PBXGroup;
 			children = (
+				5D01497A1B62CB11005142B2 /* SuperLoggerTestApp */,
+				5D0149971B62CB11005142B2 /* SuperLoggerTestAppTests */,
+				5D0149A21B62CB11005142B2 /* SuperLoggerTestAppUITests */,
 				5D3A189B1B68103C00139385 /* Libraries */,
 				5D2B79671B5000A100E83E2B /* SuperLogger */,
 				5D2B79741B5000A200E83E2B /* SuperLoggerTests */,
@@ -372,9 +375,6 @@
 				5D77FA081B57E9DF0013F9A7 /* SuperLogger-FileTests */,
 				5D77FA251B57F8630013F9A7 /* SuperLogger-CoreData */,
 				5D77FA311B57F8630013F9A7 /* SuperLogger-CoreDataTests */,
-				5D01497A1B62CB11005142B2 /* SuperLoggerTestApp */,
-				5D0149971B62CB11005142B2 /* SuperLoggerTestAppTests */,
-				5D0149A21B62CB11005142B2 /* SuperLoggerTestAppUITests */,
 				5D2B79661B5000A100E83E2B /* Products */,
 			);
 			sourceTree = "<group>";
