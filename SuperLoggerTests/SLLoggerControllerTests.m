@@ -247,10 +247,10 @@ describe(@"Logger Controller instance methods", ^{
         it(@"should have a specific label", ^{
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
-            NSString *currentQueueLabel = [NSString stringWithCString:dispatch_queue_get_label(logQueue) encoding:NSUTF8StringEncoding];
+            NSString *logQueueLabel = [NSString stringWithCString:dispatch_queue_get_label(logQueue) encoding:NSUTF8StringEncoding];
 #pragma clang diagnostic pop
             
-            expect(currentQueueLabel).to.equal(@"com.superlogger.loggercontroller.log");
+            expect(logQueueLabel).to.equal(@"com.superlogger.loggercontroller.log");
         });
     });
 });

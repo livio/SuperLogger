@@ -18,6 +18,7 @@
 		5D0149991B62CB11005142B2 /* SuperLoggerTestAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D0149981B62CB11005142B2 /* SuperLoggerTestAppTests.m */; };
 		5D0149A41B62CB11005142B2 /* SuperLoggerTestAppUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D0149A31B62CB11005142B2 /* SuperLoggerTestAppUITests.m */; };
 		5D0149B01B67D4A9005142B2 /* SLLoggerControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D0149AF1B67D4A9005142B2 /* SLLoggerControllerTests.m */; };
+		5D0367FC1B6FE2C8001C0C46 /* SLGlobals.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D0367FB1B6FE2C8001C0C46 /* SLGlobals.m */; };
 		5D2B796B1B5000A100E83E2B /* SuperLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D2B796A1B5000A100E83E2B /* SuperLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5D2B79711B5000A200E83E2B /* SuperLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D2B79651B5000A100E83E2B /* SuperLogger.framework */; };
 		5D2B79781B5000A200E83E2B /* SuperLoggerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D2B79771B5000A200E83E2B /* SuperLoggerTests.m */; };
@@ -139,6 +140,7 @@
 		5D0149A31B62CB11005142B2 /* SuperLoggerTestAppUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SuperLoggerTestAppUITests.m; sourceTree = "<group>"; };
 		5D0149A51B62CB11005142B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5D0149AF1B67D4A9005142B2 /* SLLoggerControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLLoggerControllerTests.m; sourceTree = "<group>"; };
+		5D0367FB1B6FE2C8001C0C46 /* SLGlobals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLGlobals.m; sourceTree = "<group>"; };
 		5D2B79651B5000A100E83E2B /* SuperLogger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SuperLogger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D2B79691B5000A100E83E2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5D2B796A1B5000A100E83E2B /* SuperLogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SuperLogger.h; sourceTree = "<group>"; };
@@ -409,6 +411,7 @@
 				5D9F9A061B5000FF0069DC65 /* SLLoggerController.h */,
 				5D9F9A071B5000FF0069DC65 /* SLLoggerController.m */,
 				5DB55A771B5062C7009E2C2E /* SLGlobals.h */,
+				5D0367FB1B6FE2C8001C0C46 /* SLGlobals.m */,
 				5D2B796A1B5000A100E83E2B /* SuperLogger.h */,
 				5D0149731B614442005142B2 /* SLLogMacros.h */,
 				5D2B79681B5000A100E83E2B /* Supporting Files */,
@@ -1113,6 +1116,7 @@
 			files = (
 				5DF4E7E51B5040D30073B6CB /* SLFileModule.m in Sources */,
 				5D9F9A091B5000FF0069DC65 /* SLLoggerController.m in Sources */,
+				5D0367FC1B6FE2C8001C0C46 /* SLGlobals.m in Sources */,
 				5DB55A701B504FA8009E2C2E /* SLLog.m in Sources */,
 				5DB55A7C1B53F801009E2C2E /* SLFilter.m in Sources */,
 			);

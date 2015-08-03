@@ -9,10 +9,13 @@
 @class SLLog;
 @class SLFileModule;
 
-#define SLOG_FILE [[[NSString stringWithCString:__FILE__ encoding:NSUTF8StringEncoding] lastPathComponent] stringByDeletingPathExtension]
-#define SLOG_FUNC [NSString stringWithCString:__PRETTY_FUNCTION__ encoding:NSUTF8StringEncoding]
+#define SLOG_FILE   [[[NSString stringWithCString:__FILE__ encoding:NSUTF8StringEncoding] lastPathComponent] stringByDeletingPathExtension]
+#define SLOG_FUNC   [NSString stringWithCString:__PRETTY_FUNCTION__ encoding:NSUTF8StringEncoding]
+#define SLOG_QUEUE  SLLoggerDispatchQueue()
 
 NS_ASSUME_NONNULL_BEGIN
+
+NSString *SLLoggerDispatchQueue();
 
 /**
  *  This enum defines the possible log levels.

@@ -222,10 +222,6 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)logStringWithLevel:(SLLogLevel)level fileName:(NSString *)fileName functionName:(NSString *)functionName line:(NSInteger)line message:(NSString *)message, ... {
     NSDate *timestamp = [NSDate date];
     NSArray *callstack = [NSThread callStackSymbols];
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wdeprecated-declarations"
-    NSString *currentQueueLabel = [NSString stringWithCString:dispatch_queue_get_label(dispatch_get_current_queue()) encoding:NSUTF8StringEncoding];
-#pragma clang diagnostic pop
     
     va_list args;
     va_start(args, message);
@@ -235,9 +231,9 @@ NS_ASSUME_NONNULL_BEGIN
                                       timestamp:timestamp
                                           level:level
                                        fileName:fileName
-                                   functionName:[NSString stringWithFormat:@"%s", functionName]
+                                   functionName:functionName
                                            line:line
-                                     queueLabel:currentQueueLabel
+                                     queueLabel:SLOG_QUEUE
                                       callstack:callstack];
     [self queueLog:log];
     
