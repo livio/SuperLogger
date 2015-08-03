@@ -16,8 +16,35 @@ NS_ASSUME_NONNULL_BEGIN
 
 @implementation SLConsoleLogger
 
-- (void)logString:(NSString *)string {
-    NSLog(@"%@", string);
+#pragma mark - Lifecycle
+
+- (instancetype)init {
+    self = [super init];
+    if (!self) {
+        return nil;
+    }
+    _logInRelease = YES;
+    
+    return self;
+}
+
+- (instancetype)logger {
+    return [[self alloc] init];
+}
+
+
+#pragma mark - SLLogger
+
+- (void)setupLogger {
+    
+}
+
+- (void)log:(SLLog *)log {
+    
+}
+
+- (void)teardownLogger {
+    
 }
 
 @end

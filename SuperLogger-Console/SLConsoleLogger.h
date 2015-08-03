@@ -14,7 +14,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SLConsoleLogger : NSObject <SLLogger>
 
-@property (copy, nonatomic, nullable) SLLogFormatBlock formatBlock;
+// SLLogger properties
+@property (assign, nonatomic) BOOL logInRelease;
+
+// Other properties
+
+- (instancetype)logger;
 
 @end
 
