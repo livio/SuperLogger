@@ -148,7 +148,7 @@ NS_ASSUME_NONNULL_BEGIN
 }
 
 - (SLLogLevel)logLevelForFile:(NSString *)file {
-    for (SLFileModule *module in [self.class sharedController].logModules) {
+    for (SLFileModule *module in self.logModules) {
         if ([module containsFile:file]) {
             return module.logLevel;
         }
