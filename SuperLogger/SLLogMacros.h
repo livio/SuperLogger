@@ -15,9 +15,9 @@
 
 #if DEBUG
 
-#define SLogTrace() do { if ([SLLoggerController logLevelForFile:SLOG_FILE] >= SLLogLevelVerbose) [SLLoggerController logStringWithLevel:SLLogLevelVerbose fileName:SLOG_FILE functionName:__PRETTY_FUNCTION__ line:__LINE__ message:@"Trace"]; } while(0) // TODO: See if this works
-#define SLogV(msg, ...) do { if ([SLLoggerController logLevelForFile:SLOG_FILE] >= SLLogLevelVerbose) [SLLoggerController logStringWithLevel:SLLogLevelVerbose fileName:SLOG_FILE functionName:__PRETTY_FUNCTION__ line:__LINE__ message:msg, ##__VA_ARGS__]; } while(0)
-#define SLogD(msg, ...) do { if ([SLLoggerController logLevelForFile:SLOG_FILE] >= SLLogLevelDebug) [SLLoggerController logStringWithLevel:SLLogLevelDebug fileName:SLOG_FILE functionName:__PRETTY_FUNCTION__ line:__LINE__ message:msg, ##__VA_ARGS__]; } while(0)
+#define SLogTrace() do { if ([SLLoggerController logLevelForFile:SLOG_FILE] >= SLLogLevelVerbose) [SLLoggerController logStringWithLevel:SLLogLevelVerbose fileName:SLOG_FILE functionName:SLOG_FUNC line:__LINE__ message:@"Trace"]; } while(0) // TODO: See if this works
+#define SLogV(msg, ...) do { if ([SLLoggerController logLevelForFile:SLOG_FILE] >= SLLogLevelVerbose) [SLLoggerController logStringWithLevel:SLLogLevelVerbose fileName:SLOG_FILE functionName:SLOG_FUNC line:__LINE__ message:msg, ##__VA_ARGS__]; } while(0)
+#define SLogD(msg, ...) do { if ([SLLoggerController logLevelForFile:SLOG_FILE] >= SLLogLevelDebug) [SLLoggerController logStringWithLevel:SLLogLevelDebug fileName:SLOG_FILE functionName:SLOG_FUNC line:__LINE__ message:msg, ##__VA_ARGS__]; } while(0)
 
 #else
 
@@ -30,5 +30,5 @@
 
 #pragma mark - Release Logs
 
-#define SLogR(msg, ...) do { if ([SLLoggerController logLevelForFile:SLOG_FILE] >= SLLogLevelRelease) [SLLoggerController logStringWithLevel:SLLogLevelRelease fileName:SLOG_FILE functionName:__PRETTY_FUNCTION__ line:__LINE__ message:msg, ##__VA_ARGS__]; } while(0)
-#define SLogE(msg, ...) do { if ([SLLoggerController logLevelForFile:SLOG_FILE] >= SLLogLevelError) [SLLoggerController logStringWithLevel:SLLogLevelError fileName:SLOG_FILE functionName:__PRETTY_FUNCTION__ line:__LINE__ message:msg, ##__VA_ARGS__]; } while(0)
+#define SLogR(msg, ...) do { if ([SLLoggerController logLevelForFile:SLOG_FILE] >= SLLogLevelRelease) [SLLoggerController logStringWithLevel:SLLogLevelRelease fileName:SLOG_FILE functionName:SLOG_FUNC line:__LINE__ message:msg, ##__VA_ARGS__]; } while(0)
+#define SLogE(msg, ...) do { if ([SLLoggerController logLevelForFile:SLOG_FILE] >= SLLogLevelError) [SLLoggerController logStringWithLevel:SLLogLevelError fileName:SLOG_FILE functionName:SLOG_FUNC line:__LINE__ message:msg, ##__VA_ARGS__]; } while(0)

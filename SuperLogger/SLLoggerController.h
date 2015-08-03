@@ -91,7 +91,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (void)logStringWithLevel:(SLLogLevel)level
                   fileName:(NSString *)fileName
-              functionName:(const char *)functionName
+              functionName:(NSString *)functionName
                       line:(NSInteger)line
                    message:(NSString *)message, ... NS_FORMAT_FUNCTION(5, 6);
 
@@ -112,7 +112,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)logStringWithLevel:(SLLogLevel)level
                   fileName:(NSString *)fileName
-              functionName:(const char *)functionName
+              functionName:(NSString *)functionName
                       line:(NSInteger)line
                    message:(NSString *)message, ... NS_FORMAT_FUNCTION(5, 6);
 

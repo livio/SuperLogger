@@ -210,7 +210,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark - Logging
 
-+ (void)logStringWithLevel:(SLLogLevel)level fileName:(NSString *)fileName functionName:(const char *)functionName line:(NSInteger)line message:(NSString *)message, ... {
++ (void)logStringWithLevel:(SLLogLevel)level fileName:(NSString *)fileName functionName:(NSString *)functionName line:(NSInteger)line message:(NSString *)message, ... {
     va_list args;
     va_start(args, message);
     
@@ -219,7 +219,7 @@ NS_ASSUME_NONNULL_BEGIN
     va_end(args);
 }
 
-- (void)logStringWithLevel:(SLLogLevel)level fileName:(NSString *)fileName functionName:(const char *)functionName line:(NSInteger)line message:(NSString *)message, ... {
+- (void)logStringWithLevel:(SLLogLevel)level fileName:(NSString *)fileName functionName:(NSString *)functionName line:(NSInteger)line message:(NSString *)message, ... {
     NSDate *timestamp = [NSDate date];
     NSArray *callstack = [NSThread callStackSymbols];
 #pragma clang diagnostic push

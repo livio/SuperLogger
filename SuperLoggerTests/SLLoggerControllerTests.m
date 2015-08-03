@@ -211,7 +211,7 @@ describe(@"Logger Controller instance methods", ^{
         xit(@"should properly generate a log, and tell its loggers to log", ^{
             SLLogLevel someLogLevelDebugOrAbove = SLLogLevelRelease;
             NSString *someFileName = SLOG_FILE;
-            const char *someFunctionName = __PRETTY_FUNCTION__;
+            NSString *someFunctionName = SLOG_FUNC;
             NSInteger someLine = __LINE__;
             
             OCMExpect([testLogger logString:[OCMArg any]]);

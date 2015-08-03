@@ -35,7 +35,7 @@ describe(@"Release Macros", ^{
             
             it(@"should log correctly", ^{
                 SLogR(@"testlog");
-                OCMVerify([[loggerControllerClassMock ignoringNonObjectArgs] logStringWithLevel:SLLogLevelRelease fileName:SLOG_FILE functionName:__PRETTY_FUNCTION__ line:0 message:@"testlog"]);
+                OCMVerify([[loggerControllerClassMock ignoringNonObjectArgs] logStringWithLevel:SLLogLevelRelease fileName:SLOG_FILE functionName:SLOG_FUNC line:0 message:@"testlog"]);
             });
         });
         
