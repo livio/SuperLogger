@@ -33,8 +33,6 @@
 		5D4049D61B557B8C00DA719D /* SuperLoggerWebServer.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D4049D51B557B8C00DA719D /* SuperLoggerWebServer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5D4049DD1B557B8C00DA719D /* SuperLoggerWebServer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D4049D31B557B8C00DA719D /* SuperLoggerWebServer.framework */; };
 		5D4049E21B557B8C00DA719D /* SuperLoggerWebServerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D4049E11B557B8C00DA719D /* SuperLoggerWebServerTests.m */; };
-		5D4AAE231B8CAACD00E98CB0 /* SuperLoggerConsole.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D77F9DF1B57E9D20013F9A7 /* SuperLoggerConsole.framework */; };
-		5D4AAE241B8CAACD00E98CB0 /* SuperLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D2B79651B5000A100E83E2B /* SuperLogger.framework */; };
 		5D77F9E21B57E9D20013F9A7 /* SuperLoggerConsole.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D77F9E11B57E9D20013F9A7 /* SuperLoggerConsole.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5D77F9E91B57E9D20013F9A7 /* SuperLoggerConsole.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D77F9DF1B57E9D20013F9A7 /* SuperLoggerConsole.framework */; };
 		5D77F9EE1B57E9D20013F9A7 /* SuperLoggerConsoleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D77F9ED1B57E9D20013F9A7 /* SuperLoggerConsoleTests.m */; };
@@ -55,6 +53,10 @@
 		5D9F9A081B5000FF0069DC65 /* SLLoggerController.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D9F9A061B5000FF0069DC65 /* SLLoggerController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5D9F9A091B5000FF0069DC65 /* SLLoggerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D9F9A071B5000FF0069DC65 /* SLLoggerController.m */; };
 		5D9F9A0B1B5002180069DC65 /* SLLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D9F9A0A1B5002180069DC65 /* SLLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5DACEFB71B8CBC6D004E74B9 /* SuperLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D2B79651B5000A100E83E2B /* SuperLogger.framework */; };
+		5DACEFB81B8CBC6D004E74B9 /* SuperLogger.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5D2B79651B5000A100E83E2B /* SuperLogger.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5DACEFBB1B8CBC6D004E74B9 /* SuperLoggerConsole.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D77F9DF1B57E9D20013F9A7 /* SuperLoggerConsole.framework */; };
+		5DACEFBC1B8CBC6D004E74B9 /* SuperLoggerConsole.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5D77F9DF1B57E9D20013F9A7 /* SuperLoggerConsole.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5DB55A6F1B504FA8009E2C2E /* SLLog.h in Headers */ = {isa = PBXBuildFile; fileRef = 5DB55A6D1B504FA8009E2C2E /* SLLog.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5DB55A701B504FA8009E2C2E /* SLLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB55A6E1B504FA8009E2C2E /* SLLog.m */; };
 		5DB55A7B1B53F801009E2C2E /* SLFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 5DB55A791B53F801009E2C2E /* SLFilter.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -117,7 +119,36 @@
 			remoteGlobalIDString = 5D77FA231B57F8630013F9A7;
 			remoteInfo = "SuperLogger-CoreData";
 		};
+		5DACEFB91B8CBC6D004E74B9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5D2B795C1B5000A100E83E2B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5D2B79641B5000A100E83E2B;
+			remoteInfo = SuperLogger;
+		};
+		5DACEFBD1B8CBC6D004E74B9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5D2B795C1B5000A100E83E2B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5D77F9DE1B57E9D20013F9A7;
+			remoteInfo = SuperLoggerConsole;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5DACEFBF1B8CBC6E004E74B9 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5DACEFBC1B8CBC6D004E74B9 /* SuperLoggerConsole.framework in Embed Frameworks */,
+				5DACEFB81B8CBC6D004E74B9 /* SuperLogger.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		5D0149731B614442005142B2 /* SLLogMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLLogMacros.h; sourceTree = "<group>"; };
@@ -207,8 +238,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5D4AAE231B8CAACD00E98CB0 /* SuperLoggerConsole.framework in Frameworks */,
-				5D4AAE241B8CAACD00E98CB0 /* SuperLogger.framework in Frameworks */,
+				5DACEFBB1B8CBC6D004E74B9 /* SuperLoggerConsole.framework in Frameworks */,
+				5DACEFB71B8CBC6D004E74B9 /* SuperLogger.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -666,10 +697,13 @@
 				5D0149751B62CB11005142B2 /* Sources */,
 				5D0149761B62CB11005142B2 /* Frameworks */,
 				5D0149771B62CB11005142B2 /* Resources */,
+				5DACEFBF1B8CBC6E004E74B9 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				5DACEFBA1B8CBC6D004E74B9 /* PBXTargetDependency */,
+				5DACEFBE1B8CBC6D004E74B9 /* PBXTargetDependency */,
 			);
 			name = SuperLoggerTestApp;
 			productName = SuperLoggerTestApp;
@@ -1240,6 +1274,16 @@
 			isa = PBXTargetDependency;
 			target = 5D77FA231B57F8630013F9A7 /* SuperLoggerCoreData */;
 			targetProxy = 5D77FA2F1B57F8630013F9A7 /* PBXContainerItemProxy */;
+		};
+		5DACEFBA1B8CBC6D004E74B9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5D2B79641B5000A100E83E2B /* SuperLogger */;
+			targetProxy = 5DACEFB91B8CBC6D004E74B9 /* PBXContainerItemProxy */;
+		};
+		5DACEFBE1B8CBC6D004E74B9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5D77F9DE1B57E9D20013F9A7 /* SuperLoggerConsole */;
+			targetProxy = 5DACEFBD1B8CBC6D004E74B9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
