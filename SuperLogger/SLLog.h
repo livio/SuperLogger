@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface SLLog : NSObject <NSCopying>
 
 @property (copy, nonatomic, readonly) NSString *message;
-@property (assign, nonatomic, readonly) NSDate *timestamp;
+@property (copy, nonatomic, readonly) NSDate *timestamp;
 @property (assign, nonatomic, readonly) SLLogLevel level;
 @property (assign, nonatomic, readonly) NSInteger line;
 @property (copy, nonatomic, readonly) NSString *queueLabel;

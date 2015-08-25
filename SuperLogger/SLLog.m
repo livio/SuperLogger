@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SLLog ()
 
-@property (assign, nonatomic, readwrite) NSDate *timestamp;
+@property (copy, nonatomic, readwrite) NSDate *timestamp;
 @property (copy, nonatomic, readwrite) NSString *message;
 @property (assign, nonatomic, readwrite) SLLogLevel level;
 @property (assign, nonatomic, readwrite) NSInteger line;
