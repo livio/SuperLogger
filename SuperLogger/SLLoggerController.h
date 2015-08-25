@@ -67,9 +67,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (SLLoggerController *)sharedController;
 
-/**
- *  Add loggers, modules, or filters to the shared instance
- */
 + (void)addLoggers:(NSArray<id<SLLogger>> *)loggers;
 + (void)addModules:(NSArray<SLFileModule *> *)modules;
 + (void)addFilters:(NSArray<SLLogFilterBlock> *)filters;
@@ -78,13 +75,6 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)removeModules:(NSArray<SLFileModule *> *)modules;
 + (void)removeFilters:(NSArray<SLLogFilterBlock> *)filters;
 
-/**
- *  Use a filter to return a list of stored logs that pass the filter. This will run on the search dispatch queue, which is a concurrent queue. It will return on the main queue.
- *
- *  @param searchFilterBlock The search filter that will be applied over the past logs.
- *
- *  @return An array of logs that passed the filter. Position 0 (zero) of the array contains the oldest log from the search.
- */
 + (void)searchStoredLogsWithFilters:(NSArray<SLLogFilterBlock> *)searchFilters completion:(SLSearchCompletionBlock)completionBlock;
 
 + (void)logWithLevel:(SLLogLevel)level
@@ -98,6 +88,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark - Instance Methods
 
+/**
+ *  Add / remove loggers, modules, or filters
+ */
 - (void)addLoggers:(NSArray<id<SLLogger>> *)loggers;
 - (void)addModules:(NSArray<SLFileModule *> *)modules;
 - (void)addFilters:(NSArray<SLLogFilterBlock> *)filters;
@@ -107,6 +100,15 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)removeFilters:(NSArray<SLLogFilterBlock> *)filters;
 
 - (SLLogLevel)logLevelForFile:(NSString *)file;
+
+/**
+ *  Use a filter to return a list of stored logs that pass the filter. This will run on the search dispatch queue, which is a concurrent queue. It will return on the main queue.
+ *
+ *  @param searchFilterBlock The search filter that will be applied over the past logs.
+ *
+ *  @return An array of logs that passed the filter. Position 0 (zero) of the array contains the oldest log from the search.
+ */
+- (void)searchStoredLogsWithFilters:(NSArray<SLLogFilterBlock> *)searchFilters completion:(SLSearchCompletionBlock)completionBlock;
 
 - (void)logWithLevel:(SLLogLevel)level
             fileName:(NSString *)fileName

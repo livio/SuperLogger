@@ -20,6 +20,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (copy, nonatomic, readwrite) NSMutableSet<SLLogFilterBlock> *mutableLogFilters;
 @property (copy, nonatomic, readwrite) NSMutableSet<SLFileModule *> *mutableLogModules;
 
+@property (assign, nonatomic) SLLogFormatBlock defaultFormatBlock;
+
 @end
 
 
@@ -53,6 +55,7 @@ NS_ASSUME_NONNULL_BEGIN
     _errorAsync = NO;
     _globalLogLevel = SLLogLevelDebug;
     _formatBlock = nil;
+    _defaultFormatBlock = [self.class sl_defaultFormatBlock];
     _timestampFormatter = nil;
     
     return self;
@@ -164,11 +167,7 @@ NS_ASSUME_NONNULL_BEGIN
     if (_formatBlock != nil) {
         return _formatBlock;
     } else {
-        return [^NSString *(SLLog *log, NSDateFormatter *dateFormatter) {
-            NSString *dateString = [dateFormatter stringFromDate:log.timestamp];
-            // TODO: a comment with example output
-            return [NSString stringWithFormat:@"[%@:%ld] (%@:%@) (%@) %@", log.fileName, (long)log.line, log.queueLabel, dateString, log.functionName, log.message];
-        } copy];
+        return _defaultFormatBlock;
     }
 }
 
@@ -190,6 +189,14 @@ NS_ASSUME_NONNULL_BEGIN
     dispatch_async([self.class globalLogQueue], ^{
         _timestampFormatter = timestampFormatter;
     });
+}
+
++ (SLLogFormatBlock)sl_defaultFormatBlock {
+    return [^NSString *(SLLog *log, NSDateFormatter *dateFormatter) {
+        NSString *dateString = [dateFormatter stringFromDate:log.timestamp];
+        // TODO: a comment with example output
+        return [NSString stringWithFormat:@"[%@:%ld] (%@:%@) (%@) %@", log.fileName, (long)log.line, log.queueLabel, dateString, log.functionName, log.message];
+    } copy];
 }
 
 #pragma mark Readonly, Immutable Sets
@@ -292,10 +299,14 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark - Searching
 
 + (void)searchStoredLogsWithFilters:(NSArray<SLLogFilterBlock> *)searchFilters completion:(SLSearchCompletionBlock)completionBlock {
+    [[self.class sharedController] searchStoredLogsWithFilters:searchFilters completion:completionBlock];
+}
+
+- (void)searchStoredLogsWithFilters:(NSArray<SLLogFilterBlock> *)searchFilters completion:(SLSearchCompletionBlock)completionBlock {
     dispatch_async([SLLoggerController globalLogQueue], ^{ @autoreleasepool {
         // Go through our loggers and find those that support searching
-        // TODO: Only search a passed in logger?
-        for (id<SLLogger> logger in [self.class sharedController].loggers) {
+        // TODO: Only search a passed in logger? Not happy w/ this implementation
+        for (id<SLLogger> logger in self.loggers) {
             if ([logger conformsToProtocol:@protocol(SLLogSearch)] && [logger respondsToSelector:@selector(searchStoredLogsWithFilter:error:)]) {
                 NSError *error = nil;
                 
@@ -306,6 +317,8 @@ NS_ASSUME_NONNULL_BEGIN
                 dispatch_async(dispatch_get_main_queue(), ^{
                     completionBlock(results, error);
                 });
+                
+                break;
             }
         }
     }});
