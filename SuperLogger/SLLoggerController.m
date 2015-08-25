@@ -282,8 +282,9 @@ NS_ASSUME_NONNULL_BEGIN
         }
     }
     
+    NSString *formattedLog = self.formatBlock(log, self.timestampFormatter);
     for (id<SLLogger> logger in self.loggers) { @autoreleasepool {
-        [logger log:log];
+        [logger logWithLog:log formattedLog:formattedLog];
     }}
 }
 
