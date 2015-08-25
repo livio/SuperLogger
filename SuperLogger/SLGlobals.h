@@ -57,7 +57,7 @@ typedef NS_OPTIONS(NSInteger, SLLogLevel) {
 extern const NSInteger SLLogLevelDefault;
 
 /**
- *  A block run over logs to filter results into 'good' and 'bad'. 'Good' log results pass the filter and continue. 'Bad' log results are stopped at the filter.
+ *  A block run over logs to filter results into 'pass' and 'fail'. 'Pass' log results pass the filter and continue. 'Fail' log results are stopped at the filter.
  *
  *  @param logString The string that was passed to the log method
  *  @param level     The log level that determines the priority of the log being passed
