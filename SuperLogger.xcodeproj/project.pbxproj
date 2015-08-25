@@ -22,6 +22,8 @@
 		5D0367FE1B6FE44D001C0C46 /* SLFileModuleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D0367FD1B6FE44D001C0C46 /* SLFileModuleTests.m */; };
 		5D2B796B1B5000A100E83E2B /* SuperLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D2B796A1B5000A100E83E2B /* SuperLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5D2B79711B5000A200E83E2B /* SuperLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D2B79651B5000A100E83E2B /* SuperLogger.framework */; };
+		5D372D7F1B8CB4EA00BCDE0E /* SuperLoggerFile.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D77F9FD1B57E9DF0013F9A7 /* SuperLoggerFile.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5D372D801B8CB50600BCDE0E /* SuperLoggerCoreData.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D77FA261B57F8630013F9A7 /* SuperLoggerCoreData.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5D3A18A71B68104C00139385 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D3A18A61B68104C00139385 /* libOCMock.a */; };
 		5D3A18A81B68104C00139385 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D3A18A61B68104C00139385 /* libOCMock.a */; };
 		5D3A18A91B68104C00139385 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D3A18A61B68104C00139385 /* libOCMock.a */; };
@@ -36,7 +38,6 @@
 		5D77F9E21B57E9D20013F9A7 /* SuperLoggerConsole.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D77F9E11B57E9D20013F9A7 /* SuperLoggerConsole.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5D77F9E91B57E9D20013F9A7 /* SuperLoggerConsole.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D77F9DF1B57E9D20013F9A7 /* SuperLoggerConsole.framework */; };
 		5D77F9EE1B57E9D20013F9A7 /* SuperLoggerConsoleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D77F9ED1B57E9D20013F9A7 /* SuperLoggerConsoleTests.m */; };
-		5D77F9FE1B57E9DF0013F9A7 /* SuperLoggerFile.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D77F9FD1B57E9DF0013F9A7 /* SuperLoggerFile.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5D77FA051B57E9DF0013F9A7 /* SuperLoggerFile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D77F9FB1B57E9DF0013F9A7 /* SuperLoggerFile.framework */; };
 		5D77FA0A1B57E9DF0013F9A7 /* SuperLoggerFileTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D77FA091B57E9DF0013F9A7 /* SuperLoggerFileTests.m */; };
 		5D77FA141B57E9FC0013F9A7 /* SuperLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D2B79651B5000A100E83E2B /* SuperLogger.framework */; };
@@ -46,7 +47,6 @@
 		5D77FA1A1B57EA450013F9A7 /* SLConsoleLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D77FA181B57EA450013F9A7 /* SLConsoleLogger.m */; };
 		5D77FA1D1B57EA5B0013F9A7 /* SLFileLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D77FA1B1B57EA5B0013F9A7 /* SLFileLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5D77FA1E1B57EA5B0013F9A7 /* SLFileLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D77FA1C1B57EA5B0013F9A7 /* SLFileLogger.m */; };
-		5D77FA271B57F8630013F9A7 /* SuperLoggerCoreData.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D77FA261B57F8630013F9A7 /* SuperLoggerCoreData.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5D77FA2E1B57F8630013F9A7 /* SuperLoggerCoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D77FA241B57F8630013F9A7 /* SuperLoggerCoreData.framework */; };
 		5D77FA331B57F8630013F9A7 /* SuperLoggerCoreDataTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D77FA321B57F8630013F9A7 /* SuperLoggerCoreDataTests.m */; };
 		5D77FA3B1B5804B60013F9A7 /* SuperLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D2B79651B5000A100E83E2B /* SuperLogger.framework */; };
@@ -634,10 +634,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5D77F9FE1B57E9DF0013F9A7 /* SuperLoggerFile.h in Headers */,
 				5D77FA191B57EA450013F9A7 /* SLConsoleLogger.h in Headers */,
 				5D77F9E21B57E9D20013F9A7 /* SuperLoggerConsole.h in Headers */,
-				5D77FA271B57F8630013F9A7 /* SuperLoggerCoreData.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -645,6 +643,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D372D7F1B8CB4EA00BCDE0E /* SuperLoggerFile.h in Headers */,
 				5D77FA1D1B57EA5B0013F9A7 /* SLFileLogger.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -653,6 +652,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D372D801B8CB50600BCDE0E /* SuperLoggerCoreData.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
