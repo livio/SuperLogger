@@ -13,7 +13,7 @@
 NSString *SLLoggerDispatchQueue() {
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
-    return [NSString stringWithCString:dispatch_queue_get_label(dispatch_get_current_queue()) encoding:NSUTF8StringEncoding];
+    return [NSString stringWithUTF8String:dispatch_queue_get_label(dispatch_get_current_queue())];
 #pragma clang diagnostic pop
 }
 
