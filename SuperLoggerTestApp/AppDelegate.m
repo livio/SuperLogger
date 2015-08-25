@@ -9,6 +9,10 @@
 #import "AppDelegate.h"
 #import "DetailViewController.h"
 
+#import <SuperLogger/SuperLogger.h>
+#import <SuperLoggerConsole/SuperLoggerConsole.h>
+
+
 @interface AppDelegate () <UISplitViewControllerDelegate>
 
 @end
@@ -17,6 +21,10 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [SLLoggerController addLoggers:@[[SLConsoleLogger logger]]];
+    SLogR(@"a random test i guess");
+    
+    
     // Override point for customization after application launch.
     UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
     UINavigationController *navigationController = [splitViewController.viewControllers lastObject];

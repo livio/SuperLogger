@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:SuperLogger.xcodeproj">
+      location = "self:/Users/joel/Projects/Misc/SuperLogger/SuperLogger.xcodeproj">
    </FileRef>
 </Workspace>
