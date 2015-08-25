@@ -23,12 +23,13 @@ NS_ASSUME_NONNULL_BEGIN
     if (!self) {
         return nil;
     }
+    
     _logInRelease = YES;
     
     return self;
 }
 
-- (instancetype)logger {
++ (instancetype)logger {
     return [[self alloc] init];
 }
 
@@ -39,8 +40,14 @@ NS_ASSUME_NONNULL_BEGIN
     
 }
 
-- (void)log:(SLLog *)log {
+- (void)logWithLog:(SLLog *)log formattedLog:(NSString *)stringLog {
+    NSData *formattedLogData = [stringLog dataUsingEncoding:NSUTF8StringEncoding];
     
+    NSInteger writtenBytes = write(STDERR_FILENO, formattedLogData.bytes, formattedLogData.length);
+    if (writtenBytes < 0) {
+        // TODO: We errored pretty hard, we should tell somebody
+        NSAssert(writtenBytes < 0, @"Error writing to stderr");
+    }
 }
 
 - (void)teardownLogger {

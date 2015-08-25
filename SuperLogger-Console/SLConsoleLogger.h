@@ -17,9 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 // SLLogger properties
 @property (assign, nonatomic) BOOL logInRelease;
 
-// Other properties
-
-- (instancetype)logger;
++ (instancetype)logger;
 
 @end
 
