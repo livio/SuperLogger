@@ -9,23 +9,27 @@ Pod::Spec.new do |spec|
   spec.source	= { :git => 'https://github.com/livio/SuperLogger.git', :tag => spec.version.to_s }
   
   spec.subspec 'Core' do |cs|
-    cs.source_files	= 'SuperLogger/*.{h,m}'
+    cs.source_files = 'SuperLogger/*.{h,m}'
   end
 
   spec.subspec 'Console' do |cs|
-    cs.source_files	= 'SuperLogger-Console/*.{h,m}'
+    cs.source_files = 'SuperLogger-Console/*.{h,m}'
+    cs.dependency = 'SuperLogger/Core'
   end
 
   spec.subspec 'CoreData' do |cds|
     cds.source_files	= 'SuperLogger-CoreData/*.{h,m}'
+    cds.dependency = 'SuperLogger/Core'
   end
 
   spec.subspec 'File' do |fs|
-    fs.source_files	= 'SuperLogger-File/*.{h,m}'
+    fs.source_files = 'SuperLogger-File/*.{h,m}'
+    fs.dependency = 'SuperLogger/Core'
   end
 
   spec.subspec 'WebServer' do |wss|
     wss.source_files	= 'SuperLogger-WebServer/*.{h,m}'
+    wss.dependency = 'SuperLogger/Core'
   end
 
 end
