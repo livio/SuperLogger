@@ -194,10 +194,12 @@ NS_ASSUME_NONNULL_BEGIN
 + (SLLogFormatBlock)sl_defaultFormatBlock {
     return [^NSString *(SLLog *log, NSDateFormatter *dateFormatter) {
         NSString *dateString = [dateFormatter stringFromDate:log.timestamp];
-        // TODO: a comment with example output
-        return [NSString stringWithFormat:@"[%@:%ld] (%@:%@) (%@) %@", log.fileName, (long)log.line, log.queueLabel, dateString, log.functionName, log.message];
+        
+        // Format: 09:52:07:324 (com.apple.main-thread : -[AppDelegate application:didFinishLaunchingWithOptions:] : L25) a random test i guess
+        return [NSString stringWithFormat:@"%@ (%@ : %@ : L%ld) %@", dateString, log.queueLabel, log.functionName, (long)log.line, log.message];
     } copy];
 }
+
 
 #pragma mark Readonly, Immutable Sets
 
@@ -342,7 +344,7 @@ NS_ASSUME_NONNULL_BEGIN
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         formatter = [[NSDateFormatter alloc] init];
-        formatter.dateFormat = @"yy-mm-dd | HH:mm:ss:SSSS";
+        formatter.dateFormat = @"HH:mm:ss:SSS";
     });
     
     return formatter;
