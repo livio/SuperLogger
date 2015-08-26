@@ -62,6 +62,8 @@
 		5DACEFD61B8E0747004E74B9 /* SuperLoggerASLTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DACEFD51B8E0747004E74B9 /* SuperLoggerASLTests.m */; };
 		5DACEFDA1B8E0747004E74B9 /* SuperLoggerASL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DACEFC51B8E0747004E74B9 /* SuperLoggerASL.framework */; };
 		5DACEFDB1B8E0747004E74B9 /* SuperLoggerASL.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5DACEFC51B8E0747004E74B9 /* SuperLoggerASL.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5DACEFE41B8E0886004E74B9 /* SLASLLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 5DACEFE21B8E0886004E74B9 /* SLASLLogger.h */; settings = {ASSET_TAGS = (); }; };
+		5DACEFE51B8E0886004E74B9 /* SLASLLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DACEFE31B8E0886004E74B9 /* SLASLLogger.m */; settings = {ASSET_TAGS = (); }; };
 		5DB55A6F1B504FA8009E2C2E /* SLLog.h in Headers */ = {isa = PBXBuildFile; fileRef = 5DB55A6D1B504FA8009E2C2E /* SLLog.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5DB55A701B504FA8009E2C2E /* SLLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB55A6E1B504FA8009E2C2E /* SLLog.m */; };
 		5DB55A7B1B53F801009E2C2E /* SLFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 5DB55A791B53F801009E2C2E /* SLFilter.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -253,6 +255,8 @@
 		5DACEFCE1B8E0747004E74B9 /* SuperLoggerASLTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SuperLoggerASLTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DACEFD51B8E0747004E74B9 /* SuperLoggerASLTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SuperLoggerASLTests.m; sourceTree = "<group>"; };
 		5DACEFD71B8E0747004E74B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5DACEFE21B8E0886004E74B9 /* SLASLLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLASLLogger.h; sourceTree = "<group>"; };
+		5DACEFE31B8E0886004E74B9 /* SLASLLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLASLLogger.m; sourceTree = "<group>"; };
 		5DB55A6D1B504FA8009E2C2E /* SLLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLLog.h; sourceTree = "<group>"; };
 		5DB55A6E1B504FA8009E2C2E /* SLLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLLog.m; sourceTree = "<group>"; };
 		5DB55A771B5062C7009E2C2E /* SLGlobals.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SLGlobals.h; sourceTree = "<group>"; };
@@ -663,6 +667,8 @@
 		5DACEFC61B8E0747004E74B9 /* SuperLoggerASL */ = {
 			isa = PBXGroup;
 			children = (
+				5DACEFE21B8E0886004E74B9 /* SLASLLogger.h */,
+				5DACEFE31B8E0886004E74B9 /* SLASLLogger.m */,
 				5DACEFC71B8E0747004E74B9 /* SuperLoggerASL.h */,
 				5DACEFC91B8E0747004E74B9 /* Info.plist */,
 			);
@@ -762,6 +768,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5DACEFE41B8E0886004E74B9 /* SLASLLogger.h in Headers */,
 				5DACEFC81B8E0747004E74B9 /* SuperLoggerASL.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1381,6 +1388,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5DACEFE51B8E0886004E74B9 /* SLASLLogger.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
