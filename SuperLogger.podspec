@@ -32,4 +32,9 @@ Pod::Spec.new do |spec|
     wss.dependency = 'SuperLogger/Core'
   end
 
+  spec.subspec 'ASL' do |asls|
+    asls.source_files = 'SuperLoggerASL/*.{h,m}'
+    asls.dependency = 'SuperLogger/Core'
+  end
+
 end

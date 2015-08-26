@@ -29,6 +29,11 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>SuperLoggerASL.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>6</integer>
+		</dict>
 		<key>SuperLoggerTestApp.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -98,6 +103,16 @@
 			<true/>
 		</dict>
 		<key>5D77FA2C1B57F8630013F9A7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5DACEFC41B8E0747004E74B9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5DACEFCD1B8E0747004E74B9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
