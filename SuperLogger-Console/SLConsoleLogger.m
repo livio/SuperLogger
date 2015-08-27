@@ -9,7 +9,6 @@
 #import "SLConsoleLogger.h"
 
 #import "SLLog.h"
-#import "SLLoggerController.h"
 
 
 NS_ASSUME_NONNULL_BEGIN
@@ -36,8 +35,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark - SLLogger
 
-- (void)setupLogger {
-    
+- (BOOL)setupLogger {
+    return YES;
 }
 
 - (void)logWithLog:(SLLog *)log formattedLog:(NSString *)stringLog {
