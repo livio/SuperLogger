@@ -8,6 +8,21 @@
 
 #import <Foundation/Foundation.h>
 
-@interface SLASLLogger : NSObject
+#import "SLLogger.h"
+
+
+NS_ASSUME_NONNULL_BEGIN
+
+@interface SLASLLogger : NSObject <SLLogger>
+
+// SLLogger properties
+/**
+ *  Defaults to YES
+ */
+@property (assign, nonatomic) BOOL logInRelease;
+
++ (instancetype)logger;
 
 @end
+
+NS_ASSUME_NONNULL_END
