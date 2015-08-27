@@ -10,14 +10,23 @@
 
 #import "SLLogger.h"
 
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SLFileLogger : NSObject <SLLogger>
 
 @property (copy, nonatomic, nullable) SLLogFormatBlock formatBlock;
-@property (assign, nonatomic) NSUInteger numLogFiles; // TODO
 
-+ (NSString *)newLogFileName;
+/**
+ *  Defaults to 5
+ */
+@property (assign, nonatomic) NSUInteger maxNumLogFiles;
+
+/**
+ *  Defaults to YES
+ */
+@property (assign, nonatomic) BOOL logInRelease;
+
 + (NSString *)logDirectory;
 
 @end
