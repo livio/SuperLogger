@@ -11,6 +11,7 @@
 
 #import <SuperLogger/SuperLogger.h>
 #import <SuperLoggerConsole/SuperLoggerConsole.h>
+#import <SuperLoggerASL/SuperLoggerASL.h>
 
 
 @interface AppDelegate () <UISplitViewControllerDelegate>
@@ -21,7 +22,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [SLLoggerController addLoggers:@[[SLConsoleLogger logger]]];
+    [SLLoggerController addLoggers:@[[SLConsoleLogger logger], [SLASLLogger logger]]];
     SLogR(@"a random test i guess");
     
     
