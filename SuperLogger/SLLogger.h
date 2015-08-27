@@ -23,7 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (assign, nonatomic) BOOL logInRelease;
 
-- (void)setupLogger;
+- (BOOL)setupLogger;
 - (void)logWithLog:(SLLog *)log formattedLog:(NSString *)stringLog;
 - (void)teardownLogger;
 
