@@ -8,6 +8,7 @@
 
 #import "SLFilter.h"
 
+#import "NSString+Utilities.h"
 #import "SLFileModule.h"
 #import "SLLog.h"
 
@@ -16,15 +17,17 @@
 
 #pragma mark - String filtering
 
-+ (SLLogFilterBlock)filterByDisallowingString:(NSString *)string {
++ (SLLogFilterBlock)filterByDisallowingString:(NSString *)string caseInsensitive:(BOOL)caseInsensitive {
     return [^BOOL(SLLog *log) {
-        return [log.message containsString:string] ? NO : YES;
+        // Return YES if it does not contain the string
+        return ![log.message sl_containsString:string caseInsensitive:caseInsensitive];
     } copy];
 }
 
-+ (SLLogFilterBlock)filterByAllowingString:(NSString *)string {
++ (SLLogFilterBlock)filterByAllowingString:(NSString *)string caseInsensitive:(BOOL)caseInsensitive {
     return [^BOOL(SLLog *log) {
-        return [log.message containsString:string] ? YES : NO;
+        // Return YES if it does contain the string
+        return [log.message sl_containsString:string caseInsensitive:caseInsensitive];
     } copy];
 }
 
@@ -34,22 +37,16 @@
 + (SLLogFilterBlock)filterByDisallowingRegex:(NSRegularExpression *)regex {
     return [^BOOL(SLLog *log) {
         NSUInteger matches = [regex numberOfMatchesInString:log.message options:0 range:NSMakeRange(0, log.message.length)];
-        if (matches > 0) {
-            return NO;
-        } else {
-            return YES;
-        }
+        
+        return !(matches > 0);
     } copy];
 }
 
 + (SLLogFilterBlock )filterByAllowingRegex:(NSRegularExpression *)regex {
     return [^BOOL(SLLog *log) {
         NSUInteger matches = [regex numberOfMatchesInString:log.message options:0 range:NSMakeRange(0, log.message.length)];
-        if (matches > 0) {
-            return YES;
-        } else {
-            return NO;
-        }
+        
+        return (matches > 0);
     } copy];
 }
 
@@ -58,7 +55,7 @@
 
 + (SLLogFilterBlock)filterByAllowingLevel:(SLLogLevel)level {
     return [^BOOL(SLLog *log) {
-        return log.level <= level ? YES : NO;
+        return (log.level <= level);
     } copy];
 }
 

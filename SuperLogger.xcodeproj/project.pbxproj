@@ -33,6 +33,8 @@
 		5D4049D61B557B8C00DA719D /* SuperLoggerWebServer.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D4049D51B557B8C00DA719D /* SuperLoggerWebServer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5D4049DD1B557B8C00DA719D /* SuperLoggerWebServer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D4049D31B557B8C00DA719D /* SuperLoggerWebServer.framework */; };
 		5D4049E21B557B8C00DA719D /* SuperLoggerWebServerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D4049E11B557B8C00DA719D /* SuperLoggerWebServerTests.m */; };
+		5D73161D1B90B28C00EDCB7F /* NSString+Utilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D73161B1B90B28C00EDCB7F /* NSString+Utilities.h */; settings = {ASSET_TAGS = (); }; };
+		5D73161E1B90B28C00EDCB7F /* NSString+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D73161C1B90B28C00EDCB7F /* NSString+Utilities.m */; settings = {ASSET_TAGS = (); }; };
 		5D77F9E21B57E9D20013F9A7 /* SuperLoggerConsole.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D77F9E11B57E9D20013F9A7 /* SuperLoggerConsole.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5D77F9E91B57E9D20013F9A7 /* SuperLoggerConsole.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D77F9DF1B57E9D20013F9A7 /* SuperLoggerConsole.framework */; };
 		5D77F9EE1B57E9D20013F9A7 /* SuperLoggerConsoleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D77F9ED1B57E9D20013F9A7 /* SuperLoggerConsoleTests.m */; };
@@ -223,6 +225,8 @@
 		5D4049DC1B557B8C00DA719D /* SuperLoggerWebServerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SuperLoggerWebServerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D4049E11B557B8C00DA719D /* SuperLoggerWebServerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SuperLoggerWebServerTests.m; sourceTree = "<group>"; };
 		5D4049E31B557B8C00DA719D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5D73161B1B90B28C00EDCB7F /* NSString+Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Utilities.h"; sourceTree = "<group>"; };
+		5D73161C1B90B28C00EDCB7F /* NSString+Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Utilities.m"; sourceTree = "<group>"; };
 		5D77F9DF1B57E9D20013F9A7 /* SuperLoggerConsole.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SuperLoggerConsole.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D77F9E11B57E9D20013F9A7 /* SuperLoggerConsole.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SuperLoggerConsole.h; sourceTree = "<group>"; };
 		5D77F9E31B57E9D20013F9A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -492,6 +496,7 @@
 		5D2B79671B5000A100E83E2B /* SuperLogger */ = {
 			isa = PBXGroup;
 			children = (
+				5D73161F1B90B29300EDCB7F /* Utilities */,
 				5DB55A781B53F7A8009E2C2E /* Filters */,
 				5DB55A711B505FA1009E2C2E /* Logs */,
 				5D9F9A0C1B50154B0069DC65 /* Loggers */,
@@ -589,6 +594,15 @@
 			);
 			name = SuperLoggerWebServerTests;
 			path = "SuperLogger-WebServerTests";
+			sourceTree = "<group>";
+		};
+		5D73161F1B90B29300EDCB7F /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				5D73161B1B90B28C00EDCB7F /* NSString+Utilities.h */,
+				5D73161C1B90B28C00EDCB7F /* NSString+Utilities.m */,
+			);
+			name = Utilities;
 			sourceTree = "<group>";
 		};
 		5D77F9E01B57E9D20013F9A7 /* SuperLoggerConsole */ = {
@@ -719,6 +733,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D9F9A081B5000FF0069DC65 /* SLLoggerController.h in Headers */,
+				5D73161D1B90B28C00EDCB7F /* NSString+Utilities.h in Headers */,
 				5DF4E7E41B5040D30073B6CB /* SLFileModule.h in Headers */,
 				5D77FA421B5D40710013F9A7 /* SLLogSearch.h in Headers */,
 				5D77FA3C1B5842B70013F9A7 /* SLGlobals.h in Headers */,
@@ -1305,6 +1320,7 @@
 			files = (
 				5DF4E7E51B5040D30073B6CB /* SLFileModule.m in Sources */,
 				5D9F9A091B5000FF0069DC65 /* SLLoggerController.m in Sources */,
+				5D73161E1B90B28C00EDCB7F /* NSString+Utilities.m in Sources */,
 				5D0367FC1B6FE2C8001C0C46 /* SLGlobals.m in Sources */,
 				5DB55A701B504FA8009E2C2E /* SLLog.m in Sources */,
 				5DB55A7C1B53F801009E2C2E /* SLFilter.m in Sources */,

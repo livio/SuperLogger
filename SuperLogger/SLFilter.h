@@ -22,7 +22,7 @@
  *
  *  @return The filter block to be added to SLLoggerController
  */
-+ (SLLogFilterBlock)filterByDisallowingString:(NSString *)string;
++ (SLLogFilterBlock)filterByDisallowingString:(NSString *)string caseInsensitive:(BOOL)caseInsensitive;
 
 /**
  *  Only logs containing the string specified will be logged
@@ -31,7 +31,7 @@
  *
  *  @return The filter block to be added to SLLoggerController
  */
-+ (SLLogFilterBlock)filterByAllowingString:(NSString *)string;
++ (SLLogFilterBlock)filterByAllowingString:(NSString *)string caseInsensitive:(BOOL)caseInsensitive;
 
 /**
  *  If the log contains the regex specified, it will not be logged
