@@ -38,7 +38,8 @@
     return [^BOOL(SLLog *log) {
         NSUInteger matches = [regex numberOfMatchesInString:log.message options:0 range:NSMakeRange(0, log.message.length)];
         
-        return !(matches > 0);
+        // Return YES if there are no matches
+        return (matches == 0);
     } copy];
 }
 
@@ -46,6 +47,7 @@
     return [^BOOL(SLLog *log) {
         NSUInteger matches = [regex numberOfMatchesInString:log.message options:0 range:NSMakeRange(0, log.message.length)];
         
+        // Return YES if there are matches
         return (matches > 0);
     } copy];
 }
