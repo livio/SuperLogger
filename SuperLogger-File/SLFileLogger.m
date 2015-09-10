@@ -40,6 +40,11 @@ NS_ASSUME_NONNULL_BEGIN
     return [[self alloc] init];
 }
 
+- (void)dealloc {
+    [_logFile synchronizeFile];
+    [_logFile closeFile];
+}
+
 
 #pragma mark - SLLogger protocol
 
@@ -60,27 +65,13 @@ NS_ASSUME_NONNULL_BEGIN
 }
 
 - (void)teardownLogger {
+    [self.logFile synchronizeFile];
     [self.logFile closeFile];
     self.logFile = nil;
 }
 
 
-#pragma mark - Log Path Helpers
-
-+ (NSString *)newLogFileName {
-    NSString *appBundle = nil;
-    if (!appBundle) {
-        appBundle = [NSBundle mainBundle].infoDictionary[@"CFBundleDisplayName"];
-        if (appBundle == nil) {
-            appBundle = @"superlogger";
-        }
-    }
-    
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    dateFormatter.dateFormat = @"yyyy-MM-dd - HH-mm-ss";
-    
-    return [NSString stringWithFormat:@"/%@-%@.log", appBundle, [dateFormatter stringFromDate:[NSDate date]]];
-}
+#pragma mark - Log Lifecycle
 
 + (NSString *)logDirectory {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
@@ -90,8 +81,31 @@ NS_ASSUME_NONNULL_BEGIN
     return logDirectory;
 }
 
-+ (NSFileHandle *)sl_createNewFile {
-    NSString *logFilePath = [[SLFileLogger logDirectory] stringByAppendingPathComponent:[SLFileLogger newLogFileName]];
++ (NSArray *)sortedLogPaths {
+    NSArray *directoryContent = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:[self.class logDirectory] error:nil];
+    
+    directoryContent = [directoryContent sortedArrayUsingSelector:@selector(caseInsensitiveCompare:)];
+    
+    return directoryContent;
+}
+
++ (NSString *)sl_newLogFileName {
+    NSString *appBundle = nil;
+    if (!appBundle) {
+        appBundle = [NSBundle mainBundle].infoDictionary[@"CFBundleDisplayName"];
+        if (appBundle == nil) {
+            appBundle = @"superlogger";
+        }
+    }
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter.dateFormat = @"yyyy-MM-dd HH-mm-ss";
+    
+    return [NSString stringWithFormat:@"%@ %@.log", appBundle, [dateFormatter stringFromDate:[NSDate date]]];
+}
+
+- (NSFileHandle *)sl_createNewFile {
+    NSString *logFilePath = [[SLFileLogger logDirectory] stringByAppendingPathComponent:[self.class sl_newLogFileName]];
     
     NSFileManager *fileManager = [NSFileManager defaultManager];
     if ([fileManager fileExistsAtPath:logFilePath]) {
@@ -99,36 +113,21 @@ NS_ASSUME_NONNULL_BEGIN
     }
     
     [fileManager createFileAtPath:logFilePath contents:nil attributes:nil];
+    
+    [self sl_deleteOldLogFiles];
+    
     return [NSFileHandle fileHandleForWritingAtPath:logFilePath];
 }
 
-+ (NSArray *)sl_sortedCurrentLogs {
-    NSError *error = nil;
-    NSArray *directoryContent = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:[SLFileLogger logDirectory] error:&error];
-    
-    if (directoryContent == nil || error != nil) {
-        return @[];
-    }
-    
-    NSMutableArray *mutableDirectoryContent = [directoryContent mutableCopy];
-    for (NSString *path in directoryContent) {
-        BOOL isDirectory = NO;
-        BOOL exists = [[NSFileManager defaultManager] fileExistsAtPath:path isDirectory:&isDirectory];
-        
-        if (!exists || isDirectory) {
-            [mutableDirectoryContent removeObject:path];
-        }
-    }
-    
-    directoryContent = [mutableDirectoryContent copy];
-    directoryContent = [directoryContent sortedArrayUsingSelector:@selector(caseInsensitiveCompare:)];
-    
-    return directoryContent;
-}
-
 - (void)sl_deleteOldLogFiles {
-    if ([self.class sl_sortedCurrentLogs].count <= self.maxNumLogFiles) {
+    NSArray *sortedLogPaths = [self.class sortedLogPaths];
+    
+    if (sortedLogPaths.count <= self.maxNumLogFiles) {
         return;
+    }
+    
+    for (int i = 0; i < (sortedLogPaths.count - self.maxNumLogFiles); i++) {
+        [[NSFileManager defaultManager] removeItemAtPath:sortedLogPaths[i] error:nil];
     }
 }
 

@@ -28,6 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (assign, nonatomic) BOOL logInRelease;
 
 + (NSString *)logDirectory;
++ (NSArray *)sortedLogPaths;
 
 @end
 
