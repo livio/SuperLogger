@@ -24,6 +24,21 @@
 		5D2B79711B5000A200E83E2B /* SuperLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D2B79651B5000A100E83E2B /* SuperLogger.framework */; };
 		5D372D7F1B8CB4EA00BCDE0E /* SuperLoggerFile.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D77F9FD1B57E9DF0013F9A7 /* SuperLoggerFile.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5D372D801B8CB50600BCDE0E /* SuperLoggerCoreData.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D77FA261B57F8630013F9A7 /* SuperLoggerCoreData.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5D3810731BA20E8900B41AE3 /* SLFileLoggerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D3810711BA20E8100B41AE3 /* SLFileLoggerSpec.m */; settings = {ASSET_TAGS = (); }; };
+		5D3810761BA20EE000B41AE3 /* SLConsoleLoggerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D3810741BA20EDB00B41AE3 /* SLConsoleLoggerSpec.m */; settings = {ASSET_TAGS = (); }; };
+		5D3810781BA20EF900B41AE3 /* SLASLLoggerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D3810771BA20EF900B41AE3 /* SLASLLoggerSpec.m */; settings = {ASSET_TAGS = (); }; };
+		5D3810791BA20FA000B41AE3 /* Expecta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DB55FF71B6A6F8400BC8B87 /* Expecta.framework */; };
+		5D38107A1BA20FA000B41AE3 /* Specta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DB55FF81B6A6F8400BC8B87 /* Specta.framework */; };
+		5D38107B1BA20FA500B41AE3 /* Expecta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DB55FF71B6A6F8400BC8B87 /* Expecta.framework */; };
+		5D38107C1BA20FA500B41AE3 /* Specta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DB55FF81B6A6F8400BC8B87 /* Specta.framework */; };
+		5D38107D1BA20FAA00B41AE3 /* Expecta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DB55FF71B6A6F8400BC8B87 /* Expecta.framework */; };
+		5D38107E1BA20FAA00B41AE3 /* Specta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DB55FF81B6A6F8400BC8B87 /* Specta.framework */; };
+		5D38107F1BA20FAE00B41AE3 /* Expecta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DB55FF71B6A6F8400BC8B87 /* Expecta.framework */; };
+		5D3810801BA20FAE00B41AE3 /* Specta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DB55FF81B6A6F8400BC8B87 /* Specta.framework */; };
+		5D3810811BA20FB100B41AE3 /* Expecta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DB55FF71B6A6F8400BC8B87 /* Expecta.framework */; };
+		5D3810821BA20FB100B41AE3 /* Specta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DB55FF81B6A6F8400BC8B87 /* Specta.framework */; };
+		5D3810831BA20FB400B41AE3 /* Expecta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DB55FF71B6A6F8400BC8B87 /* Expecta.framework */; };
+		5D3810841BA20FB400B41AE3 /* Specta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DB55FF81B6A6F8400BC8B87 /* Specta.framework */; };
 		5D3A18A71B68104C00139385 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D3A18A61B68104C00139385 /* libOCMock.a */; };
 		5D3A18A81B68104C00139385 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D3A18A61B68104C00139385 /* libOCMock.a */; };
 		5D3A18A91B68104C00139385 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D3A18A61B68104C00139385 /* libOCMock.a */; };
@@ -37,9 +52,7 @@
 		5D73161E1B90B28C00EDCB7F /* NSString+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D73161C1B90B28C00EDCB7F /* NSString+Utilities.m */; settings = {ASSET_TAGS = (); }; };
 		5D77F9E21B57E9D20013F9A7 /* SuperLoggerConsole.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D77F9E11B57E9D20013F9A7 /* SuperLoggerConsole.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5D77F9E91B57E9D20013F9A7 /* SuperLoggerConsole.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D77F9DF1B57E9D20013F9A7 /* SuperLoggerConsole.framework */; };
-		5D77F9EE1B57E9D20013F9A7 /* SuperLoggerConsoleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D77F9ED1B57E9D20013F9A7 /* SuperLoggerConsoleTests.m */; };
 		5D77FA051B57E9DF0013F9A7 /* SuperLoggerFile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D77F9FB1B57E9DF0013F9A7 /* SuperLoggerFile.framework */; };
-		5D77FA0A1B57E9DF0013F9A7 /* SuperLoggerFileTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D77FA091B57E9DF0013F9A7 /* SuperLoggerFileTests.m */; };
 		5D77FA141B57E9FC0013F9A7 /* SuperLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D2B79651B5000A100E83E2B /* SuperLogger.framework */; };
 		5D77FA151B57EA000013F9A7 /* SuperLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D2B79651B5000A100E83E2B /* SuperLogger.framework */; };
 		5D77FA161B57EA040013F9A7 /* SuperLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D2B79651B5000A100E83E2B /* SuperLogger.framework */; };
@@ -61,7 +74,6 @@
 		5DACEFBC1B8CBC6D004E74B9 /* SuperLoggerConsole.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5D77F9DF1B57E9D20013F9A7 /* SuperLoggerConsole.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5DACEFC81B8E0747004E74B9 /* SuperLoggerASL.h in Headers */ = {isa = PBXBuildFile; fileRef = 5DACEFC71B8E0747004E74B9 /* SuperLoggerASL.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5DACEFCF1B8E0747004E74B9 /* SuperLoggerASL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DACEFC51B8E0747004E74B9 /* SuperLoggerASL.framework */; settings = {ASSET_TAGS = (); }; };
-		5DACEFD61B8E0747004E74B9 /* SuperLoggerASLTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DACEFD51B8E0747004E74B9 /* SuperLoggerASLTests.m */; };
 		5DACEFDA1B8E0747004E74B9 /* SuperLoggerASL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DACEFC51B8E0747004E74B9 /* SuperLoggerASL.framework */; };
 		5DACEFDB1B8E0747004E74B9 /* SuperLoggerASL.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5DACEFC51B8E0747004E74B9 /* SuperLoggerASL.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5DACEFE41B8E0886004E74B9 /* SLASLLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 5DACEFE21B8E0886004E74B9 /* SLASLLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -209,6 +221,9 @@
 		5D2B796A1B5000A100E83E2B /* SuperLogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SuperLogger.h; sourceTree = "<group>"; };
 		5D2B79701B5000A200E83E2B /* SuperLoggerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SuperLoggerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D2B79761B5000A200E83E2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5D3810711BA20E8100B41AE3 /* SLFileLoggerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLFileLoggerSpec.m; sourceTree = "<group>"; };
+		5D3810741BA20EDB00B41AE3 /* SLConsoleLoggerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLConsoleLoggerSpec.m; sourceTree = "<group>"; };
+		5D3810771BA20EF900B41AE3 /* SLASLLoggerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLASLLoggerSpec.m; sourceTree = "<group>"; };
 		5D3A189D1B68104C00139385 /* NSNotificationCenter+OCMAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNotificationCenter+OCMAdditions.h"; sourceTree = "<group>"; };
 		5D3A189E1B68104C00139385 /* OCMArg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMArg.h; sourceTree = "<group>"; };
 		5D3A189F1B68104C00139385 /* OCMConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMConstraint.h; sourceTree = "<group>"; };
@@ -231,13 +246,11 @@
 		5D77F9E11B57E9D20013F9A7 /* SuperLoggerConsole.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SuperLoggerConsole.h; sourceTree = "<group>"; };
 		5D77F9E31B57E9D20013F9A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5D77F9E81B57E9D20013F9A7 /* SuperLoggerConsoleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SuperLoggerConsoleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5D77F9ED1B57E9D20013F9A7 /* SuperLoggerConsoleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SuperLoggerConsoleTests.m; sourceTree = "<group>"; };
 		5D77F9EF1B57E9D20013F9A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5D77F9FB1B57E9DF0013F9A7 /* SuperLoggerFile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SuperLoggerFile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D77F9FD1B57E9DF0013F9A7 /* SuperLoggerFile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SuperLoggerFile.h; sourceTree = "<group>"; };
 		5D77F9FF1B57E9DF0013F9A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5D77FA041B57E9DF0013F9A7 /* SuperLoggerFileTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SuperLoggerFileTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5D77FA091B57E9DF0013F9A7 /* SuperLoggerFileTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SuperLoggerFileTests.m; sourceTree = "<group>"; };
 		5D77FA0B1B57E9DF0013F9A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5D77FA171B57EA450013F9A7 /* SLConsoleLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLConsoleLogger.h; sourceTree = "<group>"; };
 		5D77FA181B57EA450013F9A7 /* SLConsoleLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLConsoleLogger.m; sourceTree = "<group>"; };
@@ -257,7 +270,6 @@
 		5DACEFC71B8E0747004E74B9 /* SuperLoggerASL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SuperLoggerASL.h; sourceTree = "<group>"; };
 		5DACEFC91B8E0747004E74B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5DACEFCE1B8E0747004E74B9 /* SuperLoggerASLTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SuperLoggerASLTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5DACEFD51B8E0747004E74B9 /* SuperLoggerASLTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SuperLoggerASLTests.m; sourceTree = "<group>"; };
 		5DACEFD71B8E0747004E74B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5DACEFE21B8E0886004E74B9 /* SLASLLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLASLLogger.h; sourceTree = "<group>"; };
 		5DACEFE31B8E0886004E74B9 /* SLASLLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLASLLogger.m; sourceTree = "<group>"; };
@@ -290,6 +302,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D3A18AC1B68104C00139385 /* libOCMock.a in Frameworks */,
+				5D3810831BA20FB400B41AE3 /* Expecta.framework in Frameworks */,
+				5D3810841BA20FB400B41AE3 /* Specta.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,6 +346,8 @@
 			files = (
 				5D4049DD1B557B8C00DA719D /* SuperLoggerWebServer.framework in Frameworks */,
 				5D3A18A81B68104C00139385 /* libOCMock.a in Frameworks */,
+				5D38107D1BA20FAA00B41AE3 /* Expecta.framework in Frameworks */,
+				5D38107E1BA20FAA00B41AE3 /* Specta.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,6 +365,8 @@
 			files = (
 				5D77F9E91B57E9D20013F9A7 /* SuperLoggerConsole.framework in Frameworks */,
 				5D3A18A91B68104C00139385 /* libOCMock.a in Frameworks */,
+				5D3810791BA20FA000B41AE3 /* Expecta.framework in Frameworks */,
+				5D38107A1BA20FA000B41AE3 /* Specta.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,6 +384,8 @@
 			files = (
 				5D77FA051B57E9DF0013F9A7 /* SuperLoggerFile.framework in Frameworks */,
 				5D3A18AA1B68104C00139385 /* libOCMock.a in Frameworks */,
+				5D38107B1BA20FA500B41AE3 /* Expecta.framework in Frameworks */,
+				5D38107C1BA20FA500B41AE3 /* Specta.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,6 +403,8 @@
 			files = (
 				5D77FA2E1B57F8630013F9A7 /* SuperLoggerCoreData.framework in Frameworks */,
 				5D3A18AB1B68104C00139385 /* libOCMock.a in Frameworks */,
+				5D38107F1BA20FAE00B41AE3 /* Expecta.framework in Frameworks */,
+				5D3810801BA20FAE00B41AE3 /* Specta.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,6 +420,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				5DACEFCF1B8E0747004E74B9 /* SuperLoggerASL.framework in Frameworks */,
+				5D3810811BA20FB100B41AE3 /* Expecta.framework in Frameworks */,
+				5D3810821BA20FB100B41AE3 /* Specta.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -620,7 +644,7 @@
 		5D77F9EC1B57E9D20013F9A7 /* SuperLoggerConsoleTests */ = {
 			isa = PBXGroup;
 			children = (
-				5D77F9ED1B57E9D20013F9A7 /* SuperLoggerConsoleTests.m */,
+				5D3810741BA20EDB00B41AE3 /* SLConsoleLoggerSpec.m */,
 				5D77F9EF1B57E9D20013F9A7 /* Info.plist */,
 			);
 			name = SuperLoggerConsoleTests;
@@ -642,8 +666,8 @@
 		5D77FA081B57E9DF0013F9A7 /* SuperLoggerFileTests */ = {
 			isa = PBXGroup;
 			children = (
-				5D77FA091B57E9DF0013F9A7 /* SuperLoggerFileTests.m */,
 				5D77FA0B1B57E9DF0013F9A7 /* Info.plist */,
+				5D3810711BA20E8100B41AE3 /* SLFileLoggerSpec.m */,
 			);
 			name = SuperLoggerFileTests;
 			path = "SuperLogger-FileTests";
@@ -692,8 +716,8 @@
 		5DACEFD41B8E0747004E74B9 /* SuperLoggerASLTests */ = {
 			isa = PBXGroup;
 			children = (
-				5DACEFD51B8E0747004E74B9 /* SuperLoggerASLTests.m */,
 				5DACEFD71B8E0747004E74B9 /* Info.plist */,
+				5D3810771BA20EF900B41AE3 /* SLASLLoggerSpec.m */,
 			);
 			path = SuperLoggerASLTests;
 			sourceTree = "<group>";
@@ -910,6 +934,7 @@
 				5D4049D81B557B8C00DA719D /* Sources */,
 				5D4049D91B557B8C00DA719D /* Frameworks */,
 				5D4049DA1B557B8C00DA719D /* Resources */,
+				5D3810851BA20FC400B41AE3 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -946,6 +971,7 @@
 				5D77F9E41B57E9D20013F9A7 /* Sources */,
 				5D77F9E51B57E9D20013F9A7 /* Frameworks */,
 				5D77F9E61B57E9D20013F9A7 /* Resources */,
+				5D3810861BA20FE100B41AE3 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -982,6 +1008,7 @@
 				5D77FA001B57E9DF0013F9A7 /* Sources */,
 				5D77FA011B57E9DF0013F9A7 /* Frameworks */,
 				5D77FA021B57E9DF0013F9A7 /* Resources */,
+				5D3810871BA20FF100B41AE3 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -1018,6 +1045,7 @@
 				5D77FA291B57F8630013F9A7 /* Sources */,
 				5D77FA2A1B57F8630013F9A7 /* Frameworks */,
 				5D77FA2B1B57F8630013F9A7 /* Resources */,
+				5D3810881BA2100000B41AE3 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -1054,6 +1082,7 @@
 				5DACEFCA1B8E0747004E74B9 /* Sources */,
 				5DACEFCB1B8E0747004E74B9 /* Frameworks */,
 				5DACEFCC1B8E0747004E74B9 /* Resources */,
+				5D3810891BA2100E00B41AE3 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -1269,6 +1298,81 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		5D3810851BA20FC400B41AE3 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Specta.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Expecta.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+		5D3810861BA20FE100B41AE3 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Specta.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Expecta.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+		5D3810871BA20FF100B41AE3 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Specta.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Expecta.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+		5D3810881BA2100000B41AE3 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Specta.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Expecta.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+		5D3810891BA2100E00B41AE3 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Specta.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Expecta.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
 		5DB55FFD1B6A70E600BC8B87 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1365,7 +1469,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5D77F9EE1B57E9D20013F9A7 /* SuperLoggerConsoleTests.m in Sources */,
+				5D3810761BA20EE000B41AE3 /* SLConsoleLoggerSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1381,7 +1485,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5D77FA0A1B57E9DF0013F9A7 /* SuperLoggerFileTests.m in Sources */,
+				5D3810731BA20E8900B41AE3 /* SLFileLoggerSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1412,7 +1516,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5DACEFD61B8E0747004E74B9 /* SuperLoggerASLTests.m in Sources */,
+				5D3810781BA20EF900B41AE3 /* SLASLLoggerSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2112,6 +2216,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = SuperLoggerASLTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -2124,6 +2232,10 @@
 		5DACEFE11B8E0747004E74B9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = SuperLoggerASLTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
