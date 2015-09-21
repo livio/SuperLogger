@@ -30,6 +30,7 @@ Pod::Spec.new do |spec|
   spec.subspec 'WebServer' do |wss|
     wss.source_files	= 'SuperLogger-WebServer/*.{h,m}'
     wss.dependency = 'SuperLogger/Core'
+    wss.dependency = 'livio/liviohttpserver'
   end
 
   spec.subspec 'ASL' do |asls|

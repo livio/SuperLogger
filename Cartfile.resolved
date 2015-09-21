@@ -1,2 +1,4 @@
-github "specta/expecta" "v1.0.2"
-github "specta/specta" "v1.0.3"
+github "livio/SuperSocket" "8.1.0"
+github "specta/expecta" "3603d43fc03e9d0066e044ff863306c364de38d3"
+github "specta/specta" "3d127e6a14e9f4759fbde50272481260775b193b"
+github "livio/LivioHTTPServer" "4954f98d33be51f3d85f917a0577ca5ecd23b77e"
