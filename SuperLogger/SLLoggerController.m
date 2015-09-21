@@ -91,6 +91,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 #pragma Instance Methods
 - (void)addLoggers:(NSArray<id<SLLogger>> *)loggers {
+    // TODO: Return errors if any occur?
     dispatch_async([self.class globalLogQueue], ^{ @autoreleasepool {
         for (id<SLLogger> logger in loggers) {
 #ifndef DEBUG
@@ -196,7 +197,7 @@ NS_ASSUME_NONNULL_BEGIN
         NSString *dateString = [dateFormatter stringFromDate:log.timestamp];
         
         // Format: 09:52:07:324 (com.apple.main-thread : -[AppDelegate application:didFinishLaunchingWithOptions:] : L25) a random test i guess
-        return [NSString stringWithFormat:@"%@ (%@ : %@ : L%ld) %@", dateString, log.queueLabel, log.functionName, (long)log.line, log.message];
+        return [NSString stringWithFormat:@"%@ (%@ : %@ : L%ld) %@\n", dateString, log.queueLabel, log.functionName, (long)log.line, log.message];
     } copy];
 }
 
