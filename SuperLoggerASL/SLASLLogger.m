@@ -31,7 +31,7 @@
         return nil;
     }
     
-    _logInRelease = YES;
+    _logInRelease = NO;
     
     return self;
 }

@@ -15,9 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SLConsoleLogger : NSObject <SLLogger>
 
-// SLLogger properties
 /**
- *  Defaults to YES
+ *  Defaults to NO
  */
 @property (assign, nonatomic) BOOL logInRelease;
 

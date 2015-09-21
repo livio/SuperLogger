@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 @required
 
 /**
- *  If this is NO, when not in DEBUG, the logger will not receive any messages to set up, tear down, or log. All loggers should default to YES.
+ *  If this is NO, when not in DEBUG, the logger will not receive any messages to set up, tear down, or log. All loggers should default to NO.
  */
 @property (assign, nonatomic) BOOL logInRelease;
 

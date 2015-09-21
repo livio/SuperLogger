@@ -31,7 +31,7 @@ NS_ASSUME_NONNULL_BEGIN
     }
     
     _maxNumLogFiles = 5;
-    _logInRelease = YES;
+    _logInRelease = NO;
     
     return self;
 }

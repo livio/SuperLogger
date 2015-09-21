@@ -23,7 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (assign, nonatomic) NSUInteger maxNumLogFiles;
 
 /**
- *  Defaults to YES
+ *  Defaults to NO
  */
 @property (assign, nonatomic) BOOL logInRelease;
 
