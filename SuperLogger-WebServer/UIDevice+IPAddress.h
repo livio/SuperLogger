@@ -10,7 +10,7 @@
 
 @interface UIDevice (IPAddress)
 
-+ (NSString *)currentIPAddress:(BOOL)preferIPv4;
++ (NSString *)currentIPAddressAndPreferIPv4:(BOOL)preferIPv4;
 + (NSDictionary *)allIPAddresses;
 
 @end

@@ -13,19 +13,17 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef NS_ENUM(NSUInteger, IPType) {
+    IPTypeV4,
+    IPTypeV6
+};
+
 @interface SLWebLogger : NSObject <SLLogger>
 
 /**
  *  Defaults to NO.
  */
 @property (assign, nonatomic) BOOL logInRelease;
-
-/**
- *  Returns the URL of the server
- *
- *  @warning Will return nil if the server is not started.
- */
-@property (copy, nonatomic, readonly, nullable) NSString *URL;
 
 - (instancetype)init;
 - (instancetype)initWithPort:(UInt16)port NS_DESIGNATED_INITIALIZER;
@@ -49,6 +47,15 @@ NS_ASSUME_NONNULL_BEGIN
 - (BOOL)setupLogger;
 - (void)logWithLog:(SLLog *)log formattedLog:(NSString *)stringLog;
 - (void)teardownLogger;
+
+/**
+ *  Return the URL that the server is running on
+ *
+ *  @param ipAddressType Whether the URL should try to return an ipv4 url or an ipv6 url
+ *
+ *  @return The URL of the server or nil if the server is not running
+ */
+- (nullable NSString *)serverURLForType:(IPType)ipAddressType;
 
 @end
 

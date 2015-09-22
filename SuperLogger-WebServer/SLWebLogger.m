@@ -54,6 +54,10 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark - SLLogger Protocol
 
 - (BOOL)setupLogger {
+    if (self.port != 0) {
+        [self.server setPort:self.port];
+    }
+    
     [self.server setType:@"_http._tcp."];
     [self.server setConnectionClass:[SLWebLoggerConnection class]];
     
@@ -85,11 +89,22 @@ NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark - Readonly Properties
 
-- (nullable NSString *)URL {
+- (nullable NSString *)serverURLForType:(IPType)ipAddressType {
     if (!self.server.isRunning) {
         return nil;
     } else {
-        return [NSString stringWithFormat:@"http://%@:%@", [UIDevice currentIPAddress:YES], @(self.port)];
+        switch (ipAddressType) {
+            case IPTypeV4: {
+                return [NSString stringWithFormat:@"http://%@:%@", [UIDevice currentIPAddressAndPreferIPv4:YES], @(self.port)];
+            } break;
+            case IPTypeV6: {
+                return [NSString stringWithFormat:@"http://%@:%@", [UIDevice currentIPAddressAndPreferIPv4:NO], @(self.port)];
+            } break;
+            default: {
+                NSAssert(NO, @"Unknown enum type: %@, @: %@", @(ipAddressType), [NSString stringWithUTF8String:__PRETTY_FUNCTION__]);
+            } break;
+        }
+        
     }
 }
 
@@ -104,8 +119,7 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark Bonjour
 
 - (void)server:(LHSServer *)server bonjourDidPublish:(NSNetService *)netService {
-    NSLog(@"%@", [UIDevice currentDevice].name);
-    NSLog(@"SLWebLogger bonjour published: %@:%@", [UIDevice currentIPAddress:YES], @(netService.port));
+    NSLog(@"SLWebLogger bonjour published: %@:%@", [UIDevice currentIPAddressAndPreferIPv4:YES], @(netService.port));
 }
 
 - (void)server:(LHSServer *)server bonjourPublishFailed:(NSNetService *)netService error:(NSDictionary *)errorDictionary {
@@ -128,6 +142,10 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)server:(LHSServer *)server webSocketDidOpen:(LHSWebSocket *)socket {
     NSLog(@"SLWebLogger server websocket opened: %@", socket);
     socket.delegate = self;
+    
+    for (LHSWebSocket *webSocket in self.server.webSockets) {
+        [webSocket sendMessage:@"test message"];
+    }
 }
 
 - (void)server:(LHSServer *)server webSocketDidClose:(LHSWebSocket *)socket {
@@ -143,6 +161,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)webSocket:(LHSWebSocket *)socket didReceiveData:(NSData *)data {
     NSLog(@"SLWebLogger server websocket: %@, message: %@", socket, data);
+}
+
+- (void)webSocketDidClose:(LHSWebSocket *)ws {
+    NSLog(@"SLWebLogger websocket did close: %@", ws);
 }
 
 @end

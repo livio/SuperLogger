@@ -1,4 +1,4 @@
 github "livio/SuperSocket" "8.1.0"
 github "specta/expecta" "3603d43fc03e9d0066e044ff863306c364de38d3"
-github "specta/specta" "3d127e6a14e9f4759fbde50272481260775b193b"
-github "livio/LivioHTTPServer" "4954f98d33be51f3d85f917a0577ca5ecd23b77e"
+github "specta/specta" "8f7ac2989d5ad953ded6c3c3668ee128cd2e5683"
+github "livio/LivioHTTPServer" "dd2b9a283157c4beea0aff5900f51ddf140d41d0"
