@@ -14,6 +14,7 @@
     	socket.onmessage = function(message) {
     		console.log("Superlogger message received");
     		console.log(message.data);
+            socket.send("message received");
     	};
 
     	socket.onclose = function() {

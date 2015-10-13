@@ -8,7 +8,7 @@
 
 #import "SLWebLoggerConnection.h"
 
-@import SuperSocket;
+@import CocoaAsyncSocket;
 
 
 @implementation SLWebLoggerConnection
