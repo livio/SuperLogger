@@ -20,45 +20,41 @@
 		5D0149B01B67D4A9005142B2 /* SLLoggerControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D0149AF1B67D4A9005142B2 /* SLLoggerControllerTests.m */; };
 		5D0367FC1B6FE2C8001C0C46 /* SLGlobals.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D0367FB1B6FE2C8001C0C46 /* SLGlobals.m */; };
 		5D0367FE1B6FE44D001C0C46 /* SLFileModuleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D0367FD1B6FE44D001C0C46 /* SLFileModuleTests.m */; };
-		5D10E5071BAC55ED00E9A728 /* SLWebLoggerConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D10E5051BAC55ED00E9A728 /* SLWebLoggerConnection.h */; settings = {ASSET_TAGS = (); }; };
-		5D10E5081BAC55ED00E9A728 /* SLWebLoggerConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D10E5061BAC55ED00E9A728 /* SLWebLoggerConnection.m */; settings = {ASSET_TAGS = (); }; };
-		5D10E50D1BB09CD900E9A728 /* UIDevice+IPAddress.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D10E50B1BB09CD900E9A728 /* UIDevice+IPAddress.h */; settings = {ASSET_TAGS = (); }; };
-		5D10E50E1BB09CD900E9A728 /* UIDevice+IPAddress.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D10E50C1BB09CD900E9A728 /* UIDevice+IPAddress.m */; settings = {ASSET_TAGS = (); }; };
+		5D10E5071BAC55ED00E9A728 /* SLWebLoggerConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D10E5051BAC55ED00E9A728 /* SLWebLoggerConnection.h */; };
+		5D10E5081BAC55ED00E9A728 /* SLWebLoggerConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D10E5061BAC55ED00E9A728 /* SLWebLoggerConnection.m */; };
+		5D10E50D1BB09CD900E9A728 /* UIDevice+IPAddress.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D10E50B1BB09CD900E9A728 /* UIDevice+IPAddress.h */; };
+		5D10E50E1BB09CD900E9A728 /* UIDevice+IPAddress.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D10E50C1BB09CD900E9A728 /* UIDevice+IPAddress.m */; };
 		5D2B796B1B5000A100E83E2B /* SuperLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D2B796A1B5000A100E83E2B /* SuperLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5D2B79711B5000A200E83E2B /* SuperLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D2B79651B5000A100E83E2B /* SuperLogger.framework */; };
 		5D372D7F1B8CB4EA00BCDE0E /* SuperLoggerFile.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D77F9FD1B57E9DF0013F9A7 /* SuperLoggerFile.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5D372D801B8CB50600BCDE0E /* SuperLoggerCoreData.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D77FA261B57F8630013F9A7 /* SuperLoggerCoreData.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5D3810731BA20E8900B41AE3 /* SLFileLoggerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D3810711BA20E8100B41AE3 /* SLFileLoggerSpec.m */; settings = {ASSET_TAGS = (); }; };
-		5D3810761BA20EE000B41AE3 /* SLConsoleLoggerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D3810741BA20EDB00B41AE3 /* SLConsoleLoggerSpec.m */; settings = {ASSET_TAGS = (); }; };
-		5D3810781BA20EF900B41AE3 /* SLASLLoggerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D3810771BA20EF900B41AE3 /* SLASLLoggerSpec.m */; settings = {ASSET_TAGS = (); }; };
+		5D3810731BA20E8900B41AE3 /* SLFileLoggerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D3810711BA20E8100B41AE3 /* SLFileLoggerSpec.m */; };
+		5D3810761BA20EE000B41AE3 /* SLConsoleLoggerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D3810741BA20EDB00B41AE3 /* SLConsoleLoggerSpec.m */; };
+		5D3810781BA20EF900B41AE3 /* SLASLLoggerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D3810771BA20EF900B41AE3 /* SLASLLoggerSpec.m */; };
 		5D3810791BA20FA000B41AE3 /* Expecta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DB55FF71B6A6F8400BC8B87 /* Expecta.framework */; };
 		5D38107A1BA20FA000B41AE3 /* Specta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DB55FF81B6A6F8400BC8B87 /* Specta.framework */; };
 		5D38107B1BA20FA500B41AE3 /* Expecta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DB55FF71B6A6F8400BC8B87 /* Expecta.framework */; };
 		5D38107C1BA20FA500B41AE3 /* Specta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DB55FF81B6A6F8400BC8B87 /* Specta.framework */; };
 		5D38107D1BA20FAA00B41AE3 /* Expecta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DB55FF71B6A6F8400BC8B87 /* Expecta.framework */; };
 		5D38107E1BA20FAA00B41AE3 /* Specta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DB55FF81B6A6F8400BC8B87 /* Specta.framework */; };
-		5D38107F1BA20FAE00B41AE3 /* Expecta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DB55FF71B6A6F8400BC8B87 /* Expecta.framework */; };
-		5D3810801BA20FAE00B41AE3 /* Specta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DB55FF81B6A6F8400BC8B87 /* Specta.framework */; };
 		5D3810811BA20FB100B41AE3 /* Expecta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DB55FF71B6A6F8400BC8B87 /* Expecta.framework */; };
 		5D3810821BA20FB100B41AE3 /* Specta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DB55FF81B6A6F8400BC8B87 /* Specta.framework */; };
 		5D3810831BA20FB400B41AE3 /* Expecta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DB55FF71B6A6F8400BC8B87 /* Expecta.framework */; };
 		5D3810841BA20FB400B41AE3 /* Specta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DB55FF81B6A6F8400BC8B87 /* Specta.framework */; };
 		5D38108F1BA74A3000B41AE3 /* SLWebLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D38108D1BA74A3000B41AE3 /* SLWebLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5D3810901BA74A3000B41AE3 /* SLWebLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D38108E1BA74A3000B41AE3 /* SLWebLogger.m */; settings = {ASSET_TAGS = (); }; };
+		5D3810901BA74A3000B41AE3 /* SLWebLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D38108E1BA74A3000B41AE3 /* SLWebLogger.m */; };
 		5D3810931BA855C800B41AE3 /* LivioHTTPServer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D3810911BA855C800B41AE3 /* LivioHTTPServer.framework */; };
 		5D3810991BA8561200B41AE3 /* LivioHTTPServer.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5D3810971BA8561200B41AE3 /* LivioHTTPServer.framework.dSYM */; };
-		5D3810A01BA8941600B41AE3 /* site in Resources */ = {isa = PBXBuildFile; fileRef = 5D38109F1BA8941600B41AE3 /* site */; settings = {ASSET_TAGS = (); }; };
+		5D3810A01BA8941600B41AE3 /* site in Resources */ = {isa = PBXBuildFile; fileRef = 5D38109F1BA8941600B41AE3 /* site */; };
 		5D3A18A71B68104C00139385 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D3A18A61B68104C00139385 /* libOCMock.a */; };
 		5D3A18A81B68104C00139385 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D3A18A61B68104C00139385 /* libOCMock.a */; };
 		5D3A18A91B68104C00139385 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D3A18A61B68104C00139385 /* libOCMock.a */; };
 		5D3A18AA1B68104C00139385 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D3A18A61B68104C00139385 /* libOCMock.a */; };
-		5D3A18AB1B68104C00139385 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D3A18A61B68104C00139385 /* libOCMock.a */; };
 		5D3A18AC1B68104C00139385 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D3A18A61B68104C00139385 /* libOCMock.a */; };
 		5D4049D61B557B8C00DA719D /* SuperLoggerWebServer.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D4049D51B557B8C00DA719D /* SuperLoggerWebServer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5D4049DD1B557B8C00DA719D /* SuperLoggerWebServer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D4049D31B557B8C00DA719D /* SuperLoggerWebServer.framework */; };
 		5D4049E21B557B8C00DA719D /* SuperLoggerWebServerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D4049E11B557B8C00DA719D /* SuperLoggerWebServerTests.m */; };
-		5D73161D1B90B28C00EDCB7F /* NSString+Utilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D73161B1B90B28C00EDCB7F /* NSString+Utilities.h */; settings = {ASSET_TAGS = (); }; };
-		5D73161E1B90B28C00EDCB7F /* NSString+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D73161C1B90B28C00EDCB7F /* NSString+Utilities.m */; settings = {ASSET_TAGS = (); }; };
+		5D73161D1B90B28C00EDCB7F /* NSString+Utilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D73161B1B90B28C00EDCB7F /* NSString+Utilities.h */; };
+		5D73161E1B90B28C00EDCB7F /* NSString+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D73161C1B90B28C00EDCB7F /* NSString+Utilities.m */; };
 		5D77F9E21B57E9D20013F9A7 /* SuperLoggerConsole.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D77F9E11B57E9D20013F9A7 /* SuperLoggerConsole.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5D77F9E91B57E9D20013F9A7 /* SuperLoggerConsole.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D77F9DF1B57E9D20013F9A7 /* SuperLoggerConsole.framework */; };
 		5D77FA051B57E9DF0013F9A7 /* SuperLoggerFile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D77F9FB1B57E9DF0013F9A7 /* SuperLoggerFile.framework */; };
@@ -69,9 +65,6 @@
 		5D77FA1A1B57EA450013F9A7 /* SLConsoleLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D77FA181B57EA450013F9A7 /* SLConsoleLogger.m */; };
 		5D77FA1D1B57EA5B0013F9A7 /* SLFileLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D77FA1B1B57EA5B0013F9A7 /* SLFileLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5D77FA1E1B57EA5B0013F9A7 /* SLFileLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D77FA1C1B57EA5B0013F9A7 /* SLFileLogger.m */; };
-		5D77FA2E1B57F8630013F9A7 /* SuperLoggerCoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D77FA241B57F8630013F9A7 /* SuperLoggerCoreData.framework */; };
-		5D77FA331B57F8630013F9A7 /* SuperLoggerCoreDataTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D77FA321B57F8630013F9A7 /* SuperLoggerCoreDataTests.m */; };
-		5D77FA3B1B5804B60013F9A7 /* SuperLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D2B79651B5000A100E83E2B /* SuperLogger.framework */; };
 		5D77FA3C1B5842B70013F9A7 /* SLGlobals.h in Headers */ = {isa = PBXBuildFile; fileRef = 5DB55A771B5062C7009E2C2E /* SLGlobals.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5D77FA421B5D40710013F9A7 /* SLLogSearch.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D77FA411B5D40710013F9A7 /* SLLogSearch.h */; };
 		5D8203F91BCBF40E00D0A41B /* CocoaAsyncSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D8203F81BCBF40E00D0A41B /* CocoaAsyncSocket.framework */; };
@@ -94,9 +87,9 @@
 		5D9F9A091B5000FF0069DC65 /* SLLoggerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D9F9A071B5000FF0069DC65 /* SLLoggerController.m */; };
 		5D9F9A0B1B5002180069DC65 /* SLLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D9F9A0A1B5002180069DC65 /* SLLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5DACEFC81B8E0747004E74B9 /* SuperLoggerASL.h in Headers */ = {isa = PBXBuildFile; fileRef = 5DACEFC71B8E0747004E74B9 /* SuperLoggerASL.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5DACEFCF1B8E0747004E74B9 /* SuperLoggerASL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DACEFC51B8E0747004E74B9 /* SuperLoggerASL.framework */; settings = {ASSET_TAGS = (); }; };
+		5DACEFCF1B8E0747004E74B9 /* SuperLoggerASL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DACEFC51B8E0747004E74B9 /* SuperLoggerASL.framework */; };
 		5DACEFE41B8E0886004E74B9 /* SLASLLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 5DACEFE21B8E0886004E74B9 /* SLASLLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5DACEFE51B8E0886004E74B9 /* SLASLLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DACEFE31B8E0886004E74B9 /* SLASLLogger.m */; settings = {ASSET_TAGS = (); }; };
+		5DACEFE51B8E0886004E74B9 /* SLASLLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DACEFE31B8E0886004E74B9 /* SLASLLogger.m */; };
 		5DB55A6F1B504FA8009E2C2E /* SLLog.h in Headers */ = {isa = PBXBuildFile; fileRef = 5DB55A6D1B504FA8009E2C2E /* SLLog.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5DB55A701B504FA8009E2C2E /* SLLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB55A6E1B504FA8009E2C2E /* SLLog.m */; };
 		5DB55A7B1B53F801009E2C2E /* SLFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 5DB55A791B53F801009E2C2E /* SLFilter.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -151,13 +144,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 5D77F9FA1B57E9DF0013F9A7;
 			remoteInfo = "SuperLogger-File";
-		};
-		5D77FA2F1B57F8630013F9A7 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5D2B795C1B5000A100E83E2B /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 5D77FA231B57F8630013F9A7;
-			remoteInfo = "SuperLogger-CoreData";
 		};
 		5D8204001BCBFE2000D0A41B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -306,12 +292,6 @@
 		5D77FA181B57EA450013F9A7 /* SLConsoleLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLConsoleLogger.m; sourceTree = "<group>"; };
 		5D77FA1B1B57EA5B0013F9A7 /* SLFileLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLFileLogger.h; sourceTree = "<group>"; };
 		5D77FA1C1B57EA5B0013F9A7 /* SLFileLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLFileLogger.m; sourceTree = "<group>"; };
-		5D77FA241B57F8630013F9A7 /* SuperLoggerCoreData.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SuperLoggerCoreData.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5D77FA261B57F8630013F9A7 /* SuperLoggerCoreData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SuperLoggerCoreData.h; sourceTree = "<group>"; };
-		5D77FA281B57F8630013F9A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5D77FA2D1B57F8630013F9A7 /* SuperLoggerCoreDataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SuperLoggerCoreDataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5D77FA321B57F8630013F9A7 /* SuperLoggerCoreDataTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SuperLoggerCoreDataTests.m; sourceTree = "<group>"; };
-		5D77FA341B57F8630013F9A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5D77FA411B5D40710013F9A7 /* SLLogSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLLogSearch.h; sourceTree = "<group>"; };
 		5D8203F81BCBF40E00D0A41B /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaAsyncSocket.framework; path = ../Carthage/Build/iOS/CocoaAsyncSocket.framework; sourceTree = "<group>"; };
 		5D8203FA1BCBF42300D0A41B /* CocoaAsyncSocket.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = CocoaAsyncSocket.framework.dSYM; path = ../Carthage/Build/iOS/CocoaAsyncSocket.framework.dSYM; sourceTree = "<group>"; };
@@ -447,25 +427,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5D77FA201B57F8630013F9A7 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5D77FA3B1B5804B60013F9A7 /* SuperLogger.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5D77FA2A1B57F8630013F9A7 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5D77FA2E1B57F8630013F9A7 /* SuperLoggerCoreData.framework in Frameworks */,
-				5D3A18AB1B68104C00139385 /* libOCMock.a in Frameworks */,
-				5D38107F1BA20FAE00B41AE3 /* Expecta.framework in Frameworks */,
-				5D3810801BA20FAE00B41AE3 /* Specta.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		5DACEFC11B8E0747004E74B9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -563,8 +524,6 @@
 				5D77F9EC1B57E9D20013F9A7 /* SuperLoggerConsoleTests */,
 				5D77F9FC1B57E9DF0013F9A7 /* SuperLoggerFile */,
 				5D77FA081B57E9DF0013F9A7 /* SuperLoggerFileTests */,
-				5D77FA251B57F8630013F9A7 /* SuperLoggerCoreData */,
-				5D77FA311B57F8630013F9A7 /* SuperLoggerCoreDataTests */,
 				5DACEFC61B8E0747004E74B9 /* SuperLoggerASL */,
 				5DACEFD41B8E0747004E74B9 /* SuperLoggerASLTests */,
 				5D2B79661B5000A100E83E2B /* Products */,
@@ -582,8 +541,6 @@
 				5D77F9E81B57E9D20013F9A7 /* SuperLoggerConsoleTests.xctest */,
 				5D77F9FB1B57E9DF0013F9A7 /* SuperLoggerFile.framework */,
 				5D77FA041B57E9DF0013F9A7 /* SuperLoggerFileTests.xctest */,
-				5D77FA241B57F8630013F9A7 /* SuperLoggerCoreData.framework */,
-				5D77FA2D1B57F8630013F9A7 /* SuperLoggerCoreDataTests.xctest */,
 				5D0149791B62CB11005142B2 /* SuperLoggerTestApp.app */,
 				5D0149941B62CB11005142B2 /* SuperLoggerTestAppTests.xctest */,
 				5D01499F1B62CB11005142B2 /* SuperLoggerTestAppUITests.xctest */,
@@ -774,26 +731,6 @@
 			path = "SuperLogger-FileTests";
 			sourceTree = "<group>";
 		};
-		5D77FA251B57F8630013F9A7 /* SuperLoggerCoreData */ = {
-			isa = PBXGroup;
-			children = (
-				5D77FA261B57F8630013F9A7 /* SuperLoggerCoreData.h */,
-				5D77FA281B57F8630013F9A7 /* Info.plist */,
-			);
-			name = SuperLoggerCoreData;
-			path = "SuperLogger-CoreData";
-			sourceTree = "<group>";
-		};
-		5D77FA311B57F8630013F9A7 /* SuperLoggerCoreDataTests */ = {
-			isa = PBXGroup;
-			children = (
-				5D77FA321B57F8630013F9A7 /* SuperLoggerCoreDataTests.m */,
-				5D77FA341B57F8630013F9A7 /* Info.plist */,
-			);
-			name = SuperLoggerCoreDataTests;
-			path = "SuperLogger-CoreDataTests";
-			sourceTree = "<group>";
-		};
 		5D9F9A0C1B50154B0069DC65 /* Loggers */ = {
 			isa = PBXGroup;
 			children = (
@@ -896,14 +833,6 @@
 			files = (
 				5D372D7F1B8CB4EA00BCDE0E /* SuperLoggerFile.h in Headers */,
 				5D77FA1D1B57EA5B0013F9A7 /* SLFileLogger.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5D77FA211B57F8630013F9A7 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5D372D801B8CB50600BCDE0E /* SuperLoggerCoreData.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1128,43 +1057,6 @@
 			productReference = 5D77FA041B57E9DF0013F9A7 /* SuperLoggerFileTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		5D77FA231B57F8630013F9A7 /* SuperLoggerCoreData */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 5D77FA351B57F8630013F9A7 /* Build configuration list for PBXNativeTarget "SuperLoggerCoreData" */;
-			buildPhases = (
-				5D77FA1F1B57F8630013F9A7 /* Sources */,
-				5D77FA201B57F8630013F9A7 /* Frameworks */,
-				5D77FA211B57F8630013F9A7 /* Headers */,
-				5D77FA221B57F8630013F9A7 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = SuperLoggerCoreData;
-			productName = "SuperLogger-CoreData";
-			productReference = 5D77FA241B57F8630013F9A7 /* SuperLoggerCoreData.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		5D77FA2C1B57F8630013F9A7 /* SuperLoggerCoreDataTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 5D77FA381B57F8630013F9A7 /* Build configuration list for PBXNativeTarget "SuperLoggerCoreDataTests" */;
-			buildPhases = (
-				5D77FA291B57F8630013F9A7 /* Sources */,
-				5D77FA2A1B57F8630013F9A7 /* Frameworks */,
-				5D77FA2B1B57F8630013F9A7 /* Resources */,
-				5D3810881BA2100000B41AE3 /* ShellScript */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				5D77FA301B57F8630013F9A7 /* PBXTargetDependency */,
-			);
-			name = SuperLoggerCoreDataTests;
-			productName = "SuperLogger-CoreDataTests";
-			productReference = 5D77FA2D1B57F8630013F9A7 /* SuperLoggerCoreDataTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		5DACEFC41B8E0747004E74B9 /* SuperLoggerASL */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5DACEFDC1B8E0747004E74B9 /* Build configuration list for PBXNativeTarget "SuperLoggerASL" */;
@@ -1246,12 +1138,6 @@
 					5D77FA031B57E9DF0013F9A7 = {
 						CreatedOnToolsVersion = 7.0;
 					};
-					5D77FA231B57F8630013F9A7 = {
-						CreatedOnToolsVersion = 7.0;
-					};
-					5D77FA2C1B57F8630013F9A7 = {
-						CreatedOnToolsVersion = 7.0;
-					};
 					5DACEFC41B8E0747004E74B9 = {
 						CreatedOnToolsVersion = 7.0;
 					};
@@ -1282,8 +1168,6 @@
 				5D77F9E71B57E9D20013F9A7 /* SuperLoggerConsoleTests */,
 				5D77F9FA1B57E9DF0013F9A7 /* SuperLoggerFile */,
 				5D77FA031B57E9DF0013F9A7 /* SuperLoggerFileTests */,
-				5D77FA231B57F8630013F9A7 /* SuperLoggerCoreData */,
-				5D77FA2C1B57F8630013F9A7 /* SuperLoggerCoreDataTests */,
 				5DACEFC41B8E0747004E74B9 /* SuperLoggerASL */,
 				5DACEFCD1B8E0747004E74B9 /* SuperLoggerASLTests */,
 				5D0149781B62CB11005142B2 /* SuperLoggerTestApp */,
@@ -1375,20 +1259,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5D77FA221B57F8630013F9A7 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5D77FA2B1B57F8630013F9A7 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		5DACEFC31B8E0747004E74B9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1437,21 +1307,6 @@
 			shellScript = "/usr/local/bin/carthage copy-frameworks";
 		};
 		5D3810871BA20FF100B41AE3 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/Specta.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Expecta.framework",
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
-		};
-		5D3810881BA2100000B41AE3 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1615,21 +1470,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5D77FA1F1B57F8630013F9A7 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5D77FA291B57F8630013F9A7 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5D77FA331B57F8630013F9A7 /* SuperLoggerCoreDataTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		5DACEFC01B8E0747004E74B9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1678,11 +1518,6 @@
 			isa = PBXTargetDependency;
 			target = 5D77F9FA1B57E9DF0013F9A7 /* SuperLoggerFile */;
 			targetProxy = 5D77FA061B57E9DF0013F9A7 /* PBXContainerItemProxy */;
-		};
-		5D77FA301B57F8630013F9A7 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 5D77FA231B57F8630013F9A7 /* SuperLoggerCoreData */;
-			targetProxy = 5D77FA2F1B57F8630013F9A7 /* PBXContainerItemProxy */;
 		};
 		5D8204011BCBFE2000D0A41B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -2250,80 +2085,6 @@
 			};
 			name = Release;
 		};
-		5D77FA361B57F8630013F9A7 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "SuperLogger-CoreData/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.livio.SuperLoggerCoreData;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		5D77FA371B57F8630013F9A7 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "SuperLogger-CoreData/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.livio.SuperLoggerCoreData;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		5D77FA391B57F8630013F9A7 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
-				INFOPLIST_FILE = "SuperLogger-CoreDataTests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Libs",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.livio.SuperLoggerCoreDataTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		5D77FA3A1B57F8630013F9A7 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
-				INFOPLIST_FILE = "SuperLogger-CoreDataTests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Libs",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.livio.SuperLoggerCoreDataTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
 		5DACEFDD1B8E0747004E74B9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -2499,24 +2260,6 @@
 			buildConfigurations = (
 				5D77FA101B57E9DF0013F9A7 /* Debug */,
 				5D77FA111B57E9DF0013F9A7 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		5D77FA351B57F8630013F9A7 /* Build configuration list for PBXNativeTarget "SuperLoggerCoreData" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				5D77FA361B57F8630013F9A7 /* Debug */,
-				5D77FA371B57F8630013F9A7 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		5D77FA381B57F8630013F9A7 /* Build configuration list for PBXNativeTarget "SuperLoggerCoreDataTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				5D77FA391B57F8630013F9A7 /* Debug */,
-				5D77FA3A1B57F8630013F9A7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
