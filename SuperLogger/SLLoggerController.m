@@ -92,7 +92,7 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma Instance Methods
 - (void)addLoggers:(NSArray<id<SLLogger>> *)loggers {
     // TODO: Return errors if any occur?
-    dispatch_async([self.class globalLogQueue], ^{ @autoreleasepool {
+    dispatch_async([self.class globalLogQueue], ^{
         for (id<SLLogger> logger in loggers) {
 #ifndef DEBUG
             // If the app is running in release mode, and the logger should not run in release mode, then just ignore this logger.
@@ -104,19 +104,19 @@ NS_ASSUME_NONNULL_BEGIN
             [self.mutableLoggers addObject:logger];
             [logger setupLogger];
         }
-    }});
+    });
 }
 
 - (void)addModules:(NSArray<SLFileModule *> *)modules {
-    dispatch_async([self.class globalLogQueue], ^{ @autoreleasepool {
+    dispatch_async([self.class globalLogQueue], ^{
         [self.mutableLogModules addObjectsFromArray:modules];
-    }});
+    });
 }
 
 - (void)addFilters:(NSArray<SLLogFilterBlock> *)filters {
-    dispatch_async([self.class globalLogQueue], ^{ @autoreleasepool {
+    dispatch_async([self.class globalLogQueue], ^{
         [self.mutableLogFilters addObjectsFromArray:filters];
-    }});
+    });
 }
 
 - (void)removeLoggers:(nonnull NSArray<id<SLLogger>> *)loggers {
