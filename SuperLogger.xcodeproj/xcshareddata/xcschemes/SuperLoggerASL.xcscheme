@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5D77FA231B57F8630013F9A7"
-               BuildableName = "SuperLoggerCoreData.framework"
-               BlueprintName = "SuperLoggerCoreData"
+               BlueprintIdentifier = "5DACEFC41B8E0747004E74B9"
+               BuildableName = "SuperLoggerASL.framework"
+               BlueprintName = "SuperLoggerASL"
                ReferencedContainer = "container:SuperLogger.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -28,26 +28,7 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5D77FA2C1B57F8630013F9A7"
-               BuildableName = "SuperLoggerCoreDataTests.xctest"
-               BlueprintName = "SuperLoggerCoreDataTests"
-               ReferencedContainer = "container:SuperLogger.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "5D77FA231B57F8630013F9A7"
-            BuildableName = "SuperLoggerCoreData.framework"
-            BlueprintName = "SuperLoggerCoreData"
-            ReferencedContainer = "container:SuperLogger.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -64,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "5D77FA231B57F8630013F9A7"
-            BuildableName = "SuperLoggerCoreData.framework"
-            BlueprintName = "SuperLoggerCoreData"
+            BlueprintIdentifier = "5DACEFC41B8E0747004E74B9"
+            BuildableName = "SuperLoggerASL.framework"
+            BlueprintName = "SuperLoggerASL"
             ReferencedContainer = "container:SuperLogger.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -82,9 +63,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "5D77FA231B57F8630013F9A7"
-            BuildableName = "SuperLoggerCoreData.framework"
-            BlueprintName = "SuperLoggerCoreData"
+            BlueprintIdentifier = "5DACEFC41B8E0747004E74B9"
+            BuildableName = "SuperLoggerASL.framework"
+            BlueprintName = "SuperLoggerASL"
             ReferencedContainer = "container:SuperLogger.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

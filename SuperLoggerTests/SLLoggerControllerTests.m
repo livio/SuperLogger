@@ -205,7 +205,7 @@ describe(@"Logger Controller instance methods", ^{
             [testController removeLoggers:[testController.loggers allObjects]];
             
             testLogger = OCMProtocolMock(@protocol(SLLogger));
-            OCMStub([testLogger log:[OCMArg any]]);
+            OCMStub([testLogger logWithLog:[OCMArg any] formattedLog:[OCMArg any]]);
             
             [testController addLoggers:@[testLogger]];
         });
@@ -217,7 +217,7 @@ describe(@"Logger Controller instance methods", ^{
             NSString *someFunctionName = SLOG_FUNC;
             NSInteger someLine = __LINE__;
             
-            OCMExpect([testLogger log:[OCMArg any]]);
+            OCMExpect([testLogger logWithLog:[OCMArg any] formattedLog:[OCMArg any]]);
             
             [testController logWithLevel:someLogLevelDebugOrAbove fileName:someFileName functionName:someFunctionName line:someLine message:@"some message with format %@", @"some other message"];
             
@@ -237,7 +237,7 @@ describe(@"Logger Controller instance methods", ^{
             NSString *expectedLogString = testController.formatBlock(testLog, testController.timestampFormatter);
             
             [testController queueLog:testLog];
-            OCMVerify([testLogger log:[OCMArg any]]);
+            OCMVerify([testLogger logWithLog:[OCMArg any] formattedLog:[OCMArg any]]);
         });
     });
     
