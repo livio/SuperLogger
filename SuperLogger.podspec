@@ -17,11 +17,6 @@ Pod::Spec.new do |spec|
     cs.dependency = 'SuperLogger/Core'
   end
 
-  spec.subspec 'CoreData' do |cds|
-    cds.source_files	= 'SuperLogger-CoreData/*.{h,m}'
-    cds.dependency = 'SuperLogger/Core'
-  end
-
   spec.subspec 'File' do |fs|
     fs.source_files = 'SuperLogger-File/*.{h,m}'
     fs.dependency = 'SuperLogger/Core'
