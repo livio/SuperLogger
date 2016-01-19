@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
   spec.name		= "SuperLogger"
   spec.platform	= :ios, "7.0"
-  spec.version	= "0.1.0"
+  spec.version	= "0.0.1"
   spec.license	= { :type => "New BSD", :file => 'LICENSE' }
   spec.homepage	= https://github.com/livio/SuperLogger
   spec.authors	= { 'Joel Fischer' => 'joel@livio.io' }
