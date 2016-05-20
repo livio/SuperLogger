@@ -24,6 +24,15 @@
 		5D10E5081BAC55ED00E9A728 /* SLWebLoggerConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D10E5061BAC55ED00E9A728 /* SLWebLoggerConnection.m */; };
 		5D10E50D1BB09CD900E9A728 /* UIDevice+IPAddress.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D10E50B1BB09CD900E9A728 /* UIDevice+IPAddress.h */; };
 		5D10E50E1BB09CD900E9A728 /* UIDevice+IPAddress.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D10E50C1BB09CD900E9A728 /* UIDevice+IPAddress.m */; };
+		5D1665531CEF821700CC4CA1 /* OCMock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D1665521CEF821700CC4CA1 /* OCMock.framework */; };
+		5D1665541CEF821700CC4CA1 /* OCMock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D1665521CEF821700CC4CA1 /* OCMock.framework */; };
+		5D1665551CEF821700CC4CA1 /* OCMock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D1665521CEF821700CC4CA1 /* OCMock.framework */; };
+		5D1665561CEF821700CC4CA1 /* OCMock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D1665521CEF821700CC4CA1 /* OCMock.framework */; };
+		5D1665571CEF821700CC4CA1 /* OCMock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D1665521CEF821700CC4CA1 /* OCMock.framework */; };
+		5D1665581CEF821700CC4CA1 /* OCMock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D1665521CEF821700CC4CA1 /* OCMock.framework */; };
+		5D16655D1CEF825200CC4CA1 /* Expecta.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5D16655A1CEF825200CC4CA1 /* Expecta.framework.dSYM */; };
+		5D16655E1CEF825200CC4CA1 /* OCMock.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5D16655B1CEF825200CC4CA1 /* OCMock.framework.dSYM */; };
+		5D16655F1CEF825200CC4CA1 /* Specta.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5D16655C1CEF825200CC4CA1 /* Specta.framework.dSYM */; };
 		5D2B796B1B5000A100E83E2B /* SuperLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D2B796A1B5000A100E83E2B /* SuperLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5D2B79711B5000A200E83E2B /* SuperLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D2B79651B5000A100E83E2B /* SuperLogger.framework */; };
 		5D372D7F1B8CB4EA00BCDE0E /* SuperLoggerFile.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D77F9FD1B57E9DF0013F9A7 /* SuperLoggerFile.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -45,11 +54,6 @@
 		5D3810931BA855C800B41AE3 /* LivioHTTPServer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D3810911BA855C800B41AE3 /* LivioHTTPServer.framework */; };
 		5D3810991BA8561200B41AE3 /* LivioHTTPServer.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5D3810971BA8561200B41AE3 /* LivioHTTPServer.framework.dSYM */; };
 		5D3810A01BA8941600B41AE3 /* site in Resources */ = {isa = PBXBuildFile; fileRef = 5D38109F1BA8941600B41AE3 /* site */; };
-		5D3A18A71B68104C00139385 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D3A18A61B68104C00139385 /* libOCMock.a */; };
-		5D3A18A81B68104C00139385 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D3A18A61B68104C00139385 /* libOCMock.a */; };
-		5D3A18A91B68104C00139385 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D3A18A61B68104C00139385 /* libOCMock.a */; };
-		5D3A18AA1B68104C00139385 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D3A18A61B68104C00139385 /* libOCMock.a */; };
-		5D3A18AC1B68104C00139385 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D3A18A61B68104C00139385 /* libOCMock.a */; };
 		5D4049D61B557B8C00DA719D /* SuperLoggerWebServer.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D4049D51B557B8C00DA719D /* SuperLoggerWebServer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5D4049DD1B557B8C00DA719D /* SuperLoggerWebServer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D4049D31B557B8C00DA719D /* SuperLoggerWebServer.framework */; };
 		5D4049E21B557B8C00DA719D /* SuperLoggerWebServerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D4049E11B557B8C00DA719D /* SuperLoggerWebServerTests.m */; };
@@ -190,6 +194,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		5D1665591CEF824900CC4CA1 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5D16655D1CEF825200CC4CA1 /* Expecta.framework.dSYM in CopyFiles */,
+				5D16655E1CEF825200CC4CA1 /* OCMock.framework.dSYM in CopyFiles */,
+				5D16655F1CEF825200CC4CA1 /* Specta.framework.dSYM in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5D3810961BA855E400B41AE3 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -247,6 +263,10 @@
 		5D10E5061BAC55ED00E9A728 /* SLWebLoggerConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLWebLoggerConnection.m; sourceTree = "<group>"; };
 		5D10E50B1BB09CD900E9A728 /* UIDevice+IPAddress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+IPAddress.h"; sourceTree = "<group>"; };
 		5D10E50C1BB09CD900E9A728 /* UIDevice+IPAddress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+IPAddress.m"; sourceTree = "<group>"; };
+		5D1665521CEF821700CC4CA1 /* OCMock.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OCMock.framework; path = Carthage/Build/iOS/OCMock.framework; sourceTree = "<group>"; };
+		5D16655A1CEF825200CC4CA1 /* Expecta.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Expecta.framework.dSYM; path = Carthage/Build/iOS/Expecta.framework.dSYM; sourceTree = "<group>"; };
+		5D16655B1CEF825200CC4CA1 /* OCMock.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = OCMock.framework.dSYM; path = Carthage/Build/iOS/OCMock.framework.dSYM; sourceTree = "<group>"; };
+		5D16655C1CEF825200CC4CA1 /* Specta.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Specta.framework.dSYM; path = Carthage/Build/iOS/Specta.framework.dSYM; sourceTree = "<group>"; };
 		5D2B79651B5000A100E83E2B /* SuperLogger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SuperLogger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D2B79691B5000A100E83E2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5D2B796A1B5000A100E83E2B /* SuperLogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SuperLogger.h; sourceTree = "<group>"; };
@@ -260,16 +280,6 @@
 		5D3810911BA855C800B41AE3 /* LivioHTTPServer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LivioHTTPServer.framework; path = ../Carthage/Build/iOS/LivioHTTPServer.framework; sourceTree = "<group>"; };
 		5D3810971BA8561200B41AE3 /* LivioHTTPServer.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = LivioHTTPServer.framework.dSYM; path = ../Carthage/Build/iOS/LivioHTTPServer.framework.dSYM; sourceTree = "<group>"; };
 		5D38109F1BA8941600B41AE3 /* site */ = {isa = PBXFileReference; lastKnownFileType = folder; path = site; sourceTree = "<group>"; };
-		5D3A189D1B68104C00139385 /* NSNotificationCenter+OCMAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNotificationCenter+OCMAdditions.h"; sourceTree = "<group>"; };
-		5D3A189E1B68104C00139385 /* OCMArg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMArg.h; sourceTree = "<group>"; };
-		5D3A189F1B68104C00139385 /* OCMConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMConstraint.h; sourceTree = "<group>"; };
-		5D3A18A01B68104C00139385 /* OCMLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMLocation.h; sourceTree = "<group>"; };
-		5D3A18A11B68104C00139385 /* OCMMacroState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMMacroState.h; sourceTree = "<group>"; };
-		5D3A18A21B68104C00139385 /* OCMock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMock.h; sourceTree = "<group>"; };
-		5D3A18A31B68104C00139385 /* OCMockObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMockObject.h; sourceTree = "<group>"; };
-		5D3A18A41B68104C00139385 /* OCMRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMRecorder.h; sourceTree = "<group>"; };
-		5D3A18A51B68104C00139385 /* OCMStubRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMStubRecorder.h; sourceTree = "<group>"; };
-		5D3A18A61B68104C00139385 /* libOCMock.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libOCMock.a; path = Libs/libOCMock.a; sourceTree = "<group>"; };
 		5D4049D31B557B8C00DA719D /* SuperLoggerWebServer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SuperLoggerWebServer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D4049D51B557B8C00DA719D /* SuperLoggerWebServer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SuperLoggerWebServer.h; sourceTree = "<group>"; };
 		5D4049D71B557B8C00DA719D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -337,8 +347,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5D3A18AC1B68104C00139385 /* libOCMock.a in Frameworks */,
 				5D3810831BA20FB400B41AE3 /* Expecta.framework in Frameworks */,
+				5D1665581CEF821700CC4CA1 /* OCMock.framework in Frameworks */,
 				5D3810841BA20FB400B41AE3 /* Specta.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -361,8 +371,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D1665531CEF821700CC4CA1 /* OCMock.framework in Frameworks */,
 				5D2B79711B5000A200E83E2B /* SuperLogger.framework in Frameworks */,
-				5D3A18A71B68104C00139385 /* libOCMock.a in Frameworks */,
 				5DB55FFB1B6A6F8800BC8B87 /* Expecta.framework in Frameworks */,
 				5DB55FFC1B6A6F8800BC8B87 /* Specta.framework in Frameworks */,
 			);
@@ -382,8 +392,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D1665541CEF821700CC4CA1 /* OCMock.framework in Frameworks */,
 				5D4049DD1B557B8C00DA719D /* SuperLoggerWebServer.framework in Frameworks */,
-				5D3A18A81B68104C00139385 /* libOCMock.a in Frameworks */,
 				5D38107D1BA20FAA00B41AE3 /* Expecta.framework in Frameworks */,
 				5D38107E1BA20FAA00B41AE3 /* Specta.framework in Frameworks */,
 			);
@@ -401,8 +411,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D1665551CEF821700CC4CA1 /* OCMock.framework in Frameworks */,
 				5D77F9E91B57E9D20013F9A7 /* SuperLoggerConsole.framework in Frameworks */,
-				5D3A18A91B68104C00139385 /* libOCMock.a in Frameworks */,
 				5D3810791BA20FA000B41AE3 /* Expecta.framework in Frameworks */,
 				5D38107A1BA20FA000B41AE3 /* Specta.framework in Frameworks */,
 			);
@@ -420,8 +430,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D1665561CEF821700CC4CA1 /* OCMock.framework in Frameworks */,
 				5D77FA051B57E9DF0013F9A7 /* SuperLoggerFile.framework in Frameworks */,
-				5D3A18AA1B68104C00139385 /* libOCMock.a in Frameworks */,
 				5D38107B1BA20FA500B41AE3 /* Expecta.framework in Frameworks */,
 				5D38107C1BA20FA500B41AE3 /* Specta.framework in Frameworks */,
 			);
@@ -438,6 +448,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D1665571CEF821700CC4CA1 /* OCMock.framework in Frameworks */,
 				5DACEFCF1B8E0747004E74B9 /* SuperLoggerASL.framework in Frameworks */,
 				5D3810811BA20FB100B41AE3 /* Expecta.framework in Frameworks */,
 				5D3810821BA20FB100B41AE3 /* Specta.framework in Frameworks */,
@@ -509,23 +520,71 @@
 			name = "Livio HTTP Server Subclasses";
 			sourceTree = "<group>";
 		};
-		5D2B795B1B5000A100E83E2B = {
+		5D1665671CEF82E100CC4CA1 /* SuperLoggerTestApp */ = {
 			isa = PBXGroup;
 			children = (
 				5D01497A1B62CB11005142B2 /* SuperLoggerTestApp */,
 				5D0149971B62CB11005142B2 /* SuperLoggerTestAppTests */,
 				5D0149A21B62CB11005142B2 /* SuperLoggerTestAppUITests */,
-				5D3A189B1B68103C00139385 /* Testing Libraries */,
+			);
+			name = SuperLoggerTestApp;
+			sourceTree = "<group>";
+		};
+		5D1665681CEF82ED00CC4CA1 /* SuperLogger */ = {
+			isa = PBXGroup;
+			children = (
 				5D2B79671B5000A100E83E2B /* SuperLogger */,
 				5D2B79741B5000A200E83E2B /* SuperLoggerTests */,
+			);
+			name = SuperLogger;
+			sourceTree = "<group>";
+		};
+		5D1665691CEF82F700CC4CA1 /* SLWebServer */ = {
+			isa = PBXGroup;
+			children = (
 				5D4049D41B557B8C00DA719D /* SuperLoggerWebServer */,
 				5D4049E01B557B8C00DA719D /* SuperLoggerWebServerTests */,
+			);
+			name = SLWebServer;
+			sourceTree = "<group>";
+		};
+		5D16656A1CEF830100CC4CA1 /* SLConsole */ = {
+			isa = PBXGroup;
+			children = (
 				5D77F9E01B57E9D20013F9A7 /* SuperLoggerConsole */,
 				5D77F9EC1B57E9D20013F9A7 /* SuperLoggerConsoleTests */,
+			);
+			name = SLConsole;
+			sourceTree = "<group>";
+		};
+		5D16656B1CEF830700CC4CA1 /* SLFile */ = {
+			isa = PBXGroup;
+			children = (
 				5D77F9FC1B57E9DF0013F9A7 /* SuperLoggerFile */,
 				5D77FA081B57E9DF0013F9A7 /* SuperLoggerFileTests */,
+			);
+			name = SLFile;
+			sourceTree = "<group>";
+		};
+		5D16656C1CEF830C00CC4CA1 /* SLASL */ = {
+			isa = PBXGroup;
+			children = (
 				5DACEFC61B8E0747004E74B9 /* SuperLoggerASL */,
 				5DACEFD41B8E0747004E74B9 /* SuperLoggerASLTests */,
+			);
+			name = SLASL;
+			sourceTree = "<group>";
+		};
+		5D2B795B1B5000A100E83E2B = {
+			isa = PBXGroup;
+			children = (
+				5D3A189B1B68103C00139385 /* Testing Libraries */,
+				5D1665671CEF82E100CC4CA1 /* SuperLoggerTestApp */,
+				5D1665681CEF82ED00CC4CA1 /* SuperLogger */,
+				5D1665691CEF82F700CC4CA1 /* SLWebServer */,
+				5D16656A1CEF830100CC4CA1 /* SLConsole */,
+				5D16656B1CEF830700CC4CA1 /* SLFile */,
+				5D16656C1CEF830C00CC4CA1 /* SLASL */,
 				5D2B79661B5000A100E83E2B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -619,37 +678,14 @@
 		5D3A189B1B68103C00139385 /* Testing Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				5D16655A1CEF825200CC4CA1 /* Expecta.framework.dSYM */,
+				5D16655B1CEF825200CC4CA1 /* OCMock.framework.dSYM */,
+				5D16655C1CEF825200CC4CA1 /* Specta.framework.dSYM */,
+				5D1665521CEF821700CC4CA1 /* OCMock.framework */,
 				5DB55FF71B6A6F8400BC8B87 /* Expecta.framework */,
 				5DB55FF81B6A6F8400BC8B87 /* Specta.framework */,
-				5D3A18AD1B68104F00139385 /* OCMock */,
 			);
 			name = "Testing Libraries";
-			sourceTree = "<group>";
-		};
-		5D3A189C1B68104C00139385 /* Headers */ = {
-			isa = PBXGroup;
-			children = (
-				5D3A189D1B68104C00139385 /* NSNotificationCenter+OCMAdditions.h */,
-				5D3A189E1B68104C00139385 /* OCMArg.h */,
-				5D3A189F1B68104C00139385 /* OCMConstraint.h */,
-				5D3A18A01B68104C00139385 /* OCMLocation.h */,
-				5D3A18A11B68104C00139385 /* OCMMacroState.h */,
-				5D3A18A21B68104C00139385 /* OCMock.h */,
-				5D3A18A31B68104C00139385 /* OCMockObject.h */,
-				5D3A18A41B68104C00139385 /* OCMRecorder.h */,
-				5D3A18A51B68104C00139385 /* OCMStubRecorder.h */,
-			);
-			name = Headers;
-			path = Libs/OCMock;
-			sourceTree = "<group>";
-		};
-		5D3A18AD1B68104F00139385 /* OCMock */ = {
-			isa = PBXGroup;
-			children = (
-				5D3A189C1B68104C00139385 /* Headers */,
-				5D3A18A61B68104C00139385 /* libOCMock.a */,
-			);
-			name = OCMock;
 			sourceTree = "<group>";
 		};
 		5D4049D41B557B8C00DA719D /* SuperLoggerWebServer */ = {
@@ -931,6 +967,7 @@
 			buildPhases = (
 				5D2B796C1B5000A200E83E2B /* Sources */,
 				5D2B796D1B5000A200E83E2B /* Frameworks */,
+				5D1665591CEF824900CC4CA1 /* CopyFiles */,
 				5D2B796E1B5000A200E83E2B /* Resources */,
 				5DB55FFD1B6A70E600BC8B87 /* ShellScript */,
 			);
