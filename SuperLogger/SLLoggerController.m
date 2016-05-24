@@ -56,7 +56,6 @@ NS_ASSUME_NONNULL_BEGIN
     _globalLogLevel = SLLogLevelDebug;
     _formatBlock = nil;
     _defaultFormatBlock = [self.class sl_defaultFormatBlock];
-    _timestampFormatter = nil;
     
     return self;
 }
@@ -196,9 +195,22 @@ NS_ASSUME_NONNULL_BEGIN
     return [^NSString *(SLLog *log, NSDateFormatter *dateFormatter) {
         NSString *dateString = [dateFormatter stringFromDate:log.timestamp];
         
-        // Format: 09:52:07:324 (com.apple.main-thread : -[AppDelegate application:didFinishLaunchingWithOptions:] : L25) a random test i guess
-        return [NSString stringWithFormat:@"%@ (%@ : %@ : L%ld) %@\n", dateString, log.queueLabel, log.functionName, (long)log.line, log.message];
+        // Format: 09:52:07:324 (com.apple.main-thread : -[Base:AppDelegate application:didFinishLaunchingWithOptions:] : L25) a random test i guess
+        return [NSString stringWithFormat:@"%@ (%@ : %@:%@ : L%ld) %@\n", dateString, log.queueLabel, log.moduleName, log.functionName, (long)log.line, log.message];
     } copy];
+}
+
+
+#pragma mark Modules
+
+- (nullable SLFileModule *)moduleForFile:(NSString *)file {
+    for (SLFileModule *module in self.logModules) {
+        if ([module containsFile:file]) {
+            return module;
+        }
+    }
+    
+    return nil;
 }
 
 
@@ -231,6 +243,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)logWithLevel:(SLLogLevel)level fileName:(NSString *)fileName functionName:(NSString *)functionName line:(NSInteger)line message:(NSString *)message, ... {
     NSDate *timestamp = [NSDate date];
     NSArray *callstack = [NSThread callStackSymbols];
+    NSString *moduleName = [self moduleForFile:fileName] ? [self moduleForFile:fileName].name : @"";
     
     va_list args;
     va_start(args, message);
@@ -240,6 +253,7 @@ NS_ASSUME_NONNULL_BEGIN
                                       timestamp:timestamp
                                           level:level
                                        fileName:fileName
+                                     moduleName:moduleName
                                    functionName:functionName
                                            line:line
                                      queueLabel:SLOG_QUEUE

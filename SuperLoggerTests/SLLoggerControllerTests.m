@@ -227,13 +227,14 @@ describe(@"Logger Controller instance methods", ^{
         xit(@"should tell its loggers to log the right thing", ^{
             NSTimeInterval someInterval = 12000;
             SLLogLevel someLogLevelDebugOrAbove = SLLogLevelRelease;
+            NSString *someModuleName = @"UI";
             NSString *someFileName = @"testfilename";
             NSString *someFunctionName = @"testfunctionname";
             NSInteger someLine = __LINE__;
             NSString *someQueueName = @"com.test.testQueue";
             NSArray *someCallstack = @[];
             
-            SLLog *testLog = [[SLLog alloc] initWithMessage:@"someString" timestamp:[NSDate dateWithTimeIntervalSince1970:someInterval] level:someLogLevelDebugOrAbove fileName:someFileName functionName:someFunctionName line:someLine queueLabel:someQueueName callstack:someCallstack];
+            SLLog *testLog = [[SLLog alloc] initWithMessage:@"someString" timestamp:[NSDate dateWithTimeIntervalSince1970:someInterval] level:someLogLevelDebugOrAbove fileName:someFileName moduleName:someModuleName functionName:someFunctionName line:someLine queueLabel:someQueueName callstack:someCallstack];
             NSString *expectedLogString = testController.formatBlock(testLog, testController.timestampFormatter);
             
             [testController queueLog:testLog];

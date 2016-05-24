@@ -21,6 +21,7 @@ describe(@"The Log Model SLLog", ^{
         __block NSTimeInterval someInterval = 0;
         __block SLLogLevel someLogLevel = 0;
         __block NSString *someFileName = nil;
+        __block NSString *someModuleName = nil;
         __block NSString *someFunctionName = nil;
         __block NSInteger someLine = 0;
         __block NSString *someQueueLabel = nil;
@@ -29,13 +30,14 @@ describe(@"The Log Model SLLog", ^{
             someMessage = @"someMessage";
             someInterval = 2000;
             someLogLevel = SLLogLevelRelease;
+            someModuleName = @"someModuleName";
             someFileName = @"someFileName";
             someFunctionName = @"someFunctionName";
             someLine = 27;
             someQueueLabel = @"com.some.test.queue";
             someCallstack = @[];
             
-            testLog = [[SLLog alloc] initWithMessage:someMessage timestamp:[NSDate dateWithTimeIntervalSince1970:someInterval] level:someLogLevel fileName:someFileName functionName:someFunctionName line:someLine queueLabel:someQueueLabel callstack:someCallstack];
+            testLog = [[SLLog alloc] initWithMessage:someMessage timestamp:[NSDate dateWithTimeIntervalSince1970:someInterval] level:someLogLevel fileName:someFileName moduleName:someModuleName functionName:someFunctionName line:someLine queueLabel:someQueueLabel callstack:someCallstack];
         });
         
         it(@"should properly return message", ^{

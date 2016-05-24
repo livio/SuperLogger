@@ -1,4 +1,4 @@
-github "livio/LivioHTTPServer" "59340cd7ac64c5bf034957c09f0b52e2e89aa4aa"
-github "specta/expecta" "d16885a29a51db477258a89083dc8c25882ca2c2"
+github "livio/LivioHTTPServer" "0f8f09e9b2bfbe7739bc861202f17f17887eb902"
+github "specta/expecta" "b8b75c84fa5b5726b6542af87579fba3561db954"
 github "erikdoe/ocmock" "v3.3"
-github "specta/specta" "04d9b237577fe6ca058ef95893064b76d2566e1c"
+github "specta/specta" "3c34fccf19673c40247839770d5cf2acf33dd9b6"

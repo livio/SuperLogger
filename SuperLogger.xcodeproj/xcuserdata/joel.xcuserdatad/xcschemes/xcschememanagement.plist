@@ -27,12 +27,17 @@
 		<key>SuperLoggerASL.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
+			<integer>5</integer>
+		</dict>
+		<key>SuperLoggerNSLogger.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
 			<integer>6</integer>
 		</dict>
 		<key>SuperLoggerTestApp.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>5</integer>
+			<integer>4</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
@@ -48,6 +53,16 @@
 			<true/>
 		</dict>
 		<key>5D01499E1B62CB11005142B2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5D1665711CEF8AF500CC4CA1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5D16657A1CEF8AF600CC4CA1</key>
 		<dict>
 			<key>primary</key>
 			<true/>

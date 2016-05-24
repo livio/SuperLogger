@@ -1,6 +1,6 @@
-#import <Quick/Quick.h>
-#import <Nimble/Nimble.h>
+#import <Specta/Specta.h>
+#import <Expecta/Expecta.h>
 
-QuickSpecBegin(SLFileLoggerSpec)
+SpecBegin(SLFileLoggerSpec)
 
-QuickSpecEnd
+SpecEnd

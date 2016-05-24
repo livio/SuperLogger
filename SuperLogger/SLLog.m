@@ -18,6 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (assign, nonatomic, readwrite) NSInteger line;
 @property (copy, nonatomic, readwrite) NSString *queueLabel;
 @property (copy, nonatomic, readwrite) NSString *fileName;
+@property (copy, nonatomic, readwrite) NSString *moduleName;
 @property (copy, nonatomic, readwrite) NSString *functionName;
 @property (copy, nonatomic, readwrite) NSArray *callstack;
 
@@ -36,6 +37,7 @@ NS_ASSUME_NONNULL_BEGIN
                       timestamp:(NSDate *)timestamp
                           level:(SLLogLevel)level
                        fileName:(NSString *)fileName
+                     moduleName:(NSString *)moduleName
                    functionName:(NSString *)functionName
                            line:(NSInteger)line
                      queueLabel:(NSString *)queueLabel
@@ -49,6 +51,7 @@ NS_ASSUME_NONNULL_BEGIN
     _timestamp = timestamp;
     _level = level;
     _fileName = fileName;
+    _moduleName = moduleName;
     _functionName = functionName;
     _line = line;
     _queueLabel = queueLabel;
@@ -73,7 +76,7 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark - NSCopying
 
 - (id)copyWithZone:(nullable NSZone *)zone {
-    return [[SLLog allocWithZone:zone] initWithMessage:_message timestamp:_timestamp level:_level fileName:_fileName functionName:_functionName line:_line queueLabel:_queueLabel callstack:_callstack];
+    return [[SLLog allocWithZone:zone] initWithMessage:_message timestamp:_timestamp level:_level fileName:_fileName moduleName:_moduleName functionName:_functionName line:_line queueLabel:_queueLabel callstack:_callstack];
 }
 
 @end

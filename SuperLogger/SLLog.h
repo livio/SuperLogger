@@ -23,6 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (assign, nonatomic, readonly) NSInteger line;
 @property (copy, nonatomic, readonly) NSString *queueLabel;
 @property (copy, nonatomic, readonly) NSString *fileName;
+@property (copy, nonatomic, readonly) NSString *moduleName;
 @property (copy, nonatomic, readonly) NSString *functionName;
 @property (copy, nonatomic, readonly) NSArray *callstack;
 
@@ -31,6 +32,7 @@ NS_ASSUME_NONNULL_BEGIN
                       timestamp:(NSDate *)timestamp
                           level:(SLLogLevel)level
                        fileName:(NSString *)fileName
+                     moduleName:(NSString *)moduleName
                    functionName:(NSString *)functionName
                            line:(NSInteger)line
                      queueLabel:(NSString *)queueLabel

@@ -8,8 +8,6 @@
 
 #import "SLWebLoggerConnection.h"
 
-@import CocoaAsyncSocket;
-
 
 @implementation SLWebLoggerConnection
 
